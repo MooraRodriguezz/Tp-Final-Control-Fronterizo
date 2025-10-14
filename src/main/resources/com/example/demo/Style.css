@@ -1,51 +1,48 @@
+/*
+ * LA SECCIÓN @font-face FUE ELIMINADA.
+ * Java se encarga de cargar la fuente, el CSS solo la usa por su nombre.
+ */
 
-/* 1. Cargar la fuente pixelada que descargamos */
-@font-face {
-    font-family: 'Press Start 2P';
-    src: url('/fonts/PressStart2P-Regular.ttf');
-}
-
-/* 2. Estilo base de la ventana */
+/* Estilo base de la ventana */
 .root {
-    -fx-background-color: #363636; /* Fondo gris oscuro, casi negro */
-    -fx-font-family: 'Press Start 2P'; /* ¡Usamos nuestra fuente pixelada en todo! */
+    -fx-background-color: #363636;
+    -fx-font-family: 'Press Start 2P'; /* Pide la fuente por su nombre oficial */
 }
 
-/* 3. Estilo para todas las etiquetas */
+/* Estilo para todas las etiquetas */
 .label {
-    -fx-text-fill: #b9b9b9; /* Texto gris claro, no blanco puro */
+    -fx-text-fill: #b9b9b9;
     -fx-font-size: 12px;
 }
 
-/* 4. Estilo para el título principal */
-#tituloPrincipal { /* Asigna este ID a tu label del título en Scene Builder */
-    -fx-text-fill: #ffe599; /* Amarillo pálido, como en una pantalla de fósforo */
+/* Estilo para el título principal */
+#tituloPrincipal {
+    -fx-text-fill: #ffe599;
     -fx-font-size: 16px;
     -fx-alignment: center;
 }
 
-/* 5. Estilo para los campos de texto y contraseña */
+/* Estilo para los campos de texto y contraseña */
 .text-field, .password-field {
-    -fx-background-color: #1c1c1c; /* Fondo casi negro para los campos */
-    -fx-text-fill: #4CAF50; /* Texto verde, como en las terminales antiguas */
-    -fx-border-color: #b9b9b9; /* Borde gris claro */
+    -fx-background-color: #1c1c1c;
+    -fx-text-fill: #4CAF50;
+    -fx-border-color: #b9b9b9;
     -fx-border-width: 2px;
-    -fx-border-radius: 0; /* ¡Bordes cuadrados, nada de redondeos! */
+    -fx-border-radius: 0;
     -fx-background-insets: 0;
-    -fx-font-family: 'Press Start 2P';
+    -fx-font-family: 'Press Start 2P'; /* Usa la fuente aquí también */
     -fx-padding: 8px;
-    -fx-prompt-text-fill: #555;
 }
 
-/* 6. Estilo del cursor (caret) en los campos de texto */
+/* Estilo del cursor (caret) */
 .text-field .caret, .password-field .caret {
-    -fx-stroke: #4CAF50; /* El cursor también es verde */
+    -fx-stroke: #4CAF50;
 }
 
-/* 7. Estilo del botón */
+/* Estilo del botón */
 .button {
-    -fx-background-color: #5a5a5a; /* Fondo gris para el botón */
-    -fx-text-fill: #ffe599; /* Texto amarillo, como el título */
+    -fx-background-color: #5a5a5a;
+    -fx-text-fill: #ffe599;
     -fx-border-color: #b9b9b9;
     -fx-border-width: 2px;
     -fx-border-radius: 0;
@@ -53,7 +50,6 @@
     -fx-cursor: hand;
 }
 
-/* Efecto al pasar el mouse por encima del botón */
 .button:hover {
     -fx-background-color: #707070;
     -fx-text-fill: #ffffff;
@@ -61,5 +57,6 @@
 
 /* Estilo para el mensaje de error */
 #errorMessageLabel {
-    -fx-text-fill: #ff4d4d; /* Rojo brillante para errores */
+    -fx-text-fill: #ff4d4d;
+    -fx-font-size: 14px;
 }
