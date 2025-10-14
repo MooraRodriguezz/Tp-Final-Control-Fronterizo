@@ -6,7 +6,7 @@
 /* Estilo base de la ventana */
 .root {
     -fx-background-color: #363636;
-    -fx-font-family: 'Press Start 2P'; /* Pide la fuente por su nombre oficial */
+    -fx-font-family: 'Press Start 2P';
 }
 
 /* Estilo para todas las etiquetas */
@@ -15,14 +15,14 @@
     -fx-font-size: 12px;
 }
 
-/* Estilo para el título principal */
+/* Estilo para el título principal (funciona para login y admin) */
 #tituloPrincipal {
     -fx-text-fill: #ffe599;
     -fx-font-size: 16px;
     -fx-alignment: center;
 }
 
-/* Estilo para los campos de texto y contraseña */
+/* Estilo para los campos de texto y contraseña (del login) */
 .text-field, .password-field {
     -fx-background-color: #1c1c1c;
     -fx-text-fill: #4CAF50;
@@ -30,7 +30,7 @@
     -fx-border-width: 2px;
     -fx-border-radius: 0;
     -fx-background-insets: 0;
-    -fx-font-family: 'Press Start 2P'; /* Usa la fuente aquí también */
+    -fx-font-family: 'Press Start 2P';
     -fx-padding: 8px;
 }
 
@@ -39,14 +39,14 @@
     -fx-stroke: #4CAF50;
 }
 
-/* Estilo del botón */
+/* Estilo de los botones normales */
 .button {
     -fx-background-color: #5a5a5a;
     -fx-text-fill: #ffe599;
     -fx-border-color: #b9b9b9;
     -fx-border-width: 2px;
     -fx-border-radius: 0;
-    -fx-font-size: 14px;
+    -fx-font-size: 12px; /* Reducimos un poco para el menú */
     -fx-cursor: hand;
 }
 
@@ -55,8 +55,48 @@
     -fx-text-fill: #ffffff;
 }
 
-/* Estilo para el mensaje de error */
-#errorMessageLabel {
-    -fx-text-fill: #ff4d4d;
+/* -------------------------------------------------- */
+/* --- NUEVAS REGLAS PARA EL PANEL DE ADMINISTRADOR --- */
+/* -------------------------------------------------- */
+
+/* Estilo para el panel del menú a la izquierda */
+.menu-panel {
+    -fx-background-color: #2b2b2b; /* Un gris un poco más claro que el fondo */
+    -fx-border-color: #b9b9b9;
+    -fx-border-width: 0 2px 0 0; /* Solo un borde a la derecha */
+}
+
+/* Estilo para el panel de contenido central */
+.content-panel {
+    -fx-background-color: #212121;
+    -fx-border-color: #b9b9b9;
+    -fx-border-width: 2px;
+    -fx-border-insets: 10; /* Margen para el borde */
+}
+
+#placeholderLabel {
+    -fx-text-fill: #5a5a5a; /* Texto del placeholder más apagado */
     -fx-font-size: 14px;
+}
+
+/* Estilo para el separador en el menú */
+.separator .line {
+    -fx-border-color: #b9b9b9;
+    -fx-border-width: 1 0 0 0; /* Una línea simple arriba */
+}
+
+/* Estilo especial para el botón "Cerrar Sesión" */
+.danger-button {
+    -fx-text-fill: #ff4d4d; /* Texto rojo */
+}
+
+.danger-button:hover {
+    -fx-background-color: #c9302c; /* Fondo rojo oscuro al pasar el mouse */
+    -fx-text-fill: white;
+}
+
+/* Estilo para el texto del pie de página */
+#footerLabel {
+    -fx-text-fill: #5a5a5a;
+    -fx-font-size: 10px;
 }

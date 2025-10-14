@@ -14,11 +14,9 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        // --- CÓDIGO CLAVE PARA CARGAR LA FUENTE ---
-        // Esto carga la fuente desde tus recursos y la hace disponible para toda la app.
         try (InputStream fontStream = HelloApplication.class.getResourceAsStream("/fonts/PressStart2P-Regular.ttf")) {
             if (fontStream != null) {
-                Font.loadFont(fontStream, 12); // El tamaño es irrelevante, solo la carga.
+                Font.loadFont(fontStream, 12);
                 System.out.println(">>> FUENTE 'Press Start 2P' CARGADA CORRECTAMENTE EN JAVA.");
             } else {
                 System.err.println(">>> ERROR CRÍTICO: No se encontró el archivo '/fonts/PressStart2P-Regular.ttf'");
@@ -27,9 +25,7 @@ public class HelloApplication extends Application {
             System.err.println(">>> ERROR FATAL AL CARGAR LA FUENTE:");
             e.printStackTrace();
         }
-        // --- FIN DEL CÓDIGO DE LA FUENTE ---
 
-        // Carga de la vista de login (esto queda igual)
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 500, 350);
         stage.setTitle("Control Fronterizo - Login");
