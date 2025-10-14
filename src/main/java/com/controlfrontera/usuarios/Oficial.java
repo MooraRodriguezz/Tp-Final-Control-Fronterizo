@@ -6,12 +6,13 @@ import com.controlfrontera.modelo.Decision;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Representa a un oficial del sistema, que tiene la capacidad de revisar personas y registrar decisiones.
+ */
 public class Oficial extends Usuario {
+    /// Atributos
     List<Usuario> historial;
-
-    //constructores
-
-
+    ///Constructores
     public Oficial() {
     }
 
@@ -19,7 +20,15 @@ public class Oficial extends Usuario {
         super(nombre, contrasenia, rol);
         this.historial = new ArrayList<>();
     }
+    /// Getters and Setters
+    public List<Usuario> getHistorial() {
+        return historial;
+    }
 
+    public void setHistorial(List<Usuario> historial) {
+        this.historial = historial;
+    }
+    /// Metodos
     public void revisarPersona(Persona p){
 
     }
