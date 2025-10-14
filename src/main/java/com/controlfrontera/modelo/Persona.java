@@ -1,9 +1,9 @@
-package com.example.demo;
+package com.controlfrontera.modelo;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class Persona implements Verificable{
+public class Persona implements Verificable {
     private String nombre;
     private String nacionalidad;
     private Set<Documento> documentos;

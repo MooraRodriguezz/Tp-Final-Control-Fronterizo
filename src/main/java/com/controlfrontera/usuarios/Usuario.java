@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.controlfrontera.usuarios;
 
 abstract class Usuario {
     private String nombre;

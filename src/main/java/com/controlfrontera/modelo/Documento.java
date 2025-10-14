@@ -1,8 +1,8 @@
-package com.example.demo;
+package com.controlfrontera.modelo;
 
 import java.util.Date;
 
-public class Documento implements Verificable{
+public class Documento implements Verificable {
     private String tipo;
     private boolean valido;
     private String motivoViaje;

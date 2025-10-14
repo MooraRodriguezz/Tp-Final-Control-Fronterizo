@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.controlfrontera.usuarios;
 
 
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class Administrador extends Usuario{
+public class Administrador extends Usuario {
     List<Usuario> listaUsuarios;
     Set<String> paisesValidos;
 

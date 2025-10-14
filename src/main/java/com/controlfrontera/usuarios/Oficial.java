@@ -1,9 +1,12 @@
-package com.example.demo;
+package com.controlfrontera.usuarios;
+
+import com.controlfrontera.modelo.Persona;
+import com.controlfrontera.modelo.Decision;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Oficial extends Usuario{
+public class Oficial extends Usuario {
     List<Usuario> historial;
 
     //constructores

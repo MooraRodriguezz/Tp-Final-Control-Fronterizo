@@ -8,4 +8,8 @@ module com.example.demo {
 
     opens com.example.demo to javafx.fxml;
     exports com.example.demo;
+    exports com.controlfrontera.usuarios;
+    opens com.controlfrontera.usuarios to javafx.fxml;
+    exports com.controlfrontera.modelo;
+    opens com.controlfrontera.modelo to javafx.fxml;
 }

@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.controlfrontera.modelo;
 
 public interface Verificable {
 

@@ -1,8 +1,8 @@
-package com.example.demo;
+package com.controlfrontera.modelo;
 
-import java.time.LocalDate;
+import com.controlfrontera.usuarios.Oficial;
+
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class Decision {
     private Persona persona;
