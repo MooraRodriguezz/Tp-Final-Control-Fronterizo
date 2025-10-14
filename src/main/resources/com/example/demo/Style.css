@@ -1,27 +1,65 @@
-/* styles.css */
+
+/* 1. Cargar la fuente pixelada que descargamos */
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('/fonts/PressStart2P-Regular.ttf');
+}
+
+/* 2. Estilo base de la ventana */
 .root {
-    -fx-background-color: #f0f2f5; /* Un gris muy claro de fondo */
+    -fx-background-color: #363636; /* Fondo gris oscuro, casi negro */
+    -fx-font-family: 'Press Start 2P'; /* ¡Usamos nuestra fuente pixelada en todo! */
 }
 
+/* 3. Estilo para todas las etiquetas */
 .label {
-    -fx-text-fill: #333333; /* Color de texto general */
+    -fx-text-fill: #b9b9b9; /* Texto gris claro, no blanco puro */
+    -fx-font-size: 12px;
 }
 
-.button {
-    -fx-background-color: #4CAF50; /* Verde brillante para el botón */
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-background-radius: 5; /* Bordes redondeados */
-    -fx-cursor: hand; /* Cursor de mano al pasar por encima */
+/* 4. Estilo para el título principal */
+#tituloPrincipal { /* Asigna este ID a tu label del título en Scene Builder */
+    -fx-text-fill: #ffe599; /* Amarillo pálido, como en una pantalla de fósforo */
+    -fx-font-size: 16px;
+    -fx-alignment: center;
 }
 
-.button:hover {
-    -fx-background-color: #45a049; /* Verde un poco más oscuro al pasar el mouse */
-}
-
+/* 5. Estilo para los campos de texto y contraseña */
 .text-field, .password-field {
-    -fx-background-color: white;
-    -fx-border-color: #cccccc;
-    -fx-border-radius: 5;
+    -fx-background-color: #1c1c1c; /* Fondo casi negro para los campos */
+    -fx-text-fill: #4CAF50; /* Texto verde, como en las terminales antiguas */
+    -fx-border-color: #b9b9b9; /* Borde gris claro */
+    -fx-border-width: 2px;
+    -fx-border-radius: 0; /* ¡Bordes cuadrados, nada de redondeos! */
+    -fx-background-insets: 0;
+    -fx-font-family: 'Press Start 2P';
     -fx-padding: 8px;
+    -fx-prompt-text-fill: #555;
+}
+
+/* 6. Estilo del cursor (caret) en los campos de texto */
+.text-field .caret, .password-field .caret {
+    -fx-stroke: #4CAF50; /* El cursor también es verde */
+}
+
+/* 7. Estilo del botón */
+.button {
+    -fx-background-color: #5a5a5a; /* Fondo gris para el botón */
+    -fx-text-fill: #ffe599; /* Texto amarillo, como el título */
+    -fx-border-color: #b9b9b9;
+    -fx-border-width: 2px;
+    -fx-border-radius: 0;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+/* Efecto al pasar el mouse por encima del botón */
+.button:hover {
+    -fx-background-color: #707070;
+    -fx-text-fill: #ffffff;
+}
+
+/* Estilo para el mensaje de error */
+#errorMessageLabel {
+    -fx-text-fill: #ff4d4d; /* Rojo brillante para errores */
 }
