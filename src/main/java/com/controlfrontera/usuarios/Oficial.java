@@ -12,6 +12,7 @@ import java.util.List;
 public class Oficial extends Usuario {
     /// Atributos
     List<Usuario> historial;
+    public int puntos;
     ///Constructores
     public Oficial() {
     }

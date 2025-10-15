@@ -2,7 +2,7 @@
 /* 1. Cargar la fuente pixelada que descargamos */
 @font-face {
     font-family: 'Press Start 2P';
-    src: url('fonts/PressStart2P-Regular.ttf');
+    src: url('../../fonts/PressStart2P-Regular.ttf');
 }
 
 /* 2. Estilo base de la ventana */

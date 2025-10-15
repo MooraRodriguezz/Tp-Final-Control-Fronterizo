@@ -2,7 +2,7 @@ package com.controlfrontera.usuarios;
 /**
  * Representa a un usuario del sistema.
  */
-abstract class Usuario {
+ public abstract class Usuario {
     /// Atributos
     private String nombre;
     private String contrasenia;

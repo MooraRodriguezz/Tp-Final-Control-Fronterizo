@@ -1,5 +1,9 @@
-package com.controlfrontera.Controllers; // Tu paquete original
+package com.controlfrontera.Controllers;
 
+import com.controlfrontera.usuarios.Administrador;
+import com.controlfrontera.usuarios.GestorUsuarios;
+import com.controlfrontera.usuarios.Oficial;
+import com.controlfrontera.usuarios.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,25 +17,27 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL; // Importante para manejar las rutas de los archivos
+import java.net.URL;
 
 public class LoginViewController {
 
     @FXML
     private TextField usernameField;
-
     @FXML
     private PasswordField passwordField;
-
     @FXML
     private Button loginButton;
-
     @FXML
     private Label errorMessageLabel;
+
+    // 1. Creamos una instancia de nuestro gestor de usuarios.
+    private GestorUsuarios gestorUsuarios;
 
     @FXML
     public void initialize() {
         errorMessageLabel.setVisible(false);
+        // 2. Inicializamos el gestor cuando el controlador se carga.
+        gestorUsuarios = new GestorUsuarios();
     }
 
     @FXML
@@ -39,28 +45,26 @@ public class LoginViewController {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        if (username.equals("admin") && password.equals("admin123")) {
-            System.out.println("ACCESO AUTORIZADO: ADMINISTRADOR");
-            cambiarEscena(event, "/com/example/demo/admin-view.fxml", "Panel de Administración");
+        // 3. Usamos nuestro nuevo método de autenticación.
+        Usuario usuarioAutenticado = gestorUsuarios.autenticarUsuario(username, password);
 
-        } else if (username.equals("oficial") && password.equals("pass123")) {
-            System.out.println("ACCESO AUTORIZADO: OFICIAL");
-            // --- AQUÍ ESTÁ LA LÓGICA AGREGADA ---
-            // Llama al mismo método para cambiar la escena, pero con el archivo del oficial.
-            cambiarEscena(event, "/com/example/demo/oficial-view.fxml", "Puesto de Control");
-
+        // 4. Verificamos el resultado.
+        if (usuarioAutenticado != null) {
+            // Verificamos el tipo de usuario usando 'instanceof'
+            if (usuarioAutenticado instanceof Administrador) {
+                System.out.println("ACCESO AUTORIZADO: ADMINISTRADOR");
+                cambiarEscena(event, "/com/example/demo/admin-view.fxml", "Panel de Administración");
+            } else if (usuarioAutenticado instanceof Oficial) {
+                System.out.println("ACCESO AUTORIZADO: OFICIAL");
+                cambiarEscena(event, "/com/example/demo/oficial-view.fxml", "Puesto de Control");
+            }
         } else {
+            // Si el usuario es null, el acceso es denegado.
             System.err.println("ACCESO DENEGADO.");
             errorMessageLabel.setVisible(true);
         }
     }
 
-    /**
-     * Un método reutilizable para cambiar de una pantalla a otra.
-     * @param event El evento del botón que inició el cambio.
-     * @param fxmlFile La ruta completa al nuevo archivo FXML.
-     * @param newTitle El nuevo título para la ventana.
-     */
     private void cambiarEscena(ActionEvent event, String fxmlFile, String newTitle) {
         try {
             URL fxmlUrl = getClass().getResource(fxmlFile);
@@ -70,7 +74,7 @@ public class LoginViewController {
                 errorMessageLabel.setVisible(true);
                 return;
             }
-
+            //A partir de aca cambia ventana
             Parent nuevaVista = FXMLLoader.load(fxmlUrl);
             Scene nuevaEscena = new Scene(nuevaVista);
 
