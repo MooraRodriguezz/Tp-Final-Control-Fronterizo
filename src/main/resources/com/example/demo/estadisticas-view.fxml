@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="300.0" prefWidth="500.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controlfrontera.Controllers.EstadisticasViewController">
+    <top>
+        <Label id="tituloPrincipal" text="ESTADÍSTICAS GENERALES" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="20.0" bottom="20.0" />
+            </padding>
+        </Label>
+    </top>
+    <center>
+        <GridPane hgap="10" vgap="15" alignment="CENTER">
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+            <children>
+                <Label text="PERSONAS PROCESADAS:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                <Label fx:id="lblTotal" styleClass="info-data" text="0" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+                <Label text="APROBADOS:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                <Label fx:id="lblAprobados" styleClass="info-data" text="0" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+                <Label text="RECHAZADOS:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                <Label fx:id="lblRechazados" styleClass="info-data" text="0" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+            </children>
+        </GridPane>
+    </center>
+</BorderPane>

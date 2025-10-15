@@ -1,0 +1,47 @@
+package com.controlfrontera.Controllers;
+
+import com.controlfrontera.modelo.GestorPaises;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+
+public class ConfigurarPaisesViewController {
+
+    @FXML
+    private ListView<String> listaPaises;
+    @FXML
+    private TextField txtNombrePais;
+
+    private GestorPaises gestorPaises;
+
+    @FXML
+    public void initialize() {
+        // Obtenemos la instancia única de nuestro gestor
+        this.gestorPaises = GestorPaises.getInstancia();
+
+        // Conectamos la lista de la interfaz con la lista de datos del gestor
+        listaPaises.setItems(gestorPaises.getPaisesValidos());
+    }
+
+    @FXML
+    void onAgregarPaisClick() {
+        String nuevoPais = txtNombrePais.getText();
+        gestorPaises.agregarPais(nuevoPais);
+        txtNombrePais.clear(); // Limpiamos el campo de texto
+    }
+
+    @FXML
+    void onEliminarPaisClick() {
+        String seleccionado = listaPaises.getSelectionModel().getSelectedItem();
+        if (seleccionado != null) {
+            gestorPaises.eliminarPais(seleccionado);
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Advertencia");
+            alert.setHeaderText(null);
+            alert.setContentText("Por favor, seleccione un país de la lista para eliminar.");
+            alert.showAndWait();
+        }
+    }
+}

@@ -73,13 +73,40 @@ public class AdminViewController {
         }
     }
 
+
     @FXML
     void onConfigurarPaisesClick(ActionEvent event) {
-        System.out.println("ACCION: Configurar países");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/configurar-paises-view.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Configurar Países Válidos");
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     void onVerEstadisticasClick(ActionEvent event) {
-        System.out.println("ACCION: Ver estadisticas");
+        try {
+            // Simplemente cargamos y mostramos la nueva ventana.
+            // El controlador de estadísticas se encargará de obtener los datos por sí mismo.
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/estadisticas-view.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Estadísticas");
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
