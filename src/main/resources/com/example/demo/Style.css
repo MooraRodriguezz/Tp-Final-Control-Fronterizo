@@ -63,3 +63,14 @@
 #errorMessageLabel {
     -fx-text-fill: #ff4d4d; /* Rojo brillante para errores */
 }
+.info-data{
+-fx-text-fill:#4CAF50;
+-fx-font-size:14px;
+-fx-font-weight:bold;
+}
+.success-button{-fx-text-fill:#4CAF50}
+.success-button:hover{
+-fx-background-color:#4CAF50;
+-fx-text-fill:white;
+
+}
