@@ -2,60 +2,51 @@ package com.controlfrontera.modelo;
 
 import java.util.Date;
 
-/**
- * Representa un documento de identidad.
- */
 public class Documento implements Verificable {
-    /// Atributos
+    // Atributos
     private String tipo;
+    private String numeroIdentificacion;
+    private String paisEmisor;
     private boolean valido;
     private String motivoViaje;
     private Date fechaExpiracion;
 
-    public Documento() {
-    }
+    public Documento() {}
 
-    public Documento(String tipo, boolean valido, String motivoViaje, Date fechaExpiracion) {
+    public Documento(String tipo, String numeroIdentificacion, String paisEmisor, boolean valido, String motivoViaje, Date fechaExpiracion) {
         this.tipo = tipo;
+        this.numeroIdentificacion = numeroIdentificacion;
+        this.paisEmisor = paisEmisor;
         this.valido = valido;
         this.motivoViaje = motivoViaje;
         this.fechaExpiracion = fechaExpiracion;
     }
-    /// Getters and Setters
-    public boolean isValido() {
-        return valido;
-    }
 
-    public void setValido(boolean valido) {
-        this.valido = valido;
-    }
+    // --- Getters y Setters ---
+    public String getTipo() { return tipo; }
+    public void setTipo(String tipo) { this.tipo = tipo; }
+    public String getNumeroIdentificacion() { return numeroIdentificacion; }
+    public void setNumeroIdentificacion(String numeroIdentificacion) { this.numeroIdentificacion = numeroIdentificacion; }
+    public String getPaisEmisor() { return paisEmisor; }
+    public void setPaisEmisor(String paisEmisor) { this.paisEmisor = paisEmisor; }
+    public boolean isValido() { return valido; }
+    public void setValido(boolean valido) { this.valido = valido; }
+    public String getMotivoViaje() { return motivoViaje; }
+    public void setMotivoViaje(String motivoViaje) { this.motivoViaje = motivoViaje; }
+    public Date getFechaExpiracion() { return fechaExpiracion; }
+    public void setFechaExpiracion(Date fechaExpiracion) { this.fechaExpiracion = fechaExpiracion; }
 
-    public Date getFechaExpiracion() {
-        return fechaExpiracion;
-    }
-
-    public void setFechaExpiracion(Date fechaExpiracion) {
-        this.fechaExpiracion = fechaExpiracion;
-    }
-
-    public String getMotivoViaje() {
-        return motivoViaje;
-    }
-
-    public void setMotivoViaje(String motivoViaje) {
-        this.motivoViaje = motivoViaje;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-    /// Metodos
     @Override
     public boolean validar() {
-        return false;
+        return this.valido;
+    }
+
+    /**
+     * Este método es la clave.
+     * El ListView lo usará para saber qué texto mostrar por cada objeto Documento.
+     */
+    @Override
+    public String toString() {
+        return tipo + " (" + (valido ? "Válido" : "Inválido") + ")";
     }
 }

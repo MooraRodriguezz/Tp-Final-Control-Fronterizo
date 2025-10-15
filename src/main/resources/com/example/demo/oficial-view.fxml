@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.control.ListView?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controlfrontera.Controllers.OficialViewController">
     <top>
         <Label fx:id="tituloPrincipal" alignment="CENTER" text="Puesto de control Dia 1" BorderPane.alignment="CENTER">
@@ -37,7 +38,7 @@
                     </children>
                 </HBox>
                 <Label text="[ DOCUMENTOS PRESENTADOS ]" />
-                <TextArea fx:id="documentosTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+                <ListView fx:id="documentosListView" prefHeight="200.0" prefWidth="200.0" />
             </children>
             <padding>
                 <Insets top="20.0" />

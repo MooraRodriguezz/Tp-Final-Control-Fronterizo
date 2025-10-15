@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+
+<BorderPane prefHeight="350.0" prefWidth="450.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controlfrontera.Controllers.DocumentoDetalleViewController">
+    <top>
+        <Label id="tituloPrincipal" text="DETALLE DEL DOCUMENTO" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="20.0" top="20.0" />
+            </padding>
+        </Label>
+    </top>
+    <center>
+        <GridPane hgap="10" vgap="15" alignment="CENTER_LEFT">
+            <padding>
+                <Insets left="40.0" />
+            </padding>
+            <children>
+                <Label text="TIPO:" GridPane.rowIndex="0" />
+                <Label fx:id="lblTipo" styleClass="info-data" text="[...]" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+                <Label text="NÚMERO:" GridPane.rowIndex="1" />
+                <Label fx:id="lblNumero" styleClass="info-data" text="[...]" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+                <Label text="PAÍS EMISOR:" GridPane.rowIndex="2" />
+                <Label fx:id="lblPaisEmisor" styleClass="info-data" text="[...]" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+                <Label text="EXPIRA:" GridPane.rowIndex="3" />
+                <Label fx:id="lblFechaExp" styleClass="info-data" text="[...]" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+                <Label text="ESTADO:" GridPane.rowIndex="4" />
+                <Label fx:id="lblEstado" styleClass="info-data" text="[...]" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+            </children>
+        </GridPane>
+    </center>
+</BorderPane>
