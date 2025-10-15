@@ -30,13 +30,11 @@ public class LoginViewController {
     @FXML
     private Label errorMessageLabel;
 
-    // 1. Creamos una instancia de nuestro gestor de usuarios.
     private GestorUsuarios gestorUsuarios;
 
     @FXML
     public void initialize() {
         errorMessageLabel.setVisible(false);
-        // 2. Inicializamos el gestor cuando el controlador se carga.
         gestorUsuarios = new GestorUsuarios();
     }
 
@@ -45,27 +43,23 @@ public class LoginViewController {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        // 3. Usamos nuestro nuevo método de autenticación.
         Usuario usuarioAutenticado = gestorUsuarios.autenticarUsuario(username, password);
 
-        // 4. Verificamos el resultado.
         if (usuarioAutenticado != null) {
-            // Verificamos el tipo de usuario usando 'instanceof'
             if (usuarioAutenticado instanceof Administrador) {
                 System.out.println("ACCESO AUTORIZADO: ADMINISTRADOR");
-                cambiarEscena(event, "/com/example/demo/admin-view.fxml", "Panel de Administración");
+                cambiarEscena(event, "/com/example/demo/admin-view.fxml", "Panel de Administración", usuarioAutenticado);
             } else if (usuarioAutenticado instanceof Oficial) {
                 System.out.println("ACCESO AUTORIZADO: OFICIAL");
-                cambiarEscena(event, "/com/example/demo/oficial-view.fxml", "Puesto de Control");
+                cambiarEscena(event, "/com/example/demo/oficial-view.fxml", "Puesto de Control", usuarioAutenticado);
             }
         } else {
-            // Si el usuario es null, el acceso es denegado.
             System.err.println("ACCESO DENEGADO.");
             errorMessageLabel.setVisible(true);
         }
     }
 
-    private void cambiarEscena(ActionEvent event, String fxmlFile, String newTitle) {
+    private void cambiarEscena(ActionEvent event, String fxmlFile, String newTitle, Usuario usuario) {
         try {
             URL fxmlUrl = getClass().getResource(fxmlFile);
             if (fxmlUrl == null) {
@@ -74,12 +68,19 @@ public class LoginViewController {
                 errorMessageLabel.setVisible(true);
                 return;
             }
-            //A partir de aca cambia ventana
-            Parent nuevaVista = FXMLLoader.load(fxmlUrl);
+
+            // Usamos FXMLLoader para poder acceder al controlador de la nueva vista
+            FXMLLoader loader = new FXMLLoader(fxmlUrl);
+            Parent nuevaVista = loader.load();
+
+            // Si el usuario es un Oficial, obtenemos el controlador y le pasamos el objeto Oficial
+            if (usuario instanceof Oficial) {
+                OficialViewController controller = loader.getController();
+                controller.initData((Oficial) usuario);
+            }
+
             Scene nuevaEscena = new Scene(nuevaVista);
-
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
             window.setScene(nuevaEscena);
             window.setTitle(newTitle);
             window.show();
