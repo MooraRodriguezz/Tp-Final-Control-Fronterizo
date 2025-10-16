@@ -6,11 +6,14 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
@@ -24,16 +27,17 @@ public class OficialViewController {
 
     @FXML private Button aprobarButton;
     @FXML private Button rechazarButton;
+    @FXML private Button ajustesButton;
     @FXML private ListView<Documento> documentosListView;
     @FXML private ImageView fotoPersonaImageView;
     @FXML private Label motivoLabel;
     @FXML private Label nacionalidadLabel;
     @FXML private Label nombreLabel;
-    @FXML private Label puntuacionLabel; // Nuevo Label para la puntuación
+    @FXML private Label puntuacionLabel;
 
     private Queue<Persona> filaDePersonas;
     private Persona personaActual;
-    private Oficial oficialLogueado; // Para saber quién es el oficial actual
+    private Oficial oficialLogueado;
     private final RegistroDecisiones registro = RegistroDecisiones.getInstancia();
 
     @FXML
@@ -78,14 +82,12 @@ public class OficialViewController {
         if (personaActual == null) return;
 
         String motivoRechazoCorrecto = personaActual.determinarVeredictoCorrecto();
-        boolean veredictoSistema = (motivoRechazoCorrecto == null); // true = APROBAR, false = RECHAZAR
+        boolean veredictoSistema = (motivoRechazoCorrecto == null);
 
         if (decisionDelOficial == veredictoSistema) {
-            // Decisión correcta
             oficialLogueado.registrarAcierto();
             registrarDecision(decisionDelOficial, "Decisión correcta.");
         } else {
-            // Decisión incorrecta
             oficialLogueado.registrarError();
             String motivoError = veredictoSistema ? "La persona era válida y fue rechazada." : "La persona era inválida. Motivo real: " + motivoRechazoCorrecto;
             mostrarNotificacionError(motivoError);
@@ -145,7 +147,6 @@ public class OficialViewController {
             motivoLabel.setText(personaActual.isSospechosa() ? "Turismo (con alerta)" : "Turismo");
             documentosListView.setItems(FXCollections.observableArrayList(personaActual.getDocumentos()));
 
-            // esto es para cargar fto del documento
             if (personaActual.getNombreImagen() != null) {
                 try {
                     String imagePath = "/images/" + personaActual.getNombreImagen();
@@ -172,22 +173,74 @@ public class OficialViewController {
     private void crearDatosDePrueba() {
         this.filaDePersonas = new LinkedList<>();
 
-        // --- ARREGLO EN LA CREACIÓN DE PERSONAS ---
-        // Se ajustaron los parámetros para que coincidan con el nuevo constructor de Persona.
-
-        // Persona 1 (Válida)
         Documento doc1 = new Documento("Pasaporte", "GDR-12345", "Gondor", true, "Turismo", new Date(System.currentTimeMillis() + 31536000000L));
         Persona p1 = new Persona("Aragorn", "Gondor", new HashSet<>(List.of(doc1)), "1", false, "Aragorn.jpg", new Date(77, 2, 1), 90.5, 181 );
         filaDePersonas.add(p1);
 
-        // Persona 2 (Inválida por documento)
         Documento doc2 = new Documento("Permiso Especial", "SHR-67890", "La Comarca", false, "Negocios", new Date(System.currentTimeMillis() - 86400000L));
         Persona p2 = new Persona("Frodo Baggins", "La Comarca", new HashSet<>(List.of(doc2)), "2", true, "Frodo.jpg", new Date(98, 8, 22), 40.8, 107);
         filaDePersonas.add(p2);
 
-        // Persona 3 (Inválida por país)
         Documento doc3 = new Documento("Pasaporte Orco", "MDR-X6Y7", "Mordor", true, "Invasión", new Date(System.currentTimeMillis() + 31536000000L));
         Persona p3 = new Persona("Lurtz", "Mordor", new HashSet<>(List.of(doc3)), "3", true, "Lurtz.jpg", new Date(95, 5, 15), 105.2, 190);
         filaDePersonas.add(p3);
+    }
+
+    /**
+     * Se ejecuta al hacer clic en el botón [ AJUSTES ].
+     * Crea y muestra un panel con las opciones.
+     */
+    @FXML
+    void onAjustesClick(ActionEvent event) {
+        ContextMenu contextMenu = new ContextMenu();
+
+        MenuItem estadisticasItem = new MenuItem("Ver Estadísticas");
+        estadisticasItem.setOnAction(e -> abrirVentanaEstadisticas());
+
+        MenuItem cerrarSesionItem = new MenuItem("Cerrar Sesión");
+        cerrarSesionItem.setOnAction(e -> cerrarSesion());
+
+        contextMenu.getItems().addAll(estadisticasItem, cerrarSesionItem);
+
+        Node source = (Node) event.getSource();
+        contextMenu.show(source.getScene().getWindow(), source.localToScreen(0, source.getBoundsInLocal().getHeight()).getX(), source.localToScreen(0, source.getBoundsInLocal().getHeight()).getY());
+    }
+
+    /**
+     * Abre la ventana modal de estadísticas.
+     */
+    private void abrirVentanaEstadisticas() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/estadisticas-view.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Estadísticas");
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Cierra la sesión del oficial y vuelve a la pantalla de login.
+     */
+    private void cerrarSesion() {
+        try {
+            Parent loginView = FXMLLoader.load(getClass().getResource("/com/example/demo/login-view.fxml"));
+            Scene loginScene = new Scene(loginView, 500, 350);
+
+            Stage window = (Stage) ajustesButton.getScene().getWindow();
+
+            window.setScene(loginScene);
+            window.setTitle("Control Fronterizo - Login");
+            window.show();
+        } catch (IOException e) {
+            System.err.println("Error al cargar la vista de login:");
+            e.printStackTrace();
+        }
     }
 }
