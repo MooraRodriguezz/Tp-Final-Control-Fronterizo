@@ -1,15 +1,12 @@
-
 @font-face {
     font-family: 'Press Start 2P';
     src: url('../../../fonts/PressStart2P-Regular.ttf');
 }
 
-
 .root {
     -fx-background-color: #363636;
     -fx-font-family: 'Press Start 2P';
 }
-
 
 .label {
     -fx-text-fill: #b9b9b9;
@@ -22,6 +19,10 @@
     -fx-alignment: center;
 }
 
+.menu-title {
+    -fx-text-fill: #ffe599;
+    -fx-font-size: 14px;
+}
 
 .text-field, .password-field {
     -fx-background-color: #1c1c1c;
@@ -39,23 +40,21 @@
     -fx-stroke: #4CAF50;
 }
 
-
 .button {
     -fx-background-color: #5a5a5a;
     -fx-text-fill: #ffe599;
     -fx-border-color: #b9b9b9;
     -fx-border-width: 2px;
     -fx-border-radius: 0;
-    -fx-font-size: 14px;
+    -fx-font-size: 10px;
+    -fx-padding: 10px 15px;
     -fx-cursor: hand;
 }
-
 
 .button:hover {
     -fx-background-color: #707070;
     -fx-text-fill: #ffffff;
 }
-
 
 #errorMessageLabel {
     -fx-text-fill: #ff4d4d;

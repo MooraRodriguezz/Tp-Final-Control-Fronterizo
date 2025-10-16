@@ -19,10 +19,10 @@
     <left>
         <VBox alignment="TOP_CENTER" prefWidth="200.0" spacing="15.0" styleClass="menu-panel" BorderPane.alignment="CENTER">
             <children>
-                <Label text="[ OPCIONES ]" />
-                <Button fx:id="gestionarUsuariosButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onGestionarUsuariosClick" prefHeight="30.0" prefWidth="487.0" text="GESTIONAR USUARIOS" />
-                <Button fx:id="verEstadisticasButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onVerEstadisticasClick" text="VER ESTADÍSTICAS" />
-                <Button fx:id="configurarPaisesButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onConfigurarPaisesClick" text="CONFIGURAR PAÍSES" />
+                <Label text="[ OPCIONES ]" styleClass="menu-title" />
+                <Button fx:id="gestionarUsuariosButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onGestionarUsuariosClick" prefHeight="30.0" prefWidth="487.0" text="GEST. USUARIOS" />
+                <Button fx:id="verEstadisticasButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onVerEstadisticasClick" text="ESTADÍSTICAS" />
+                <Button fx:id="configurarPaisesButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onConfigurarPaisesClick" text="CONFIG. PAÍSES" />
                 <Separator prefWidth="200.0" />
                 <Button fx:id="cerrarSesionButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCerrarSesionClick" styleClass="danger-button" text="CERRAR SESIÓN" />
             </children>
