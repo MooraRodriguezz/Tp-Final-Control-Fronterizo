@@ -27,9 +27,13 @@ public class HelloApplication extends Application {
         }
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 500, 350);
+        Scene scene = new Scene(fxmlLoader.load(), 550, 400);
         stage.setTitle("Control Fronterizo - Login");
         stage.setScene(scene);
+
+        // Esta es la línea clave. Llama a esta función ANTES de mostrar el stage.
+        stage.centerOnScreen();
+
         stage.show();
     }
 

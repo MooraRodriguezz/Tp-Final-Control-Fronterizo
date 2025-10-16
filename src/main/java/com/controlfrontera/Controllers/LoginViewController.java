@@ -48,18 +48,19 @@ public class LoginViewController {
         if (usuarioAutenticado != null) {
             if (usuarioAutenticado instanceof Administrador) {
                 System.out.println("ACCESO AUTORIZADO: ADMINISTRADOR");
-                cambiarEscena(event, "/com/example/demo/admin-view.fxml", "Panel de Administración", usuarioAutenticado);
+                // Le pasamos el nuevo tamaño para la ventana de Admin
+                cambiarEscena(event, "/com/example/demo/admin-view.fxml", "Panel de Administración", usuarioAutenticado, 835, 533);
             } else if (usuarioAutenticado instanceof Oficial) {
                 System.out.println("ACCESO AUTORIZADO: OFICIAL");
-                cambiarEscena(event, "/com/example/demo/oficial-view.fxml", "Puesto de Control", usuarioAutenticado);
-            }
+                // Le pasamos el nuevo tamaño para la ventana de Oficial
+                cambiarEscena(event, "/com/example/demo/oficial-view.fxml", "Puesto de Control", usuarioAutenticado, 1100, 600);            }
         } else {
             System.err.println("ACCESO DENEGADO.");
             errorMessageLabel.setVisible(true);
         }
     }
 
-    private void cambiarEscena(ActionEvent event, String fxmlFile, String newTitle, Usuario usuario) {
+    private void cambiarEscena(ActionEvent event, String fxmlFile, String newTitle, Usuario usuario, double width, double height) {
         try {
             URL fxmlUrl = getClass().getResource(fxmlFile);
             if (fxmlUrl == null) {
@@ -69,7 +70,6 @@ public class LoginViewController {
                 return;
             }
 
-
             FXMLLoader loader = new FXMLLoader(fxmlUrl);
             Parent nuevaVista = loader.load();
 
@@ -78,10 +78,12 @@ public class LoginViewController {
                 controller.initData((Oficial) usuario);
             }
 
-            Scene nuevaEscena = new Scene(nuevaVista);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            window.setScene(nuevaEscena);
+
+            // Establecemos el nuevo tamaño de la ventana
+            window.setScene(new Scene(nuevaVista, width, height));
             window.setTitle(newTitle);
+            window.centerOnScreen(); // Volvemos a centrar
             window.show();
 
         } catch (IOException e) {
