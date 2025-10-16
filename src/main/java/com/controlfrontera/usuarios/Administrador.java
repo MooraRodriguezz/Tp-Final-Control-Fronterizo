@@ -11,10 +11,10 @@ import java.util.Set;
  * Esta clase está diseñada para administrar usuarios y gestionar permisos de país para operaciones específicas.
  */
 public class Administrador extends Usuario {
-    ///Atributos
+    //Atributos
     List<Usuario> listaUsuarios;
     Set<String> paisesValidos;
-  ///Constructores
+    //Constructores
     public Administrador() {
     }
 
@@ -23,7 +23,7 @@ public class Administrador extends Usuario {
         this.listaUsuarios = new ArrayList<>();
         this.paisesValidos = new HashSet<>();
     }
-    /// Getters and Setters
+    // Getters and Setters
     public List<Usuario> getListaUsuarios() {
         return listaUsuarios;
     }
@@ -39,7 +39,7 @@ public class Administrador extends Usuario {
     public void setPaisesValidos(Set<String> paisesValidos) {
         this.paisesValidos = paisesValidos;
     }
-    /// Metodos
+    // Metodos
     public void agregarUsuario(Usuario u){
 
     }

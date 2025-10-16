@@ -3,7 +3,7 @@ package com.controlfrontera.modelo;
 import java.util.Date;
 
 public class Documento implements Verificable {
-    // Atributos
+    // --- Atributos ---
     private String tipo;
     private String numeroIdentificacion;
     private String paisEmisor;
@@ -11,6 +11,7 @@ public class Documento implements Verificable {
     private String motivoViaje;
     private Date fechaExpiracion;
 
+    // --- Constructores ---
     public Documento() {}
 
     public Documento(String tipo, String numeroIdentificacion, String paisEmisor, boolean valido, String motivoViaje, Date fechaExpiracion) {
@@ -42,10 +43,6 @@ public class Documento implements Verificable {
         return fechaExpiracion.after(new Date());
     }
 
-    /**
-     * Este método es la clave.
-     * El ListView lo usará para saber qué texto mostrar por cada objeto Documento.
-     */
     @Override
     public String toString() {
         return tipo + " (" + (valido ? "Válido" : "Inválido") + ")";

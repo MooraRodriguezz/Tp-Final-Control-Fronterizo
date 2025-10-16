@@ -68,7 +68,7 @@ public class Oficial extends Usuario {
         this.erroresConsecutivos++;
     }
 
-    // --- MÉTODOS EXISTENTES ---
+
     public void revisarPersona(Persona p){
     }
 

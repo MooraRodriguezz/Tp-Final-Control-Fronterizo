@@ -1,4 +1,4 @@
-package com.controlfrontera.modelo;
+package com.controlfrontera.persistencia;
 
 import com.controlfrontera.usuarios.Usuario;
 import com.google.gson.Gson;

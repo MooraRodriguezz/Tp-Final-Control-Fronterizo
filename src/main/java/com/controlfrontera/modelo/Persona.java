@@ -1,6 +1,5 @@
 package com.controlfrontera.modelo;
 
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,7 +16,6 @@ public class Persona implements Verificable {
         this.documentos = new HashSet<>();
     }
 
-    // Constructor actualizado para incluir el nombre de la imagen
     public Persona(String nombre, String nacionalidad, Set<Documento> documentos, String id, boolean sospechosa, String nombreImagen) {
         this.nombre = nombre;
         this.nacionalidad = nacionalidad;
@@ -46,20 +44,17 @@ public class Persona implements Verificable {
      * @return Un String con el motivo del rechazo, o null si la persona es válida.
      */
     public String determinarVeredictoCorrecto() {
-        // Regla 1: Revisar si algún documento no es válido.
         for (Documento doc : this.getDocumentos()) {
             if (!doc.validar()) {
                 return "Documento caducado: " + doc.getTipo();
             }
         }
 
-        // Regla 2: Revisar si la nacionalidad está en la lista de países permitidos.
         GestorPaises gestorPaises = GestorPaises.getInstancia();
         if (!gestorPaises.getPaisesValidos().contains(this.getNacionalidad())) {
             return "Nacionalidad no permitida: " + this.getNacionalidad();
         }
 
-        // Si pasó todas las reglas, la persona es válida.
         return null;
     }
 

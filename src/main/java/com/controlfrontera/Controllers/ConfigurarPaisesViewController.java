@@ -17,10 +17,8 @@ public class ConfigurarPaisesViewController {
 
     @FXML
     public void initialize() {
-        // Obtenemos la instancia única de nuestro gestor
-        this.gestorPaises = GestorPaises.getInstancia();
 
-        // Conectamos la lista de la interfaz con la lista de datos del gestor
+        this.gestorPaises = GestorPaises.getInstancia();
         listaPaises.setItems(gestorPaises.getPaisesValidos());
     }
 

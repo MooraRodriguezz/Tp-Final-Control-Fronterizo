@@ -1,7 +1,5 @@
 package com.controlfrontera.usuarios;
 
-import java.util.ArrayList;
-import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -29,7 +27,6 @@ public class GestorUsuarios {
         return null;
     }
 
-    // --- MÉTODOS NUEVOS ---
 
     /**
      * Devuelve la lista de usuarios para mostrarla en la tabla.

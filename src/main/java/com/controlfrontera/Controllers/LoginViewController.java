@@ -69,11 +69,10 @@ public class LoginViewController {
                 return;
             }
 
-            // Usamos FXMLLoader para poder acceder al controlador de la nueva vista
+
             FXMLLoader loader = new FXMLLoader(fxmlUrl);
             Parent nuevaVista = loader.load();
 
-            // Si el usuario es un Oficial, obtenemos el controlador y le pasamos el objeto Oficial
             if (usuario instanceof Oficial) {
                 OficialViewController controller = loader.getController();
                 controller.initData((Oficial) usuario);

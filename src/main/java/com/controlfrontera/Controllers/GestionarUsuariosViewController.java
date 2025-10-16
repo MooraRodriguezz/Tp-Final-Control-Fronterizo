@@ -22,10 +22,9 @@ public class GestionarUsuariosViewController {
 
     private GestorUsuarios gestorUsuarios;
 
-    // Este método es llamado por AdminViewController para pasarnos el gestor
+    // Este metodo es llamado por AdminViewController para pasarnos el gestor
     public void initData(GestorUsuarios gestorUsuarios) {
         this.gestorUsuarios = gestorUsuarios;
-        // Vinculamos la tabla con la lista observable del gestor
         tablaUsuarios.setItems(gestorUsuarios.getListaDeUsuarios());
     }
 

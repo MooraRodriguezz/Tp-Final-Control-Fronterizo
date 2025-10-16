@@ -51,7 +51,7 @@ public class OficialViewController {
     }
 
     /**
-     * Este método es llamado por el LoginViewController para pasar el oficial que ha iniciado sesión.
+     * Este metodo es llamado por el LoginViewController para pasar el oficial que ha iniciado sesión.
      */
     public void initData(Oficial oficial) {
         this.oficialLogueado = oficial;
@@ -145,7 +145,7 @@ public class OficialViewController {
             motivoLabel.setText(personaActual.isSospechosa() ? "Turismo (con alerta)" : "Turismo");
             documentosListView.setItems(FXCollections.observableArrayList(personaActual.getDocumentos()));
 
-            // Lógica para cargar imagen
+            // esto es para cargar fto del documento
             if (personaActual.getNombreImagen() != null) {
                 try {
                     String imagePath = "/images/" + personaActual.getNombreImagen();

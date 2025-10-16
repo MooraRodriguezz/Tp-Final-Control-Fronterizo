@@ -9,14 +9,14 @@ import java.time.LocalDateTime;
  * el oficial que tomó la decisión, el motivo y la fecha.
  */
 public class Decision {
-    /// Atributos
+    // Atributos
     private Persona persona;
     private Oficial oficial;
     private boolean aprobada;
     private String motivo;
     private LocalDateTime fecha;
 
-    ///Constructores
+    //Constructores
     public Decision() {
     }
 
@@ -27,7 +27,7 @@ public class Decision {
         this.motivo = motivo;
         this.fecha = fecha;
     }
-    /// Getters and Setters
+    // Getters and Setters
     public Persona getPersona() {
         return persona;
     }
@@ -67,7 +67,7 @@ public class Decision {
     public void setOficial(Oficial oficial) {
         this.oficial = oficial;
     }
-    /// Metodos
+    // Metodos
     public void mostrarDecision(){
     }
 }

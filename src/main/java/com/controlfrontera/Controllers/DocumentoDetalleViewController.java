@@ -14,19 +14,18 @@ public class DocumentoDetalleViewController {
     @FXML private Label lblEstado;
 
     /**
-     * Este método es llamado desde el OficialViewController para pasarle el documento seleccionado.
+     * Este metodo es llamado desde el OficialViewController para pasarle el documento seleccionado.
      */
     public void initData(Documento documento) {
         lblTipo.setText(documento.getTipo());
         lblNumero.setText(documento.getNumeroIdentificacion());
         lblPaisEmisor.setText(documento.getPaisEmisor());
 
-        // Formateamos la fecha para que sea más legible
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         lblFechaExp.setText(formatter.format(documento.getFechaExpiracion()));
 
         lblEstado.setText(documento.isValido() ? "VÁLIDO" : "INVÁLIDO");
-        // Cambiamos el color del texto según el estado
+
         if (!documento.isValido()) {
             lblEstado.setStyle("-fx-text-fill: #ff4d4d;"); // Rojo
         } else {

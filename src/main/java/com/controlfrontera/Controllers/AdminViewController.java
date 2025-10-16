@@ -30,7 +30,6 @@ public class AdminViewController {
 
     @FXML
     void onGestionarUsuariosClick(ActionEvent event) {
-        // ... (este método ya lo tienes implementado)
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/gestionar-usuarios-view.fxml"));
             Parent root = loader.load();
@@ -49,20 +48,15 @@ public class AdminViewController {
         }
     }
 
-    // --- MÉTODO ACTUALIZADO ---
     @FXML
     void onCerrarSesionClick(ActionEvent event) {
         try {
-            // 1. Cargamos el FXML de la vista de login
             Parent loginView = FXMLLoader.load(getClass().getResource("/com/example/demo/login-view.fxml"));
 
-            // 2. Creamos una nueva escena con esa vista y le damos el tamaño original
             Scene loginScene = new Scene(loginView, 500, 350);
 
-            // 3. Obtenemos la ventana actual (Stage) a partir del evento del botón
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            // 4. Establecemos la nueva escena en la ventana, reseteamos el título y la mostramos
             window.setScene(loginScene);
             window.setTitle("Control Fronterizo - Login");
             window.show();
@@ -94,8 +88,6 @@ public class AdminViewController {
     @FXML
     void onVerEstadisticasClick(ActionEvent event) {
         try {
-            // Simplemente cargamos y mostramos la nueva ventana.
-            // El controlador de estadísticas se encargará de obtener los datos por sí mismo.
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/estadisticas-view.fxml"));
             Parent root = loader.load();
 

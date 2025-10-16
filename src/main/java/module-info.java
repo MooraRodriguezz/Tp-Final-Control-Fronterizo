@@ -11,6 +11,8 @@ module com.example.demo {
     opens com.controlfrontera.usuarios to javafx.fxml;
     exports com.controlfrontera.modelo;
     opens com.controlfrontera.modelo to javafx.fxml;
+    exports com.controlfrontera.persistencia;
+    opens com.controlfrontera.persistencia to javafx.fxml;
     requires com.google.gson;
 
 }

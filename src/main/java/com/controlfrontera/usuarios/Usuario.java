@@ -3,12 +3,12 @@ package com.controlfrontera.usuarios;
  * Representa a un usuario del sistema.
  */
  public abstract class Usuario {
-    /// Atributos
+    // Atributos
     private String nombre;
     private String contrasenia;
     private String rol;
 
-    /// Constructores
+    // Constructores
     public Usuario() {
     }
 
@@ -17,7 +17,7 @@ package com.controlfrontera.usuarios;
         this.contrasenia = contrasenia;
         this.rol = rol;
     }
-    /// Getters and Setters
+    // Getters and Setters
     public String getNombre() {
         return nombre;
     }
@@ -41,7 +41,7 @@ package com.controlfrontera.usuarios;
     public void setRol(String rol) {
         this.rol = rol;
     }
-    /// Metodos
+    // Metodos
     public boolean login() {
         return false;
     }
