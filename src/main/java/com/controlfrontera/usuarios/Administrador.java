@@ -41,17 +41,25 @@ public class Administrador extends Usuario {
     }
     // Metodos
     public void agregarUsuario(Usuario u){
-
+        if(u != null){
+            this.listaUsuarios.add(u);
+        }
     }
 
     public void eliminarUsuario(Usuario u){
-
+        if(u != null){
+            this.listaUsuarios.remove(u);
+        }
     }
 
     public void agregarPais(String pais){
+        if(pais != null && !pais.trim().isEmpty()){
+            this.paisesValidos.add(pais);
+        }
 
     }
     public void eliminarPais(String pais){
+        this.paisesValidos.remove(pais);
 
     }
 

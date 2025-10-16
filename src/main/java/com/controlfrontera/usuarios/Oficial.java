@@ -2,6 +2,8 @@ package com.controlfrontera.usuarios;
 
 import com.controlfrontera.modelo.Decision;
 import com.controlfrontera.modelo.Persona;
+import com.controlfrontera.modelo.RegistroDecisiones;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -73,6 +75,8 @@ public class Oficial extends Usuario {
     }
 
     public void registrarDecision(Decision d){
+        // Las decisiones se registran a través del singleton RegistroDecisiones.
+        RegistroDecisiones.getInstancia().agregarDecision(d);
     }
 
     public void generarReporte(){
