@@ -171,19 +171,23 @@ public class OficialViewController {
 
     private void crearDatosDePrueba() {
         this.filaDePersonas = new LinkedList<>();
+
+        // --- ARREGLO EN LA CREACIÓN DE PERSONAS ---
+        // Se ajustaron los parámetros para que coincidan con el nuevo constructor de Persona.
+
         // Persona 1 (Válida)
         Documento doc1 = new Documento("Pasaporte", "GDR-12345", "Gondor", true, "Turismo", new Date(System.currentTimeMillis() + 31536000000L));
-        Persona p1 = new Persona("Aragorn", "Gondor", new HashSet<>(List.of(doc1)), "1", "Aragorn.jpg","NOV 12, 2007",90.5,181 );
+        Persona p1 = new Persona("Aragorn", "Gondor", new HashSet<>(List.of(doc1)), "1", false, "Aragorn.jpg", new Date(77, 2, 1), 90.5, 181 );
         filaDePersonas.add(p1);
 
         // Persona 2 (Inválida por documento)
         Documento doc2 = new Documento("Permiso Especial", "SHR-67890", "La Comarca", false, "Negocios", new Date(System.currentTimeMillis() - 86400000L));
-        Persona p2 = new Persona("Frodo Baggins", "La Comarca", new HashSet<>(List.of(doc2)), "2","Frodo.jpg","NOV 12, 2007",90.5,181);
+        Persona p2 = new Persona("Frodo Baggins", "La Comarca", new HashSet<>(List.of(doc2)), "2", true, "Frodo.jpg", new Date(98, 8, 22), 40.8, 107);
         filaDePersonas.add(p2);
 
         // Persona 3 (Inválida por país)
         Documento doc3 = new Documento("Pasaporte Orco", "MDR-X6Y7", "Mordor", true, "Invasión", new Date(System.currentTimeMillis() + 31536000000L));
-        Persona p3 = new Persona("Lurtz", "Mordor", new HashSet<>(List.of(doc3)), "3","Lurtz.jpg","NOV 12, 2007",90.5,181);
+        Persona p3 = new Persona("Lurtz", "Mordor", new HashSet<>(List.of(doc3)), "3", true, "Lurtz.jpg", new Date(95, 5, 15), 105.2, 190);
         filaDePersonas.add(p3);
     }
 }
