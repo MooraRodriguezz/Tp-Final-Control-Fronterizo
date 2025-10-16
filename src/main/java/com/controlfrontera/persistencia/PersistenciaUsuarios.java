@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * Clase que gestiona el guardado y carga de usuarios en formato JSON.
  */
-public class GestorUsuarios {
+public class PersistenciaUsuarios {
     private static final String RUTA_ARCHIVO = "usuarios.json";
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
@@ -29,10 +29,10 @@ public class GestorUsuarios {
     public static Usuario cargarUsuario(Class<? extends Usuario> tipoUsuario) {
         try (FileReader reader = new FileReader(RUTA_ARCHIVO)) {
             Usuario usuario = gson.fromJson(reader, tipoUsuario);
-            System.out.println("✅ Usuario cargado correctamente desde " + RUTA_ARCHIVO);
+            System.out.println("Usuario cargado correctamente desde " + RUTA_ARCHIVO);
             return usuario;
         } catch (IOException e) {
-            System.err.println("⚠️ No se encontró archivo de usuario o hubo un error al leerlo.");
+            System.err.println("No se encontró archivo de usuario o hubo un error al leerlo.");
             return null;
         }
     }
