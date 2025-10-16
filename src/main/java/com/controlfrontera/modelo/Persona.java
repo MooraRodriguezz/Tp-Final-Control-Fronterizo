@@ -1,5 +1,6 @@
 package com.controlfrontera.modelo;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,19 +11,24 @@ public class Persona implements Verificable {
     private Set<Documento> documentos;
     private String id;
     private boolean sospechosa;
-    private String nombreImagen; // Atributo para el nombre del archivo de imagen
+    private String nombreImagen;  // Atributo para el nombre del archivo de imagen
+    private Date fechaNacimiento;
+    private double altura;
+    private double peso;
 
     public Persona() {
         this.documentos = new HashSet<>();
     }
 
-    public Persona(String nombre, String nacionalidad, Set<Documento> documentos, String id, boolean sospechosa, String nombreImagen) {
+    public Persona(String nombre, String nacionalidad, String id, boolean sospechosa, String nombreImagen, Date fechaNacimiento, double peso, double altura) {
         this.nombre = nombre;
         this.nacionalidad = nacionalidad;
-        this.documentos = documentos;
         this.id = id;
         this.sospechosa = sospechosa;
         this.nombreImagen = nombreImagen;
+        this.fechaNacimiento = fechaNacimiento;
+        this.peso = peso;
+        this.altura = altura;
     }
 
     // Getters y Setters (incluyendo el de la nueva propiedad)
@@ -38,6 +44,12 @@ public class Persona implements Verificable {
     public void setSospechosa(boolean sospechosa) { this.sospechosa = sospechosa; }
     public String getNombreImagen() { return nombreImagen; }
     public void setNombreImagen(String nombreImagen) { this.nombreImagen = nombreImagen; }
+    public Date getFechaNacimiento() {return fechaNacimiento;}
+    public void setFechaNacimiento(Date fechaNacimiento) {this.fechaNacimiento = fechaNacimiento;}
+    public double getAltura() {return altura;}
+    public void setAltura(double altura) {this.altura = altura;}
+    public double getPeso() {return peso;}
+    public void setPeso(double peso) {this.peso = peso;}
 
     /**
      * Revisa todas las reglas para determinar si la persona debe ser aprobada o rechazada.
