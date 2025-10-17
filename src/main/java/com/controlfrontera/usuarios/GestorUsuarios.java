@@ -45,7 +45,9 @@ public class GestorUsuarios {
      * Este método es llamado por los controladores cuando los datos cambian.
      */
     public void guardarUsuarios() {
-        PersistenciaGestorUsuarios.GuardarUsuarios(this.listaDeUsuarios);
+        // --- CORRECCIÓN: Llamada al método con 'g' minúscula ---
+        PersistenciaGestorUsuarios.guardarUsuarios(this.listaDeUsuarios);
+        // ----------------------------------------------------
     }
 
     public Usuario autenticarUsuario(String nombre, String contrasenia) {
