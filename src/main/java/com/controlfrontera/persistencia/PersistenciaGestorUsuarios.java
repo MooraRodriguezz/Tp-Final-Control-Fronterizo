@@ -30,9 +30,7 @@ public class PersistenciaGestorUsuarios {
     /**
      * Guarda la lista de usuarios en archivos JSON separados por rol.
      */
-    // --- CORRECCIÓN: Nombre del método en minúscula ---
     public static void guardarUsuarios(ObservableList<Usuario> listaDeUsuarios){
-        // -----------------------------------------------
         List<Oficial> oficiales = listaDeUsuarios.stream()
                 .filter(u -> u instanceof Oficial)
                 .map(u ->(Oficial) u)
@@ -79,10 +77,8 @@ public class PersistenciaGestorUsuarios {
             if(administradores != null){
                 listaCombinada.addAll(administradores);
             }
-            // --- CORRECCIÓN: Mensaje de error para admins ---
         }catch (IOException e){
             System.out.println("No se encontro un archivo de administradores, se creara uno nuevo");
-            // ---------------------------------------------
         }
         return listaCombinada;
     }

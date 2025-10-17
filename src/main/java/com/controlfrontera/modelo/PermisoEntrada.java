@@ -4,12 +4,7 @@ import java.util.Date;
 
 public class PermisoEntrada extends Documento {
 
-    // El Permiso de Entrada puede tener una duración máxima (ej. 90 días).
-    // Para simplificar, asumiremos que si es válido, ya ha pasado la validación de duración al ser emitido.
-    // Usaremos el campo 'motivoViaje' heredado.
-
     public PermisoEntrada(String numeroIdentificacion, String paisEmisor, boolean valido, String motivoViaje, Date fechaExpiracion) {
-        // El tipo siempre es "Permiso de Entrada"
         super("Permiso de Entrada", numeroIdentificacion, paisEmisor, valido, motivoViaje, fechaExpiracion);
     }
 
@@ -28,9 +23,6 @@ public class PermisoEntrada extends Documento {
                 (motivo.equalsIgnoreCase("Turismo") ||
                         motivo.equalsIgnoreCase("Negocios") ||
                         motivo.equalsIgnoreCase("Transito"));
-
-        // --- CORRECCIÓN ---
-        // Se elimina la comprobación redundante de this.isValido()
         return validoBase && motivoValido;
     }
 }

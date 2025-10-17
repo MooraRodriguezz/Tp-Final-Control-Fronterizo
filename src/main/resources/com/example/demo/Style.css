@@ -115,8 +115,6 @@
 .decision-button-deny:hover {
     -fx-background-color: #821313;
 }
-
-/* Estilo para el ListView */
 .list-view {
     -fx-background-color: #1c1c1c;
     -fx-border-color: #b9b9b9;

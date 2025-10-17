@@ -24,8 +24,6 @@ public class DocumentoDetalleViewController {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         lblFechaExp.setText(formatter.format(documento.getFechaExpiracion()));
 
-        // --- CORRECCIÓN ---
-        // Usar validar() (el método) en lugar de isValido() (el atributo)
         boolean esValidoAhora = documento.validar();
         lblEstado.setText(esValidoAhora ? "VÁLIDO" : "INVÁLIDO");
 

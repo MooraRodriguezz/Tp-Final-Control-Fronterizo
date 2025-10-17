@@ -1,7 +1,6 @@
 package com.controlfrontera.modelo;
 
 import com.controlfrontera.persistencia.PersistenciaPaises;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**

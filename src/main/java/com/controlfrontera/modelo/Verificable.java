@@ -4,5 +4,5 @@ package com.controlfrontera.modelo;
  */
 public interface Verificable {
     // Metodos
-    public boolean validar();
+    boolean validar();
 }

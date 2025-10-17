@@ -22,7 +22,6 @@ public class GestionarUsuariosViewController {
 
     private GestorUsuarios gestorUsuarios;
 
-    // Este metodo es llamado por AdminViewController para pasarnos el gestor
     public void initData(GestorUsuarios gestorUsuarios) {
         this.gestorUsuarios = gestorUsuarios;
         tablaUsuarios.setItems(gestorUsuarios.getListaDeUsuarios());

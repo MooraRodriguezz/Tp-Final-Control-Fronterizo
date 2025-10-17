@@ -12,16 +12,13 @@ import java.util.Set;
  */
 public class Administrador extends Usuario {
     //Atributos
-    // --- MODIFICADO ---
     // Añadimos 'transient' para que Gson ignore estos campos al guardar/cargar
     transient List<Usuario> listaUsuarios;
     transient Set<String> paisesValidos;
-    // ------------------
 
     //Constructores
     public Administrador() {
         super(); // Llama al constructor de Usuario
-        // Inicializa los campos transient
         this.listaUsuarios = new ArrayList<>();
         this.paisesValidos = new HashSet<>();
     }

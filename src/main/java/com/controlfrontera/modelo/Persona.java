@@ -20,7 +20,6 @@ public class Persona implements Verificable {
         this.documentos = new HashSet<>();
     }
 
-    // CONSTRUCTOR CORREGIDO: Ahora acepta todos los parámetros, incluyendo los documentos.
     public Persona(String nombre, String nacionalidad, Set<Documento> documentos, String id, boolean sospechosa, String nombreImagen, Date fechaNacimiento, double peso, double altura) {
         this.nombre = nombre;
         this.nacionalidad = nacionalidad;

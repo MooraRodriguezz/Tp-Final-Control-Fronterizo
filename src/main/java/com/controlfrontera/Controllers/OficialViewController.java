@@ -1,7 +1,7 @@
 package com.controlfrontera.Controllers;
 
 import com.controlfrontera.modelo.*;
-import com.controlfrontera.usuarios.GestorUsuarios; // <-- IMPORT AÑADIDO
+import com.controlfrontera.usuarios.GestorUsuarios;
 import com.controlfrontera.usuarios.Oficial;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -51,7 +51,6 @@ public class OficialViewController {
     @FXML private Label lblEstado;
 
 
-    // --- Atributos de Lógica ---
     private Queue<Persona> filaDePersonas;
     private Persona personaActual;
     private Oficial oficialLogueado;
@@ -62,7 +61,6 @@ public class OficialViewController {
     public void initialize() {
         crearDatosDePrueba();
 
-        // Listener para la lista de documentos
         documentosListView.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 mostrarDetalleDocumento(newSelection);
@@ -111,10 +109,7 @@ public class OficialViewController {
 
         actualizarPuntuacionUI();
 
-        // --- LÍNEA AÑADIDA (CORRECCIÓN) ---
-        // Guarda el estado del oficial (puntuación, aciertos, errores)
         GestorUsuarios.getInstancia().guardarUsuarios();
-        // ----------------------------------
 
         cargarSiguientePersona();
     }
@@ -129,7 +124,6 @@ public class OficialViewController {
             alturaLabel.setText(personaActual.getAltura() + " cm");
             pesoLabel.setText(personaActual.getPeso() + " kg");
 
-            // Cargar imagen
             if (personaActual.getNombreImagen() != null) {
                 try {
                     String imagePath = "/images/" + personaActual.getNombreImagen();
@@ -150,7 +144,6 @@ public class OficialViewController {
             }
 
         } else {
-            // No hay más personas
             limpiarPaneles();
             nombreLabel.setText("[NO HAY MÁS PERSONAS]");
             aprobarButton.setDisable(true);
@@ -193,7 +186,6 @@ public class OficialViewController {
         lblEstado.setText("");
     }
 
-    // --- Métodos existentes (sin cambios) ---
 
     private void registrarDecision(boolean aprobada, String motivo) {
         if (personaActual != null) {

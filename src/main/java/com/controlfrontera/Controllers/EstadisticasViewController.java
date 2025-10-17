@@ -1,9 +1,7 @@
 package com.controlfrontera.Controllers;
 
-import com.controlfrontera.modelo.RegistroDecisiones;
 import com.controlfrontera.usuarios.GestorUsuarios;
 import com.controlfrontera.usuarios.Oficial;
-import com.controlfrontera.usuarios.Usuario;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -17,31 +15,24 @@ public class EstadisticasViewController {
     @FXML private Label lblPuntuacion; // <-- Añadido
     @FXML private ComboBox<Oficial> cmbOficiales; // <-- Añadido
 
-    // Usamos el gestor de usuarios para obtener los oficiales
     private GestorUsuarios gestorUsuarios;
 
     @FXML
     public void initialize() {
-        // Obtenemos la instancia única del gestor
         this.gestorUsuarios = GestorUsuarios.getInstancia();
 
-        // 1. Cargar los oficiales en el ComboBox
         cargarOficiales();
 
-        // 2. Escuchar cambios en el ComboBox
         cmbOficiales.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
-                // Si se selecciona un oficial, mostrar sus estadísticas
                 actualizarStats(newSelection);
             }
         });
 
-        // 3. Limpiar labels inicialmente
         limpiarLabels();
     }
 
     private void cargarOficiales() {
-        // Obtenemos la lista de usuarios y la filtramos para quedarnos solo con los Oficiales
         cmbOficiales.getItems().addAll(
                 gestorUsuarios.getListaDeUsuarios().stream()
                         .filter(u -> u instanceof Oficial)

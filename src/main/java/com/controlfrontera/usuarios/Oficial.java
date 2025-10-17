@@ -13,15 +13,13 @@ import java.util.List;
  */
 public class Oficial extends Usuario {
     // Atributos
-    // --- MODIFICADO ---
-    // Añadimos 'transient' para que Gson ignore este campo al serializar
+
     private transient List<Usuario> historial;
-    // ------------------
+
 
     private int puntuacion;
     private int erroresConsecutivos; // Para la penalización creciente
 
-    // Nuevos atributos para estadísticas
     private int totalAciertos;
     private int totalErrores;
 
@@ -30,18 +28,15 @@ public class Oficial extends Usuario {
     public Oficial() {
         super();
         this.historial = new ArrayList<>();
-        // El resto de atributos (puntuacion, errores, etc.) se inicializan a 0 por defecto (int)
     }
 
     public Oficial(String nombre, String contrasenia, String rol, List<Usuario> historial) {
         super(nombre, contrasenia, rol);
         this.historial = new ArrayList<>();
-        // El resto de atributos se inicializan a 0 por defecto
     }
 
     // Getters y Setters
     public List<Usuario> getHistorial() {
-        // Asegurarse de que el historial no sea nulo si el objeto fue cargado por Gson
         if (this.historial == null) {
             this.historial = new ArrayList<>();
         }
@@ -92,7 +87,6 @@ public class Oficial extends Usuario {
     }
 
     public void registrarDecision(Decision d){
-        // Las decisiones se registran a través del singleton RegistroDecisiones.
         RegistroDecisiones.getInstancia().agregarDecision(d);
     }
 
@@ -109,7 +103,7 @@ public class Oficial extends Usuario {
         super.verMenu();
     }
 
-    // Sobrescribimos toString() para que el ComboBox muestre el nombre
+
     @Override
     public String toString() {
         return this.getNombre() + " (Oficial)";

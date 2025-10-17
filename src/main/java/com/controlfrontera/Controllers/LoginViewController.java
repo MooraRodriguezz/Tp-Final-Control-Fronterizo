@@ -35,10 +35,7 @@ public class LoginViewController {
     @FXML
     public void initialize() {
         errorMessageLabel.setVisible(false);
-        // --- MODIFICACIÓN ---
-        // Se obtiene la instancia única en lugar de crear una nueva
         gestorUsuarios = GestorUsuarios.getInstancia();
-        // --------------------
     }
 
     @FXML
@@ -51,11 +48,9 @@ public class LoginViewController {
         if (usuarioAutenticado != null) {
             if (usuarioAutenticado instanceof Administrador) {
                 System.out.println("ACCESO AUTORIZADO: ADMINISTRADOR");
-                // Le pasamos el nuevo tamaño para la ventana de Admin
                 cambiarEscena(event, "/com/example/demo/admin-view.fxml", "Panel de Administración", usuarioAutenticado, 835, 533);
             } else if (usuarioAutenticado instanceof Oficial) {
                 System.out.println("ACCESO AUTORIZADO: OFICIAL");
-                // Le pasamos el nuevo tamaño para la ventana de Oficial
                 cambiarEscena(event, "/com/example/demo/oficial-view.fxml", "Puesto de Control", usuarioAutenticado, 1100, 600);            }
         } else {
             System.err.println("ACCESO DENEGADO.");
@@ -80,14 +75,12 @@ public class LoginViewController {
                 OficialViewController controller = loader.getController();
                 controller.initData((Oficial) usuario);
             }
-            // NOTA: No necesitamos pasar datos al AdminViewController por ahora
 
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            // Establecemos el nuevo tamaño de la ventana
             window.setScene(new Scene(nuevaVista, width, height));
             window.setTitle(newTitle);
-            window.centerOnScreen(); // Volvemos a centrar
+            window.centerOnScreen();
             window.show();
 
         } catch (IOException e) {

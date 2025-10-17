@@ -10,35 +10,28 @@ import java.util.stream.Collectors; // IMPORTAR
 
 public class GestorUsuarios {
 
-    // --- INICIO DE CORRECCIONES SINGLETON ---
     private static GestorUsuarios instancia;
     private Map<String, Usuario> mapaDeUsuarios;
 
-    // 1. El constructor ahora es PRIVADO
     private GestorUsuarios() {
-        // 2. Cargamos usuarios desde la persistencia
         cargarUsuarios();
 
-        // 3. Si está vacío, inicializamos y guardamos
         if (this.mapaDeUsuarios == null || this.mapaDeUsuarios.isEmpty()) {
             this.mapaDeUsuarios = new HashMap<>();
-            inicializarUsuarios(); // Datos por defecto
-            guardarUsuarios(); // Guardamos los datos por defecto
+            inicializarUsuarios();
+            guardarUsuarios();
         }
     }
 
-    // 4. Método público estático para obtener la instancia
     public static GestorUsuarios getInstancia() {
         if (instancia == null) {
             instancia = new GestorUsuarios();
         }
         return instancia;
-    }//Aca estaa
-    // --- FIN DE CORRECCIONES SINGLETON ---
+    }
 
 
     private void inicializarUsuarios() {
-        // Creamos los usuarios y los agregamos al mapa
         Usuario admin = new Administrador("admin", "admin123", "ADMIN", null, null);
         Usuario oficial = new Oficial("oficial", "pass123", "OFICIAL", null);
 
@@ -62,14 +55,14 @@ public class GestorUsuarios {
     public void agregarUsuario(Usuario nuevoUsuario) {
         if (nuevoUsuario != null) {
             mapaDeUsuarios.put(nuevoUsuario.getNombre(), nuevoUsuario);
-            guardarUsuarios(); // Guardar al agregar
+            guardarUsuarios();
         }
     }
 
     public void eliminarUsuario(Usuario usuarioAEliminar) {
         if (usuarioAEliminar != null) {
             mapaDeUsuarios.remove(usuarioAEliminar.getNombre());
-            guardarUsuarios(); // Guardar al eliminar
+            guardarUsuarios();
         }
     }
 
@@ -89,7 +82,6 @@ public class GestorUsuarios {
      */
     private void cargarUsuarios() {
         ObservableList<Usuario> listaCargada = PersistenciaGestorUsuarios.cargarUsuarios();
-        // Convierte la lista cargada de vuelta a un mapa
         if (listaCargada != null && !listaCargada.isEmpty()) {
             this.mapaDeUsuarios = listaCargada.stream()
                     .collect(Collectors.toMap(Usuario::getNombre, Function.identity()));
