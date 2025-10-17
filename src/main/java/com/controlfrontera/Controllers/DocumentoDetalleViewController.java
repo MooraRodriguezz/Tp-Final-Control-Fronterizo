@@ -24,9 +24,12 @@ public class DocumentoDetalleViewController {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         lblFechaExp.setText(formatter.format(documento.getFechaExpiracion()));
 
-        lblEstado.setText(documento.isValido() ? "VÁLIDO" : "INVÁLIDO");
+        // --- CORRECCIÓN ---
+        // Usar validar() (el método) en lugar de isValido() (el atributo)
+        boolean esValidoAhora = documento.validar();
+        lblEstado.setText(esValidoAhora ? "VÁLIDO" : "INVÁLIDO");
 
-        if (!documento.isValido()) {
+        if (!esValidoAhora) {
             lblEstado.setStyle("-fx-text-fill: #ff4d4d;"); // Rojo
         } else {
             lblEstado.setStyle("-fx-text-fill: #4CAF50;"); // Verde

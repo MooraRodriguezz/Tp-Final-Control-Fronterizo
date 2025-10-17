@@ -15,7 +15,7 @@ public class PermisoTrabajo extends Documento {
     );
 
     public PermisoTrabajo(String numeroIdentificacion, String paisEmisor, boolean valido, Date fechaExpiracion,
-                            String profesionAutorizada, String empleador) {
+                          String profesionAutorizada, String empleador) {
         // El tipo es "Permiso de Trabajo" y el motivo de viaje es implícito/fijo.
         super("Permiso de Trabajo", numeroIdentificacion, paisEmisor, valido, "Trabajo", fechaExpiracion);
         this.profesionAutorizada = profesionAutorizada;
@@ -40,7 +40,8 @@ public class PermisoTrabajo extends Documento {
                 this.profesionAutorizada.toUpperCase()
         );
 
-        //  Verifica que la validez sutil (isValido), la base y la regla se cumplan
-        return validoBase && profesionEstaAutorizada && this.isValido();
+        // --- CORRECCIÓN ---
+        // Se elimina la comprobación redundante de this.isValido()
+        return validoBase && profesionEstaAutorizada;
     }
 }

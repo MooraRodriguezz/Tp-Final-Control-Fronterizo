@@ -31,7 +31,7 @@ public class PersistenciaGestorUsuarios {
      * Guarda la lista de usuarios en archivos JSON separados por rol.
      */
     // --- CORRECCIÓN: Nombre del método en minúscula ---
-    public static void guardarUsuarios(ObservableList<Usuario>listaDeUsuarios){
+    public static void guardarUsuarios(ObservableList<Usuario> listaDeUsuarios){
         // -----------------------------------------------
         List<Oficial> oficiales = listaDeUsuarios.stream()
                 .filter(u -> u instanceof Oficial)
@@ -60,8 +60,8 @@ public class PersistenciaGestorUsuarios {
     /**
      * Carga las listas de usuarios desde los JSON, las combina y las devuelve.
      */
-    public static ObservableList<Usuario>cargarUsuarios(){
-        ObservableList<Usuario>listaCombinada = FXCollections.observableArrayList();
+    public static ObservableList<Usuario> cargarUsuarios(){
+        ObservableList<Usuario> listaCombinada = FXCollections.observableArrayList();
         //Cargamos los oficiales
         try(FileReader reader = new FileReader(OFICIALES_JSON)){
             Type tipoListaOficial = new TypeToken <ArrayList<Oficial>>(){}.getType();

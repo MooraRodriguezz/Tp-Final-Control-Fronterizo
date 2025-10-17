@@ -11,11 +11,11 @@ module com.example.demo {
 
     // Permisos para que JavaFX acceda a los controladores y modelos
     opens com.controlfrontera.Controllers to javafx.fxml;
-    opens com.controlfrontera.modelo to javafx.fxml;
+    opens com.controlfrontera.modelo to javafx.fxml, com.google.gson; // Añadido gson
     opens com.controlfrontera.persistencia to javafx.fxml;
 
     // ¡AQUÍ ESTÁ LA CORRECCIÓN!
-    // Se elimina el duplicado y se añade el permiso para 'com.google.gson'
+    // Se unifican los permisos para JavaFX (fxml) y Gson (com.google.gson)
     opens com.controlfrontera.usuarios to javafx.fxml, com.google.gson;
 
     // --- PAQUETES EXPORTADOS ---

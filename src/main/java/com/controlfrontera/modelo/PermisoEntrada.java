@@ -29,7 +29,8 @@ public class PermisoEntrada extends Documento {
                         motivo.equalsIgnoreCase("Negocios") ||
                         motivo.equalsIgnoreCase("Transito"));
 
-        // Verifica que la validez sutil (isValido) y las reglas se cumplan
-        return validoBase && motivoValido && this.isValido();
+        // --- CORRECCIÓN ---
+        // Se elimina la comprobación redundante de this.isValido()
+        return validoBase && motivoValido;
     }
 }

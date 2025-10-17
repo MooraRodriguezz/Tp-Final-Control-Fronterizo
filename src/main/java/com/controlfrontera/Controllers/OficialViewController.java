@@ -111,10 +111,10 @@ public class OficialViewController {
 
         actualizarPuntuacionUI();
 
-        // --- LÍNEA AÑADIDA ---
+        // --- LÍNEA AÑADIDA (CORRECCIÓN) ---
         // Guarda el estado del oficial (puntuación, aciertos, errores)
         GestorUsuarios.getInstancia().guardarUsuarios();
-        // ---------------------
+        // ----------------------------------
 
         cargarSiguientePersona();
     }

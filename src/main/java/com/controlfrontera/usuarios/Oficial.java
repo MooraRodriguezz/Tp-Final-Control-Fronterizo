@@ -30,23 +30,21 @@ public class Oficial extends Usuario {
     public Oficial() {
         super();
         this.historial = new ArrayList<>();
-        this.puntuacion = 0;
-        this.erroresConsecutivos = 0;
-        this.totalAciertos = 0;
-        this.totalErrores = 0;
+        // El resto de atributos (puntuacion, errores, etc.) se inicializan a 0 por defecto (int)
     }
 
     public Oficial(String nombre, String contrasenia, String rol, List<Usuario> historial) {
         super(nombre, contrasenia, rol);
         this.historial = new ArrayList<>();
-        this.puntuacion = 0;
-        this.erroresConsecutivos = 0;
-        this.totalAciertos = 0;
-        this.totalErrores = 0;
+        // El resto de atributos se inicializan a 0 por defecto
     }
 
     // Getters y Setters
     public List<Usuario> getHistorial() {
+        // Asegurarse de que el historial no sea nulo si el objeto fue cargado por Gson
+        if (this.historial == null) {
+            this.historial = new ArrayList<>();
+        }
         return historial;
     }
 
