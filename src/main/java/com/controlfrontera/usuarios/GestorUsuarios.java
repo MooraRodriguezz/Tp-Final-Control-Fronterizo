@@ -1,12 +1,13 @@
 package com.controlfrontera.usuarios;
 
-import com.controlfrontera.persistencia.PersistenciaGestorUsuarios; // IMPORTAR
+import com.controlfrontera.excepciones.UsuarioYaExisteException;
+import com.controlfrontera.persistencia.PersistenciaGestorUsuarios;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Function; // IMPORTAR
-import java.util.stream.Collectors; // IMPORTAR
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class GestorUsuarios {
 
@@ -15,8 +16,8 @@ public class GestorUsuarios {
 
     private GestorUsuarios() {
         cargarUsuarios();
-
         if (this.mapaDeUsuarios == null || this.mapaDeUsuarios.isEmpty()) {
+            System.out.println("No se encontraron usuarios, inicializando datos por defecto.");
             this.mapaDeUsuarios = new HashMap<>();
             inicializarUsuarios();
             guardarUsuarios();
@@ -30,15 +31,12 @@ public class GestorUsuarios {
         return instancia;
     }
 
-
     private void inicializarUsuarios() {
         Usuario admin = new Administrador("admin", "admin123", "ADMIN", null, null);
         Usuario oficial = new Oficial("oficial", "pass123", "OFICIAL", null);
-
         mapaDeUsuarios.put(admin.getNombre(), admin);
         mapaDeUsuarios.put(oficial.getNombre(), oficial);
     }
-
 
     public Usuario autenticarUsuario(String nombre, String contrasenia) {
         Usuario usuario = mapaDeUsuarios.get(nombre);
@@ -52,9 +50,18 @@ public class GestorUsuarios {
         return FXCollections.observableArrayList(mapaDeUsuarios.values());
     }
 
-    public void agregarUsuario(Usuario nuevoUsuario) {
+
+    /**
+     * Agrega un nuevo usuario al mapa, verificando si ya existe.
+     * @param nuevoUsuario El usuario a agregar.
+     * @throws UsuarioYaExisteException Si ya existe un usuario con ese nombre.
+     */
+     public void agregarUsuario(Usuario nuevoUsuario) throws UsuarioYaExisteException {
         if (nuevoUsuario != null) {
-            mapaDeUsuarios.put(nuevoUsuario.getNombre(), nuevoUsuario);
+             if (mapaDeUsuarios.containsKey(nuevoUsuario.getNombre())) {
+                throw new UsuarioYaExisteException("El usuario '" + nuevoUsuario.getNombre() + "' ya existe.");
+            }
+             mapaDeUsuarios.put(nuevoUsuario.getNombre(), nuevoUsuario);
             guardarUsuarios();
         }
     }
@@ -66,20 +73,11 @@ public class GestorUsuarios {
         }
     }
 
-    // --- MÉTODOS DE PERSISTENCIA AÑADIDOS ---
-
-    /**
-     * Llama a la persistencia para guardar el estado actual de los usuarios.
-     * Esto es llamado por OficialViewController.
-     */
     public void guardarUsuarios() {
         PersistenciaGestorUsuarios.guardarUsuarios(getListaDeUsuarios());
         System.out.println("Usuarios guardados en JSON.");
     }
 
-    /**
-     * Carga los usuarios desde los archivos JSON y los pone en el mapa.
-     */
     private void cargarUsuarios() {
         ObservableList<Usuario> listaCargada = PersistenciaGestorUsuarios.cargarUsuarios();
         if (listaCargada != null && !listaCargada.isEmpty()) {
@@ -87,7 +85,7 @@ public class GestorUsuarios {
                     .collect(Collectors.toMap(Usuario::getNombre, Function.identity()));
             System.out.println("Usuarios cargados desde JSON.");
         } else {
-            System.out.println("No se encontró archivo de usuarios, se crearán nuevos.");
+            // No hacemos nada si no carga, el constructor se encarga de inicializar
         }
     }
 }
