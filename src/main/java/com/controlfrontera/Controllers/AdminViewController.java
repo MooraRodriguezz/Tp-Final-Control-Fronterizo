@@ -26,7 +26,10 @@ public class AdminViewController {
     @FXML
     private Button verEstadisticasButton;
 
-    private GestorUsuarios gestorUsuarios = new GestorUsuarios();
+    // --- MODIFICACIÓN ---
+    // Se obtiene la instancia única en lugar de crear una nueva
+    private GestorUsuarios gestorUsuarios = GestorUsuarios.getInstancia();
+    // --------------------
 
     @FXML
     void onGestionarUsuariosClick(ActionEvent event) {
@@ -35,6 +38,7 @@ public class AdminViewController {
             Parent root = loader.load();
 
             GestionarUsuariosViewController controller = loader.getController();
+            // Le pasamos el gestor único
             controller.initData(gestorUsuarios);
 
             Stage stage = new Stage();
@@ -90,6 +94,9 @@ public class AdminViewController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/estadisticas-view.fxml"));
             Parent root = loader.load();
+
+            // Ya no es necesario pasarle datos, el controlador de estadísticas
+            // obtendrá la instancia de GestorUsuarios por sí mismo.
 
             Stage stage = new Stage();
             stage.setTitle("Estadísticas");

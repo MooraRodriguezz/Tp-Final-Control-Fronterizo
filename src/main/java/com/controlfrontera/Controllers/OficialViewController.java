@@ -1,6 +1,7 @@
 package com.controlfrontera.Controllers;
 
 import com.controlfrontera.modelo.*;
+import com.controlfrontera.usuarios.GestorUsuarios; // <-- IMPORT AÑADIDO
 import com.controlfrontera.usuarios.Oficial;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -109,6 +110,12 @@ public class OficialViewController {
         }
 
         actualizarPuntuacionUI();
+
+        // --- LÍNEA AÑADIDA ---
+        // Guarda el estado del oficial (puntuación, aciertos, errores)
+        GestorUsuarios.getInstancia().guardarUsuarios();
+        // ---------------------
+
         cargarSiguientePersona();
     }
 

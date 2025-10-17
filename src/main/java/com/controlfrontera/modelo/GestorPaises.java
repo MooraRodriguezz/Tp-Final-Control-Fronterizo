@@ -1,5 +1,6 @@
 package com.controlfrontera.modelo;
 
+import com.controlfrontera.persistencia.PersistenciaPaises;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -12,11 +13,13 @@ public class GestorPaises {
     private final ObservableList<String> paisesValidos;
 
     private GestorPaises() {
-        this.paisesValidos = FXCollections.observableArrayList();
-        // Agregamos algunos países de ejemplo
-        paisesValidos.add("Gondor");
-        paisesValidos.add("La Comarca");
-        paisesValidos.add("Mordor");
+        this.paisesValidos = PersistenciaPaises.cargarPaises();
+        if (this.paisesValidos.isEmpty()) {
+            paisesValidos.add("Argentina");
+            paisesValidos.add("Peru");
+            paisesValidos.add("Chile");
+            PersistenciaPaises.guardarPaises(this.paisesValidos);
+        }
     }
 
     public static GestorPaises getInstancia() {
@@ -33,10 +36,13 @@ public class GestorPaises {
     public void agregarPais(String pais) {
         if (pais != null && !pais.trim().isEmpty() && !paisesValidos.contains(pais)) {
             paisesValidos.add(pais);
+            PersistenciaPaises.guardarPaises(this.paisesValidos);
         }
     }
 
     public void eliminarPais(String pais) {
-        paisesValidos.remove(pais);
+        if(paisesValidos.remove(pais)){
+            PersistenciaPaises.guardarPaises(this.paisesValidos);
+        }
     }
 }

@@ -13,9 +13,18 @@ import java.util.List;
  */
 public class Oficial extends Usuario {
     // Atributos
-    private List<Usuario> historial;
+    // --- MODIFICADO ---
+    // Añadimos 'transient' para que Gson ignore este campo al serializar
+    private transient List<Usuario> historial;
+    // ------------------
+
     private int puntuacion;
     private int erroresConsecutivos; // Para la penalización creciente
+
+    // Nuevos atributos para estadísticas
+    private int totalAciertos;
+    private int totalErrores;
+
 
     // Constructores
     public Oficial() {
@@ -23,6 +32,8 @@ public class Oficial extends Usuario {
         this.historial = new ArrayList<>();
         this.puntuacion = 0;
         this.erroresConsecutivos = 0;
+        this.totalAciertos = 0;
+        this.totalErrores = 0;
     }
 
     public Oficial(String nombre, String contrasenia, String rol, List<Usuario> historial) {
@@ -30,6 +41,8 @@ public class Oficial extends Usuario {
         this.historial = new ArrayList<>();
         this.puntuacion = 0;
         this.erroresConsecutivos = 0;
+        this.totalAciertos = 0;
+        this.totalErrores = 0;
     }
 
     // Getters y Setters
@@ -49,6 +62,10 @@ public class Oficial extends Usuario {
         this.puntuacion = puntuacion;
     }
 
+    // --- Getters para Estadísticas ---
+    public int getTotalAciertos() { return totalAciertos; }
+    public int getTotalErrores() { return totalErrores; }
+
     // --- MÉTODOS PARA LA PUNTUACIÓN ---
 
     /**
@@ -58,6 +75,7 @@ public class Oficial extends Usuario {
     public void registrarAcierto() {
         this.puntuacion += 50;
         this.erroresConsecutivos = 0; // Se resetea el contador de errores
+        this.totalAciertos++;
     }
 
     /**
@@ -68,6 +86,7 @@ public class Oficial extends Usuario {
         int penalizacion = 10 + (this.erroresConsecutivos * 5);
         this.puntuacion -= penalizacion;
         this.erroresConsecutivos++;
+        this.totalErrores++;
     }
 
 
@@ -90,5 +109,11 @@ public class Oficial extends Usuario {
     @Override
     public void verMenu() {
         super.verMenu();
+    }
+
+    // Sobrescribimos toString() para que el ComboBox muestre el nombre
+    @Override
+    public String toString() {
+        return this.getNombre() + " (Oficial)";
     }
 }
