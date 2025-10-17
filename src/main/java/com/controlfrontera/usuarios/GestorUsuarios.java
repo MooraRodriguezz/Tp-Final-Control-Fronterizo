@@ -33,7 +33,7 @@ public class GestorUsuarios {
             instancia = new GestorUsuarios();
         }
         return instancia;
-    }
+    }//Aca estaa
     // --- FIN DE CORRECCIONES SINGLETON ---
 
 
