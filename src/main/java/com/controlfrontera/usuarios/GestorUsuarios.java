@@ -46,6 +46,7 @@ public class GestorUsuarios {
         mapaDeUsuarios.put(oficial.getNombre(), oficial);
     }
 
+
     public Usuario autenticarUsuario(String nombre, String contrasenia) {
         Usuario usuario = mapaDeUsuarios.get(nombre);
         if (usuario != null && usuario.getContrasenia().equals(contrasenia)) {
