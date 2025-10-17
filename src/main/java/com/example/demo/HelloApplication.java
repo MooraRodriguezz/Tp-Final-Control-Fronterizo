@@ -31,7 +31,6 @@ public class HelloApplication extends Application {
         stage.setTitle("Control Fronterizo - Login");
         stage.setScene(scene);
 
-        // Esta es la línea clave. Llama a esta función ANTES de mostrar el stage.
         stage.centerOnScreen();
 
         stage.show();

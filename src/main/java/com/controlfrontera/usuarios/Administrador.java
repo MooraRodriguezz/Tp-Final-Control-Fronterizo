@@ -12,8 +12,12 @@ import java.util.Set;
  */
 public class Administrador extends Usuario {
     //Atributos
-    List<Usuario> listaUsuarios;
-    Set<String> paisesValidos;
+    // --- MODIFICADO ---
+    // Añadimos 'transient' para que Gson ignore estos campos
+    transient List<Usuario> listaUsuarios;
+    transient Set<String> paisesValidos;
+    // ------------------
+
     //Constructores
     public Administrador() {
     }

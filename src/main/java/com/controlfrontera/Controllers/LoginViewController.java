@@ -35,7 +35,10 @@ public class LoginViewController {
     @FXML
     public void initialize() {
         errorMessageLabel.setVisible(false);
-        gestorUsuarios = new GestorUsuarios();
+        // --- MODIFICACIÓN ---
+        // Se obtiene la instancia única en lugar de crear una nueva
+        gestorUsuarios = GestorUsuarios.getInstancia();
+        // --------------------
     }
 
     @FXML
@@ -77,6 +80,7 @@ public class LoginViewController {
                 OficialViewController controller = loader.getController();
                 controller.initData((Oficial) usuario);
             }
+            // NOTA: No necesitamos pasar datos al AdminViewController por ahora
 
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
