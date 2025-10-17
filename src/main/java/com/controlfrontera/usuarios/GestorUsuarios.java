@@ -2,50 +2,62 @@ package com.controlfrontera.usuarios;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class GestorUsuarios {
 
-    // Usamos una ObservableList para que la tabla en la UI se actualice automáticamente
-    private ObservableList<Usuario> listaDeUsuarios;
+    // Cambiamos la lista por un Map para búsquedas eficientes
+    private Map<String, Usuario> mapaDeUsuarios;
 
     public GestorUsuarios() {
-        this.listaDeUsuarios = FXCollections.observableArrayList();
+        this.mapaDeUsuarios = new HashMap<>();
         inicializarUsuarios();
     }
 
     private void inicializarUsuarios() {
-        listaDeUsuarios.add(new Administrador("admin", "admin123", "ADMIN", null, null));
-        listaDeUsuarios.add(new Oficial("oficial", "pass123", "OFICIAL", null));
+        // Creamos los usuarios y los agregamos al mapa
+        Usuario admin = new Administrador("admin", "admin123", "ADMIN", null, null);
+        Usuario oficial = new Oficial("oficial", "pass123", "OFICIAL", null);
+
+        mapaDeUsuarios.put(admin.getNombre(), admin);
+        mapaDeUsuarios.put(oficial.getNombre(), oficial);
     }
 
     public Usuario autenticarUsuario(String nombre, String contrasenia) {
-        for (Usuario usuario : listaDeUsuarios) {
-            if (usuario.getNombre().equals(nombre) && usuario.getContrasenia().equals(contrasenia)) {
-                return usuario;
-            }
-        }
-        return null;
-    }
+        // Búsqueda directa y mucho más rápida con get()
+        Usuario usuario = mapaDeUsuarios.get(nombre);
 
+        // Si el usuario existe y la contraseña coincide, lo retornamos
+        if (usuario != null && usuario.getContrasenia().equals(contrasenia)) {
+            return usuario;
+        }
+        return null; // Si no, retornamos null
+    }
 
     /**
      * Devuelve la lista de usuarios para mostrarla en la tabla.
+     * La TableView necesita una ObservableList, así que la creamos a partir de los valores del mapa.
      */
     public ObservableList<Usuario> getListaDeUsuarios() {
-        return listaDeUsuarios;
+        return FXCollections.observableArrayList(mapaDeUsuarios.values());
     }
 
     /**
-     * Agrega un nuevo usuario a la lista.
+     * Agrega un nuevo usuario al mapa.
      */
     public void agregarUsuario(Usuario nuevoUsuario) {
-        listaDeUsuarios.add(nuevoUsuario);
+        if (nuevoUsuario != null) {
+            mapaDeUsuarios.put(nuevoUsuario.getNombre(), nuevoUsuario);
+        }
     }
 
     /**
-     * Elimina un usuario de la lista.
+     * Elimina un usuario del mapa.
      */
     public void eliminarUsuario(Usuario usuarioAEliminar) {
-        listaDeUsuarios.remove(usuarioAEliminar);
+        if (usuarioAEliminar != null) {
+            mapaDeUsuarios.remove(usuarioAEliminar.getNombre());
+        }
     }
 }
