@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="400.0" prefWidth="450.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controlfrontera.Controllers.ReglamentoViewController">
+    <top>
+        <Label id="tituloPrincipal" text="REGLAMENTO FRONTERIZO" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="15.0" top="20.0" />
+            </padding>
+        </Label>
+    </top>
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true" BorderPane.alignment="CENTER">
+            <content>
+                <TextArea fx:id="reglamentoTextArea" editable="false" wrapText="true" styleClass="info-data" style="-fx-font-size: 10px; -fx-background-color: #1c1c1c; -fx-text-fill: #b9b9b9;" />
+            </content>
+            <BorderPane.margin>
+                <Insets bottom="20.0" left="20.0" right="20.0" />
+            </BorderPane.margin>
+        </ScrollPane>
+    </center>
+</BorderPane>
