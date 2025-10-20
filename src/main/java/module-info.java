@@ -1,24 +1,19 @@
 module com.example.demo {
-    // --- LIBRERÍAS REQUERIDAS ---
+
     requires javafx.controls;
     requires javafx.fxml;
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires org.kordamp.ikonli.javafx;
-    requires com.google.gson; // Requerido para la persistencia JSON
+    requires com.google.gson;
 
-    // --- PERMISOS (OPENS) ---
 
-    // Permisos para que JavaFX acceda a los controladores y modelos
     opens com.controlfrontera.Controllers to javafx.fxml;
-    opens com.controlfrontera.modelo to javafx.fxml, com.google.gson; // Añadido gson
+    opens com.controlfrontera.modelo to javafx.fxml, com.google.gson;
     opens com.controlfrontera.persistencia to javafx.fxml;
 
-    // ¡AQUÍ ESTÁ LA CORRECCIÓN!
-    // Se unifican los permisos para JavaFX (fxml) y Gson (com.google.gson)
     opens com.controlfrontera.usuarios to javafx.fxml, com.google.gson;
 
-    // --- PAQUETES EXPORTADOS ---
     exports com.example.demo;
     exports com.controlfrontera.usuarios;
     exports com.controlfrontera.modelo;
