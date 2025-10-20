@@ -27,8 +27,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
+import javafx.scene.media.AudioClip;
 
 public class OficialViewController {
+
 
     @FXML private Button aprobarButton;
     @FXML private Button rechazarButton;
@@ -54,6 +56,7 @@ public class OficialViewController {
     @FXML private Button arrestarButton;
     @FXML private Button reglamentoButton;
     @FXML private Button rayosXButton;
+    private AudioClip sonidoClick;
 
     private Queue<Persona> filaDePersonas;
     private Persona personaActual;
@@ -79,6 +82,13 @@ public class OficialViewController {
             }
         });
         cargarSiguientePersona();
+        try {
+
+            String soundFile = "/sounds/button-pressed-38129.mp3";
+            sonidoClick = new AudioClip(getClass().getResource(soundFile).toExternalForm());
+        } catch (Exception e) {
+            System.err.println("Error al cargar el sonido 'button-pressed': " + e.getMessage());
+        }
     }
 
     public void initData(Oficial oficial) {
@@ -92,7 +102,12 @@ public class OficialViewController {
         }
     }
 
-    @FXML void onAprobarClick(ActionEvent event) { procesarDecision(true); }
+    @FXML void onAprobarClick(ActionEvent event) {
+        if(sonidoClick != null){
+            sonidoClick.play();
+        }
+        procesarDecision(true);
+    }
     @FXML void onRechazarClick(ActionEvent event) { procesarDecision(false); }
 
     @FXML
