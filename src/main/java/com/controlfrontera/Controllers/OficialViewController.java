@@ -66,6 +66,8 @@ public class OficialViewController {
     private List<Pair<String, String>> discrepanciasEncontradas = new ArrayList<>();
     private boolean pesoSospechoso = false;
 
+    private static final double LIMITE_DISCREPANCIA_PESO = 3.0;
+
     @FXML
     public void initialize() {
         fechaLabel.setText("Fecha: " + LocalDate.now().format(formatterFechaHoy));
@@ -251,7 +253,7 @@ public class OficialViewController {
         double pesoExtraContrabando = personaActual.isTieneContrabando() ? ThreadLocalRandom.current().nextDouble(5.0, 15.0) : 0.0;
         pesoMedidoSimulado = pesoBase + variacion + pesoExtraContrabando;
         pesoMedidoLabel.setText(String.format("%.1f kg", pesoMedidoSimulado));
-        pesoSospechoso = Math.abs(pesoMedidoSimulado - pesoBase) > 3.0;
+        pesoSospechoso = (pesoMedidoSimulado - pesoBase) > LIMITE_DISCREPANCIA_PESO;
         pesoMedidoLabel.setStyle(pesoSospechoso ? "-fx-text-fill: #ff4d4d;" : "-fx-text-fill: #4CAF50;");
     }
 

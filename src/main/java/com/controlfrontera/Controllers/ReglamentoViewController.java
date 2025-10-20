@@ -41,7 +41,7 @@ public class ReglamentoViewController {
         contenido.append("    - Profesión: INGENIERO, MEDICO, DIPLOMATICO, TECNICO ESPECIALIZADO.\n\n");
         contenido.append("** CONTROLES ADICIONALES **\n");
         contenido.append("- PESO:\n");
-        contenido.append("    - Discrepancias > 3.0 kg activan Rayos-X.\n");
+        contenido.append("    - Una discrepancia positiva > 3.0 kg activa Rayos-X.\n");
         contenido.append("- RAYOS-X:\n");
         contenido.append("    - Si detecta contrabando, se habilita ARRESTO.\n");
         contenido.append("- DISCREPANCIAS:\n");
