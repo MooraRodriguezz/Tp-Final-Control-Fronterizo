@@ -49,9 +49,11 @@ public class LoginViewController {
             if (usuarioAutenticado instanceof Administrador) {
                 System.out.println("ACCESO AUTORIZADO: ADMINISTRADOR");
                 cambiarEscena(event, "/com/example/demo/admin-view.fxml", "Panel de Administración", usuarioAutenticado, 835, 533);
+
             } else if (usuarioAutenticado instanceof Oficial) {
                 System.out.println("ACCESO AUTORIZADO: OFICIAL");
-                cambiarEscena(event, "/com/example/demo/oficial-view.fxml", "Puesto de Control", usuarioAutenticado, 1100, 600);            }
+                cambiarEscena(event, "/com/example/demo/pantalla-inicio-oficial.fxml", "Bienvenido Oficial", usuarioAutenticado, 800, 600);
+            }
         } else {
             System.err.println("ACCESO DENEGADO.");
             errorMessageLabel.setVisible(true);
