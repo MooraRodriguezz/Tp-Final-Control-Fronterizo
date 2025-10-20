@@ -2,6 +2,7 @@ package com.controlfrontera.modelo;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import com.controlfrontera.persistencia.PersistenciaDecisiones;
 
 /**
  * Clase Singleton para almacenar y gestionar el historial de decisiones.
@@ -14,7 +15,7 @@ public class RegistroDecisiones {
 
     // El constructor es privado para que nadie más pueda crear instancias
     private RegistroDecisiones() {
-        this.decisiones = FXCollections.observableArrayList();
+        this.decisiones = PersistenciaDecisiones.cargarDecisiones();
     }
 
     /**
@@ -29,6 +30,7 @@ public class RegistroDecisiones {
 
     public void agregarDecision(Decision decision) {
         decisiones.add(decision);
+        PersistenciaDecisiones.guardarDecisiones(decisiones);
     }
 
     public ObservableList<Decision> getDecisiones() {

@@ -17,6 +17,7 @@ public class Persona implements Verificable {
     private double altura;
     private double peso;
     private boolean tieneContrabando;
+    private Double pesoMedidoSimulado; // ✅ corregido y cambiado a Double
 
     public Persona() {
         this.documentos = new HashSet<>();
@@ -26,6 +27,7 @@ public class Persona implements Verificable {
     public Persona(String nombre, String nacionalidad, Set<Documento> documentos, String id,
                    boolean sospechosa, String nombreImagen, Date fechaNacimiento,
                    double peso, double altura) {
+
         this.nombre = nombre;
         this.nacionalidad = nacionalidad;
         this.documentos = documentos;
@@ -33,11 +35,28 @@ public class Persona implements Verificable {
         this.sospechosa = sospechosa;
         this.nombreImagen = nombreImagen;
         this.fechaNacimiento = fechaNacimiento;
-        this.peso = peso;
         this.altura = altura;
+        this.peso = peso;
+
+        // Simular el peso medido con un margen de ±2 kg
+        double margen = 2.0;
+        this.pesoMedidoSimulado = peso + ThreadLocalRandom.current().nextDouble(-margen, margen);
+
+        // Probabilidad de contrabando según sospechoso
         double chance = sospechosa ? 0.7 : 0.3;
         this.tieneContrabando = ThreadLocalRandom.current().nextDouble() < chance;
     }
+
+
+
+    public Double getPesoMedidoSimulado() {
+        return pesoMedidoSimulado;
+    }
+
+    public void setPesoMedidoSimulado(Double pesoMedidoSimulado) {
+        this.pesoMedidoSimulado = pesoMedidoSimulado;
+    }
+
 
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
@@ -58,6 +77,7 @@ public class Persona implements Verificable {
     public double getPeso() {return peso;}
     public void setPeso(double peso) {this.peso = peso;}
     public boolean isTieneContrabando() { return tieneContrabando; }
+
 
     public String determinarVeredictoCorrecto() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
