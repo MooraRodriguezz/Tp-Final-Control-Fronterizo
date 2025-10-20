@@ -112,7 +112,9 @@
                     <include>**/*.png</include>
                     <include>**/*.jpg</include>
                     <include>**/*.gif</include>
-                    <include>**/*.ttf</include> </includes>
+                    <include>**/*.ttf</include>
+                    <include>**/*.mp3</include>
+                </includes>
             </resource>
         </resources>
     </build>

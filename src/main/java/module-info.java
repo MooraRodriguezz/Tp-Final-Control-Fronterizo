@@ -13,6 +13,7 @@ module com.example.demo {
     opens com.controlfrontera.Controllers to javafx.fxml;
     opens com.controlfrontera.modelo to javafx.fxml, com.google.gson;
     opens com.controlfrontera.persistencia to javafx.fxml;
+    opens sounds to javafx.media;
 
     opens com.controlfrontera.usuarios to javafx.fxml, com.google.gson;
 

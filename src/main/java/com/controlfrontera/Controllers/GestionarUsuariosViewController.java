@@ -2,10 +2,7 @@ package com.controlfrontera.Controllers;
 
 import com.controlfrontera.excepciones.RolInvalidoException;
 import com.controlfrontera.excepciones.UsuarioYaExisteException;
-import com.controlfrontera.usuarios.Administrador;
-import com.controlfrontera.usuarios.GestorUsuarios;
-import com.controlfrontera.usuarios.Oficial;
-import com.controlfrontera.usuarios.Usuario;
+import com.controlfrontera.usuarios.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableView;
@@ -27,6 +24,7 @@ public class GestionarUsuariosViewController {
 
     @FXML
     void onAgregarUsuarioClick() {
+        GestorSonido.reproducirClick();
         String nombre = txtNombre.getText();
         String contrasenia = txtContrasenia.getText();
         String rol = txtRol.getText().toUpperCase();
@@ -62,6 +60,7 @@ public class GestionarUsuariosViewController {
 
     @FXML
     void onEliminarUsuarioClick() {
+        GestorSonido.reproducirClick();
         Usuario seleccionado = tablaUsuarios.getSelectionModel().getSelectedItem();
         if (seleccionado != null) {
             gestorUsuarios.eliminarUsuario(seleccionado);

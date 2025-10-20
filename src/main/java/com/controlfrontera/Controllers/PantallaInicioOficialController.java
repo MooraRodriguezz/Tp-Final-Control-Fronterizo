@@ -1,5 +1,6 @@
 package com.controlfrontera.Controllers;
 
+import com.controlfrontera.usuarios.GestorSonido;
 import com.controlfrontera.usuarios.Oficial;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -48,6 +49,7 @@ public class PantallaInicioOficialController {
      */
     @FXML
     void onEstadisticasClick() {
+        GestorSonido.reproducirClick();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/estadisticas-view.fxml"));
             Parent root = loader.load();
@@ -67,6 +69,7 @@ public class PantallaInicioOficialController {
      */
     @FXML
     void onAjustesClick() {
+        GestorSonido.reproducirClick();
         try {
             Parent loginView = FXMLLoader.load(getClass().getResource("/com/example/demo/login-view.fxml"));
             Scene loginScene = new Scene(loginView, 550, 400);

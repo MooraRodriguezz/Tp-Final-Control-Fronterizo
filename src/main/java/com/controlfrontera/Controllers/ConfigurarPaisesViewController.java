@@ -1,6 +1,7 @@
 package com.controlfrontera.Controllers;
 
 import com.controlfrontera.modelo.GestorPaises;
+import com.controlfrontera.usuarios.GestorSonido;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
@@ -24,6 +25,7 @@ public class ConfigurarPaisesViewController {
 
     @FXML
     void onAgregarPaisClick() {
+        GestorSonido.reproducirClick();
         String nuevoPais = txtNombrePais.getText();
         gestorPaises.agregarPais(nuevoPais);
         txtNombrePais.clear(); // Limpiamos el campo de texto
@@ -31,6 +33,7 @@ public class ConfigurarPaisesViewController {
 
     @FXML
     void onEliminarPaisClick() {
+        GestorSonido.reproducirClick();
         String seleccionado = listaPaises.getSelectionModel().getSelectedItem();
         if (seleccionado != null) {
             gestorPaises.eliminarPais(seleccionado);

@@ -1,9 +1,6 @@
 package com.controlfrontera.Controllers;
 
-import com.controlfrontera.usuarios.Administrador;
-import com.controlfrontera.usuarios.GestorUsuarios;
-import com.controlfrontera.usuarios.Oficial;
-import com.controlfrontera.usuarios.Usuario;
+import com.controlfrontera.usuarios.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +15,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import com.controlfrontera.usuarios.GestorUsuarios;
 
 public class LoginViewController {
 
@@ -40,6 +38,7 @@ public class LoginViewController {
 
     @FXML
     protected void onLoginButtonClick(ActionEvent event) {
+        GestorSonido.reproducirClick();
         String username = usernameField.getText();
         String password = passwordField.getText();
 

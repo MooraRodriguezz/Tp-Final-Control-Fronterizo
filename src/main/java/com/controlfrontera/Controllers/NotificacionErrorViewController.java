@@ -1,5 +1,6 @@
 package com.controlfrontera.Controllers;
 
+import com.controlfrontera.usuarios.GestorSonido;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -21,6 +22,7 @@ public class NotificacionErrorViewController {
 
     @FXML
     void onCerrarClick(ActionEvent event) {
+        GestorSonido.reproducirClick();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
     }

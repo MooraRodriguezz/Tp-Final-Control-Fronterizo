@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import com.controlfrontera.usuarios.GestorSonido;
 
 import java.io.IOException;
 
@@ -32,6 +33,7 @@ public class AdminViewController {
 
     @FXML
     void onGestionarUsuariosClick(ActionEvent event) {
+        GestorSonido.reproducirClick();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/gestionar-usuarios-view.fxml"));
             Parent root = loader.load();
@@ -53,6 +55,7 @@ public class AdminViewController {
 
     @FXML
     void onCerrarSesionClick(ActionEvent event) {
+        GestorSonido.reproducirClick();
         try {
             Parent loginView = FXMLLoader.load(getClass().getResource("/com/example/demo/login-view.fxml"));
 
@@ -73,6 +76,7 @@ public class AdminViewController {
 
     @FXML
     void onConfigurarPaisesClick(ActionEvent event) {
+        GestorSonido.reproducirClick();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/configurar-paises-view.fxml"));
             Parent root = loader.load();
@@ -90,6 +94,7 @@ public class AdminViewController {
 
     @FXML
     void onVerEstadisticasClick(ActionEvent event) {
+        GestorSonido.reproducirClick();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/estadisticas-view.fxml"));
             Parent root = loader.load();
