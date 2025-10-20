@@ -3,25 +3,25 @@ package com.controlfrontera.modelo;
 import com.controlfrontera.usuarios.Oficial;
 
 import java.time.LocalDateTime;
+
 /**
  * Representa una decisión tomada por un oficial de control fronterizo sobre la entrada de una persona.
  * Esta clase mantiene registro de las decisiones de aprobación o rechazo, incluyendo la persona evaluada,
  * el oficial que tomó la decisión, el motivo y la fecha.
  */
 public class Decision {
+
     // Atributos
 
-    // --- INICIO DE LA CORRECCIÓN ---
-    // Se marcan como 'transient' para que GSON (la librería JSON) los ignore.
-    // Esto evita el crash al guardar, ya que Persona y Oficial son objetos complejos.
+    // MARCA ESTOS OBJETOS COMO 'transient' para que Gson (JSON) los ignore al guardar
+    // Esta es la corrección para que el programa no crashee y pase a la siguiente persona
     private transient Persona persona;
     private transient Oficial oficial;
 
-    // Se añaden campos simples para guardar la información clave que SÍ queremos en el JSON
+    // Campos simples que SÍ se guardan en el JSON
     private String nombrePersona;
     private String idPersona;
     private String nombreOficial;
-    // --- FIN DE LA CORRECCIÓN ---
 
     private boolean aprobada;
     private String motivo;
@@ -32,11 +32,10 @@ public class Decision {
     }
 
     public Decision(Persona persona, Oficial oficial, boolean aprobada, String motivo, LocalDateTime fecha) {
-        this.persona = persona; // Se mantiene para uso en memoria
-        this.oficial = oficial; // Se mantiene para uso en memoria
+        this.persona = persona;
+        this.oficial = oficial;
 
-        // --- INICIO DE LA CORRECCIÓN ---
-        // Asignamos los valores a los nuevos campos simples
+        // Asigna los nuevos campos simples en el constructor
         if (persona != null) {
             this.nombrePersona = persona.getNombre();
             this.idPersona = persona.getId();
@@ -44,7 +43,6 @@ public class Decision {
         if (oficial != null) {
             this.nombreOficial = oficial.getNombre();
         }
-        // --- FIN DE LA CORRECCIÓN ---
 
         this.aprobada = aprobada;
         this.motivo = motivo;
@@ -76,9 +74,11 @@ public class Decision {
         this.motivo = motivo;
     }
 
+    // --- ¡ACÁ ESTÁ EL MÉTODO QUE BUSCABAS! ---
     public boolean isAprobada() {
         return aprobada;
     }
+    // --- --- --- --- --- --- --- --- --- ---
 
     public void setAprobada(boolean aprobada) {
         this.aprobada = aprobada;
@@ -92,8 +92,7 @@ public class Decision {
         this.oficial = oficial;
     }
 
-    // --- INICIO DE LA CORRECCIÓN ---
-    // Getters para los nuevos campos
+    // Getters para los nuevos campos (los que se guardan en JSON)
     public String getNombrePersona() {
         return nombrePersona;
     }
@@ -105,7 +104,6 @@ public class Decision {
     public String getNombreOficial() {
         return nombreOficial;
     }
-    // --- FIN DE LA CORRECCIÓN ---
 
     // Metodos
     public void mostrarDecision(){

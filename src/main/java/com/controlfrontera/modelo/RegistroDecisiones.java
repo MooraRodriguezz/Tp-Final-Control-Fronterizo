@@ -39,7 +39,10 @@ public class RegistroDecisiones {
 
     // Métodos para calcular estadísticas
     public long getTotalAprobados() {
-        return decisiones.stream().filter(Decision::isAprobada).count();
+        // --- ESTA ES LA LÍNEA CORREGIDA ---
+        // Cambiamos "Decision::isAprobada" por un lambda "d -> d.isAprobada()"
+        // para forzar al compilador a re-evaluar el método.
+        return decisiones.stream().filter(d -> d.isAprobada()).count();
     }
 
     public long getTotalRechazados() {

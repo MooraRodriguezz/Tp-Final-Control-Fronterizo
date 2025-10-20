@@ -52,7 +52,8 @@ public class LoginViewController {
 
             } else if (usuarioAutenticado instanceof Oficial) {
                 System.out.println("ACCESO AUTORIZADO: OFICIAL");
-                cambiarEscena(event, "/com/example/demo/pantalla-inicio-oficial.fxml", "Bienvenido Oficial", usuarioAutenticado, 800, 600);
+                // ASEGURATE DE QUE ESTA LÍNEA APUNTE A "oficial-view.fxml"
+                cambiarEscena(event, "/com/example/demo/oficial-view.fxml", "Puesto de Control", usuarioAutenticado, 1100, 600);
             }
         } else {
             System.err.println("ACCESO DENEGADO.");
