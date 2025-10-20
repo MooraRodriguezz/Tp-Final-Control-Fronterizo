@@ -6,6 +6,8 @@ module com.example.demo {
     requires com.dlsc.formsfx;
     requires org.kordamp.ikonli.javafx;
     requires com.google.gson;
+    requires javafx.media;
+    requires java.desktop;
 
 
     opens com.controlfrontera.Controllers to javafx.fxml;
