@@ -1,8 +1,8 @@
 [
   {
-    "puntuacion": 1300,
+    "puntuacion": 1400,
     "erroresConsecutivos": 0,
-    "totalAciertos": 21,
+    "totalAciertos": 23,
     "totalErrores": 5,
     "nombre": "oficial",
     "contrasenia": "pass123",

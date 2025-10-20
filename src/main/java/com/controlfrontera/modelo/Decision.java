@@ -10,8 +10,19 @@ import java.time.LocalDateTime;
  */
 public class Decision {
     // Atributos
-    private Persona persona;
-    private Oficial oficial;
+
+    // --- INICIO DE LA CORRECCIÓN ---
+    // Se marcan como 'transient' para que GSON (la librería JSON) los ignore.
+    // Esto evita el crash al guardar, ya que Persona y Oficial son objetos complejos.
+    private transient Persona persona;
+    private transient Oficial oficial;
+
+    // Se añaden campos simples para guardar la información clave que SÍ queremos en el JSON
+    private String nombrePersona;
+    private String idPersona;
+    private String nombreOficial;
+    // --- FIN DE LA CORRECCIÓN ---
+
     private boolean aprobada;
     private String motivo;
     private LocalDateTime fecha;
@@ -21,12 +32,25 @@ public class Decision {
     }
 
     public Decision(Persona persona, Oficial oficial, boolean aprobada, String motivo, LocalDateTime fecha) {
-        this.persona = persona;
-        this.oficial = oficial;
+        this.persona = persona; // Se mantiene para uso en memoria
+        this.oficial = oficial; // Se mantiene para uso en memoria
+
+        // --- INICIO DE LA CORRECCIÓN ---
+        // Asignamos los valores a los nuevos campos simples
+        if (persona != null) {
+            this.nombrePersona = persona.getNombre();
+            this.idPersona = persona.getId();
+        }
+        if (oficial != null) {
+            this.nombreOficial = oficial.getNombre();
+        }
+        // --- FIN DE LA CORRECCIÓN ---
+
         this.aprobada = aprobada;
         this.motivo = motivo;
         this.fecha = fecha;
     }
+
     // Getters and Setters
     public Persona getPersona() {
         return persona;
@@ -67,6 +91,22 @@ public class Decision {
     public void setOficial(Oficial oficial) {
         this.oficial = oficial;
     }
+
+    // --- INICIO DE LA CORRECCIÓN ---
+    // Getters para los nuevos campos
+    public String getNombrePersona() {
+        return nombrePersona;
+    }
+
+    public String getIdPersona() {
+        return idPersona;
+    }
+
+    public String getNombreOficial() {
+        return nombreOficial;
+    }
+    // --- FIN DE LA CORRECCIÓN ---
+
     // Metodos
     public void mostrarDecision(){
     }

@@ -1,6 +1,18 @@
 [
   {
-    "persona": {
-      "nombre": "Aragorn",
-      "nacionalidad": "Argentina",
-      "documentos": [
+    "nombrePersona": "Aragorn",
+    "idPersona": "1",
+    "nombreOficial": "oficial",
+    "aprobada": true,
+    "motivo": "APROBADO (Correcto).",
+    "fecha": "2025-10-20T11:35:14.0180279"
+  },
+  {
+    "nombrePersona": "Frodo Baggins",
+    "idPersona": "2",
+    "nombreOficial": "oficial",
+    "aprobada": false,
+    "motivo": "RECHAZADO (Correcto).",
+    "fecha": "2025-10-20T11:35:18.5951466"
+  }
+]
