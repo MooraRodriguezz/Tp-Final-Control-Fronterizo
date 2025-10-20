@@ -22,7 +22,6 @@ public class GestorSonido {
 
             if (resource != null) {
                 audioClipClick = new AudioClip(resource.toExternalForm());
-                System.out.println(">>> Sonido cargado exitosamente (desde HelloApplication): " + resource.toExternalForm());
             } else {
                 System.err.println("Error CRÍTICO Definitivo: No se pudo encontrar 'sounds/sonido.boton.mp3' ni con ClassLoader ni con HelloApplication.class.");
                 // Puedes intentar la otra forma como respaldo final si quieres:
