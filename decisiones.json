@@ -14,5 +14,77 @@
     "aprobada": false,
     "motivo": "RECHAZADO (Correcto).",
     "fecha": "2025-10-20T11:35:18.5951466"
+  },
+  {
+    "nombrePersona": "Aragorn",
+    "idPersona": "1",
+    "nombreOficial": "oficial",
+    "aprobada": false,
+    "motivo": "RECHAZADO (ERROR). Error: Persona válida rechazada.",
+    "fecha": "2025-10-20T12:03:43.9102015"
+  },
+  {
+    "nombrePersona": "Frodo Baggins",
+    "idPersona": "2",
+    "nombreOficial": "oficial",
+    "aprobada": true,
+    "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento \u0027Permiso de Entrada\u0027 (SHR-67890) caducado el 19/10/2025",
+    "fecha": "2025-10-20T12:03:49.7030083"
+  },
+  {
+    "nombrePersona": "Lurtz",
+    "idPersona": "3",
+    "nombreOficial": "oficial",
+    "aprobada": false,
+    "motivo": "RECHAZADO (Correcto).",
+    "fecha": "2025-10-20T12:03:51.1303549"
+  },
+  {
+    "nombrePersona": "Gimli",
+    "idPersona": "4",
+    "nombreOficial": "oficial",
+    "aprobada": false,
+    "motivo": "RECHAZADO (ERROR). Error: Persona válida rechazada.",
+    "fecha": "2025-10-20T12:04:05.8775882"
+  },
+  {
+    "nombrePersona": "Aragorn",
+    "idPersona": "1",
+    "nombreOficial": "oficial",
+    "aprobada": true,
+    "motivo": "APROBADO (Correcto).",
+    "fecha": "2025-10-20T12:09:57.6747308"
+  },
+  {
+    "nombrePersona": "Frodo Baggins",
+    "idPersona": "2",
+    "nombreOficial": "oficial",
+    "aprobada": false,
+    "motivo": "RECHAZADO (Correcto).",
+    "fecha": "2025-10-20T12:09:58.6413171"
+  },
+  {
+    "nombrePersona": "Lurtz",
+    "idPersona": "3",
+    "nombreOficial": "oficial",
+    "aprobada": false,
+    "motivo": "RECHAZADO (Correcto).",
+    "fecha": "2025-10-20T12:10:00.0812986"
+  },
+  {
+    "nombrePersona": "Gimli",
+    "idPersona": "4",
+    "nombreOficial": "oficial",
+    "aprobada": false,
+    "motivo": "RECHAZADO (ERROR). Error: Persona válida rechazada.",
+    "fecha": "2025-10-20T12:10:01.455217"
+  },
+  {
+    "nombrePersona": "Aragorn",
+    "idPersona": "1",
+    "nombreOficial": "oficial",
+    "aprobada": false,
+    "motivo": "RECHAZADO (ERROR). Error: Persona válida rechazada.",
+    "fecha": "2025-10-20T13:06:14.1754095"
   }
 ]

@@ -52,8 +52,8 @@ public class LoginViewController {
 
             } else if (usuarioAutenticado instanceof Oficial) {
                 System.out.println("ACCESO AUTORIZADO: OFICIAL");
-                // ASEGURATE DE QUE ESTA LÍNEA APUNTE A "oficial-view.fxml"
-                cambiarEscena(event, "/com/example/demo/oficial-view.fxml", "Puesto de Control", usuarioAutenticado, 1100, 600);
+                // ESTA ES LA LÍNEA CLAVE Y CORREGIDA: Debe cargar la pantalla de inicio.
+                cambiarEscena(event, "/com/example/demo/pantalla-inicio-oficial.fxml", "Bienvenido Oficial", usuarioAutenticado, 800, 600);
             }
         } else {
             System.err.println("ACCESO DENEGADO.");
@@ -75,8 +75,15 @@ public class LoginViewController {
             Parent nuevaVista = loader.load();
 
             if (usuario instanceof Oficial) {
-                OficialViewController controller = loader.getController();
-                controller.initData((Oficial) usuario);
+                // Si estamos cargando la pantalla de inicio, le pasamos los datos a su controlador
+                if (fxmlFile.contains("pantalla-inicio-oficial.fxml")) {
+                    PantallaInicioOficialController controller = loader.getController();
+                    controller.initData((Oficial) usuario);
+
+                } else if (fxmlFile.contains("oficial-view.fxml")) {
+                    OficialViewController controller = loader.getController();
+                    controller.initData((Oficial) usuario);
+                }
             }
 
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

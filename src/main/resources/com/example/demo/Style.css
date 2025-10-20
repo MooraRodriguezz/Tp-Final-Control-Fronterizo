@@ -133,3 +133,23 @@
     -fx-background-color: #ffe599;
     -fx-text-fill: #1c1c1c;
 }
+
+#tituloPrincipal {
+    -fx-text-fill: #ffe599;
+    -fx-font-size: 22px;
+    -fx-alignment: center;
+}
+
+#playButton {
+    -fx-background-color: #198754;
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-family: 'Press Start 2P';
+    -fx-border-color: #b9b9b9;
+    -fx-border-width: 2px;
+}
+
+#playButton:hover {
+    -fx-background-color: #157347;
+    -fx-text-fill: #ffe599;
+}
