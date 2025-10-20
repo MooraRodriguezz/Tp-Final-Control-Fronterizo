@@ -248,14 +248,28 @@ public class OficialViewController {
     }
 
     private void simularPesaje() {
-        double pesoBase = personaActual.getPeso();
-        double variacion = ThreadLocalRandom.current().nextDouble(-1.5, 1.6);
-        double pesoExtraContrabando = personaActual.isTieneContrabando() ? ThreadLocalRandom.current().nextDouble(5.0, 15.0) : 0.0;
-        pesoMedidoSimulado = pesoBase + variacion + pesoExtraContrabando;
+        if (personaActual == null) return;
+
+        // Peso base fijo de la persona
+        double pesoBase = personaActual.getPesoMedidoSimulado();
+
+        // Extra de contrabando (si tiene)
+        double pesoExtraContrabando = personaActual.isTieneContrabando() ?
+                ThreadLocalRandom.current().nextDouble(5.0, 15.0) : 0.0;
+
+        // Peso medido real
+        pesoMedidoSimulado = pesoBase + pesoExtraContrabando;
+
+        // Mostrar en la UI
         pesoMedidoLabel.setText(String.format("%.1f kg", pesoMedidoSimulado));
-        pesoSospechoso = (pesoMedidoSimulado - pesoBase) > LIMITE_DISCREPANCIA_PESO;
+
+        // Determinar si es sospechoso
+        pesoSospechoso = (pesoMedidoSimulado - personaActual.getPeso()) > LIMITE_DISCREPANCIA_PESO;
+
+        // Cambiar color del label según sospecha
         pesoMedidoLabel.setStyle(pesoSospechoso ? "-fx-text-fill: #ff4d4d;" : "-fx-text-fill: #4CAF50;");
     }
+
 
     @FXML
     void onRayosXClick(ActionEvent event) {
@@ -378,35 +392,64 @@ public class OficialViewController {
 
     private void crearDatosDePrueba() {
         this.filaDePersonas = new LinkedList<>();
-        long d = 86400000L; long a = 31536000000L; Date hoy = new Date();
-        Date fnA = new Date(87, 2, 1); Date fnF = new Date(88, 8, 22); Date fnL = new Date(95, 4, 15); Date fnG = new Date(79, 10, 5); Date fnLe = new Date(100, 5, 20); Date fnB = new Date(85, 0, 10); Date fnE = new Date(90, 7, 1);
+        long d = 86400000L; // un día en ms
+        long a = 31536000000L; // un año en ms
+        Date hoy = new Date();
 
+        Date fnA = new Date(87, 2, 1);
+        Date fnF = new Date(88, 8, 22);
+        Date fnL = new Date(95, 4, 15);
+        Date fnG = new Date(79, 10, 5);
+        Date fnLe = new Date(100, 5, 20);
+        Date fnB = new Date(85, 0, 10);
+        Date fnE = new Date(90, 7, 1);
+
+        // Persona 1
         Pasaporte p1d1 = new Pasaporte("GDR-12345", "Argentina", true, new Date(hoy.getTime() + a), "P");
-        Persona p1 = new Persona("Aragorn", "Argentina", Set.of(p1d1), "1", false, "Aragorn.jpg", fnA, 90.5, 181); filaDePersonas.add(p1);
+        Persona p1 = new Persona("Aragorn", "Argentina", Set.of(p1d1), "1", false, "Aragorn.jpg", fnA, 90.5, 181);
+        filaDePersonas.add(p1);
 
+        // Persona 2
         PermisoEntrada p2d1 = new PermisoEntrada("SHR-67890", "Chile", true, "Negocios", new Date(hoy.getTime() - d));
-        Persona p2 = new Persona("Frodo Baggins", "Chile", Set.of(p2d1), "2", true, "Frodo.jpg", fnF, 40.8, 107); filaDePersonas.add(p2);
+        Persona p2 = new Persona("Frodo Baggins", "Chile", Set.of(p2d1), "2", true, "Frodo.jpg", fnF, 40.8, 107);
+        filaDePersonas.add(p2);
 
+        // Persona 3
         Pasaporte p3d1 = new Pasaporte("MDR-X6Y7", "Mordor", true, new Date(hoy.getTime() + a * 2), "O");
-        Persona p3 = new Persona("Lurtz", "Mordor", Set.of(p3d1), "3", true, "Lurtz.jpg", fnL, 105.2, 190); filaDePersonas.add(p3);
+        Persona p3 = new Persona("Lurtz", "Mordor", Set.of(p3d1), "3", true, "Lurtz.jpg", fnL, 105.2, 190);
+        filaDePersonas.add(p3);
 
+        // Persona 4
         PermisoTrabajo p4d1 = new PermisoTrabajo("CL-ENG-987", "Chile", true, new Date(hoy.getTime() + a / 2), "INGENIERO", "Minera Andina");
-        Persona p4 = new Persona("Gimli", "Chile", Set.of(p4d1), "4", false, null, fnG, 85.0, 140); filaDePersonas.add(p4);
+        Persona p4 = new Persona("Gimli", "Chile", Set.of(p4d1), "4", false, null, fnG, 85.0, 140);
+        filaDePersonas.add(p4);
 
+        // Persona 5
         PermisoTrabajo p5d1 = new PermisoTrabajo("PE-ART-111", "Peru", true, new Date(hoy.getTime() + a), "ARTESANO", "Mercado Local");
-        Persona p5 = new Persona("Legolas", "Peru", Set.of(p5d1), "5", false, null, fnLe, 70.0, 185); filaDePersonas.add(p5);
+        Persona p5 = new Persona("Legolas", "Peru", Set.of(p5d1), "5", false, null, fnLe, 70.0, 185);
+        filaDePersonas.add(p5);
 
+        // Persona 6
         Pasaporte p6d1 = new Pasaporte("ARG-P-555", "Argentina", true, new Date(hoy.getTime() + a * 3), "P");
         PermisoEntrada p6d2 = new PermisoEntrada("ARG-T-TEMP", "Argentina", true, "Turismo", new Date(hoy.getTime() - d * 10));
-        Persona p6 = new Persona("Boromir", "Argentina", Set.of(p6d1, p6d2), "6", true, null, fnB, 95.0, 183); filaDePersonas.add(p6);
+        Persona p6 = new Persona("Boromir", "Argentina", Set.of(p6d1, p6d2), "6", true, null, fnB, 95.0, 183);
+        filaDePersonas.add(p6);
 
+        // Persona 7
         PermisoEntrada p7d1 = new PermisoEntrada("ARG-TUR-XYZ", "Argentina", true, "Turismo", new Date(hoy.getTime() + d * 80));
-        Persona p7 = new Persona("Éowyn", "Argentina", Set.of(p7d1), "7", false, null, fnE, 65.0, 170); filaDePersonas.add(p7);
+        Persona p7 = new Persona("Éowyn", "Argentina", Set.of(p7d1), "7", false, null, fnE, 65.0, 170);
+        filaDePersonas.add(p7);
 
+        // Persona 8
         PermisoEntrada p8d1 = new PermisoEntrada("PE-INV-456", "Peru", true, "Invasión", new Date(hoy.getTime() + d * 150));
-        Persona p8 = new Persona("Grima", "Peru", Set.of(p8d1), "8", true, null, new Date(70, 0, 1), 60.0, 175); filaDePersonas.add(p8);
+        Persona p8 = new Persona("Grima", "Peru", Set.of(p8d1), "8", true, null, new Date(70, 0, 1), 60.0, 175);
+        filaDePersonas.add(p8);
 
+        // Persona 9
         Pasaporte p9d1 = new Pasaporte("CHL-P-999", "Chile", true, new Date(hoy.getTime() + a * 5), "P");
-        Persona p9 = new Persona("Samwise", "Chile", Set.of(p9d1), "9", false, null, new Date(89, 3, 6), 75.0, 160); filaDePersonas.add(p9);
+        Persona p9 = new Persona("Samwise", "Chile", Set.of(p9d1), "9", false, null, new Date(89, 3, 6), 75.0, 160);
+        filaDePersonas.add(p9);
     }
+
+
 }
