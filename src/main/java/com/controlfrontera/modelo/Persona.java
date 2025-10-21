@@ -2,7 +2,6 @@ package com.controlfrontera.modelo;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -17,12 +16,7 @@ public class Persona implements Verificable {
     private double altura;
     private double peso;
     private boolean tieneContrabando;
-    private Double pesoMedidoSimulado; // ✅ corregido y cambiado a Double
-
-    public Persona() {
-        this.documentos = new HashSet<>();
-        this.tieneContrabando = ThreadLocalRandom.current().nextBoolean();
-    }
+    private Double pesoMedidoSimulado;
 
     public Persona(String nombre, String nacionalidad, Set<Documento> documentos, String id,
                    boolean sospechosa, String nombreImagen, Date fechaNacimiento,
@@ -38,44 +32,26 @@ public class Persona implements Verificable {
         this.altura = altura;
         this.peso = peso;
 
-        // Simular el peso medido con un margen de ±2 kg
         double margen = 2.0;
         this.pesoMedidoSimulado = peso + ThreadLocalRandom.current().nextDouble(-margen, margen);
 
-        // Probabilidad de contrabando según sospechoso
         double chance = sospechosa ? 0.7 : 0.3;
         this.tieneContrabando = ThreadLocalRandom.current().nextDouble() < chance;
     }
-
 
 
     public Double getPesoMedidoSimulado() {
         return pesoMedidoSimulado;
     }
 
-    public void setPesoMedidoSimulado(Double pesoMedidoSimulado) {
-        this.pesoMedidoSimulado = pesoMedidoSimulado;
-    }
-
-
     public String getNombre() { return nombre; }
-    public void setNombre(String nombre) { this.nombre = nombre; }
     public String getNacionalidad() { return nacionalidad; }
-    public void setNacionalidad(String nacionalidad) { this.nacionalidad = nacionalidad; }
     public Set<Documento> getDocumentos() { return documentos; }
-    public void setDocumentos(Set<Documento> documentos) { this.documentos = documentos; }
     public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
-    public boolean isSospechosa() { return sospechosa; }
-    public void setSospechosa(boolean sospechosa) { this.sospechosa = sospechosa; }
     public String getNombreImagen() { return nombreImagen; }
-    public void setNombreImagen(String nombreImagen) { this.nombreImagen = nombreImagen; }
     public Date getFechaNacimiento() {return fechaNacimiento;}
-    public void setFechaNacimiento(Date fechaNacimiento) {this.fechaNacimiento = fechaNacimiento;}
     public double getAltura() {return altura;}
-    public void setAltura(double altura) {this.altura = altura;}
     public double getPeso() {return peso;}
-    public void setPeso(double peso) {this.peso = peso;}
     public boolean isTieneContrabando() { return tieneContrabando; }
 
 

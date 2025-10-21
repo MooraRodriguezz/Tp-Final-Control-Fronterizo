@@ -32,14 +32,13 @@ public class AdminViewController {
 
 
     @FXML
-    void onGestionarUsuariosClick(ActionEvent event) {
+    void onGestionarUsuariosClick(ActionEvent ignoredEvent) {
         GestorSonido.reproducirClick();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/gestionar-usuarios-view.fxml"));
             Parent root = loader.load();
 
             GestionarUsuariosViewController controller = loader.getController();
-            // Le pasamos el gestor único
             controller.initData(gestorUsuarios);
 
             Stage stage = new Stage();
@@ -75,7 +74,7 @@ public class AdminViewController {
 
 
     @FXML
-    void onConfigurarPaisesClick(ActionEvent event) {
+    void onConfigurarPaisesClick(ActionEvent ignoredEvent) {
         GestorSonido.reproducirClick();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/configurar-paises-view.fxml"));
@@ -93,7 +92,7 @@ public class AdminViewController {
     }
 
     @FXML
-    void onVerEstadisticasClick(ActionEvent event) {
+    void onVerEstadisticasClick(ActionEvent ignoredEvent) {
         GestorSonido.reproducirClick();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/estadisticas-view.fxml"));

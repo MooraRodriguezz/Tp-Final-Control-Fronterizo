@@ -6,12 +6,14 @@ package com.controlfrontera.excepciones;
  */
 public class RolInvalidoException extends Exception { // Hereda de Exception
 
+    private static final long serialVersionUID = 1L;
+
     /**
      * Constructor que acepta un mensaje de error detallado.
      * @param message El mensaje que describe el error.
      */
     public RolInvalidoException(String message) {
-        super(message); // Llama al constructor de la clase padre (Exception)
+        super(message);
     }
 
     /**

@@ -7,13 +7,11 @@ module com.example.demo {
     requires org.kordamp.ikonli.javafx;
     requires com.google.gson;
     requires javafx.media;
-    requires java.desktop;
 
 
     opens com.controlfrontera.Controllers to javafx.fxml;
     opens com.controlfrontera.modelo to javafx.fxml, com.google.gson;
     opens com.controlfrontera.persistencia to javafx.fxml;
-    opens sounds to javafx.media;
 
     opens com.controlfrontera.usuarios to javafx.fxml, com.google.gson;
 

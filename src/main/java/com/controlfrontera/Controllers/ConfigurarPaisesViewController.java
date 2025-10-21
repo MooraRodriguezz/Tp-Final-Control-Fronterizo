@@ -28,7 +28,7 @@ public class ConfigurarPaisesViewController {
         GestorSonido.reproducirClick();
         String nuevoPais = txtNombrePais.getText();
         gestorPaises.agregarPais(nuevoPais);
-        txtNombrePais.clear(); // Limpiamos el campo de texto
+        txtNombrePais.clear();
     }
 
     @FXML

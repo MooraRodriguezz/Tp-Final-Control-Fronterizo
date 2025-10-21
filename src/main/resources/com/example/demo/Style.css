@@ -71,7 +71,7 @@
 }
 
 .info-data {
-    -fx-text-fill: #4CAF50; /* Verde monitor */
+    -fx-text-fill: #4CAF50; 
     -fx-font-size: 12px;
 }
 

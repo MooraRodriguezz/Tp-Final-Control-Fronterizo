@@ -21,9 +21,9 @@ public class NotificacionErrorViewController {
     }
 
     @FXML
-    void onCerrarClick(ActionEvent event) {
+    void onCerrarClick(ActionEvent ignoredEvent) {
         GestorSonido.reproducirClick();
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) ignoredEvent.getSource()).getScene().getWindow();
         stage.close();
     }
 }

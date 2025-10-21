@@ -14,10 +14,8 @@ public class PermisoEntrada extends Documento {
      */
     @Override
     public boolean validar() {
-        // Llama a la validación base (que revisa la fecha de expiración)
         boolean validoBase = super.validar();
 
-        // Regla específica: El motivo debe ser uno de los permitidos para esta frontera
         String motivo = this.getMotivoViaje();
         boolean motivoValido = motivo != null &&
                 (motivo.equalsIgnoreCase("Turismo") ||

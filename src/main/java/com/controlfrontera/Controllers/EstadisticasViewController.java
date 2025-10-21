@@ -12,8 +12,8 @@ public class EstadisticasViewController {
     @FXML private Label lblTotal;
     @FXML private Label lblAprobados;
     @FXML private Label lblRechazados;
-    @FXML private Label lblPuntuacion; // <-- Añadido
-    @FXML private ComboBox<Oficial> cmbOficiales; // <-- Añadido
+    @FXML private Label lblPuntuacion;
+    @FXML private ComboBox<Oficial> cmbOficiales;
 
     private GestorUsuarios gestorUsuarios;
 

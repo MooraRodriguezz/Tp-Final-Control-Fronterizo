@@ -17,7 +17,7 @@ import java.io.IOException;
 public class PantallaInicioOficialController {
 
     @FXML
-    private Button playButton;
+    private Button playButton; // No se usa localmente, solo FXML. Se deja.
     @FXML
     private Button statsButton;
     @FXML

@@ -41,13 +41,4 @@ public abstract class Usuario {
     public void setRol(String rol) {
         this.rol = rol;
     }
-    // Metodos
-    public boolean login() {
-        return false;
-    }
-
-    public void verMenu(){
-
-    }
-
 }

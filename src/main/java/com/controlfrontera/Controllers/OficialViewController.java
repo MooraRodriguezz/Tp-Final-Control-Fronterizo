@@ -1,6 +1,14 @@
 package com.controlfrontera.Controllers;
 
-import com.controlfrontera.modelo.*;
+import com.controlfrontera.modelo.Decision;
+import com.controlfrontera.modelo.Documento;
+import com.controlfrontera.modelo.GestorPaises;
+import com.controlfrontera.modelo.Pasaporte;
+import com.controlfrontera.modelo.PermisoEntrada;
+import com.controlfrontera.modelo.PermisoTrabajo;
+import com.controlfrontera.modelo.Persona;
+import com.controlfrontera.modelo.RegistroDecisiones;
+
 import com.controlfrontera.usuarios.GestorUsuarios;
 import com.controlfrontera.usuarios.Oficial;
 import javafx.collections.FXCollections;
@@ -16,17 +24,24 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Pair;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Priority;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.Set;
+
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.stream.Collectors;
 import com.controlfrontera.usuarios.GestorSonido;
 
 public class OficialViewController {
@@ -63,7 +78,7 @@ public class OficialViewController {
     private final SimpleDateFormat formatterDoc = new SimpleDateFormat("dd/MM/yyyy");
     private final DateTimeFormatter formatterFechaHoy = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     private boolean modoInspeccion = false;
-    private double pesoMedidoSimulado = 0.0;
+    private double pesoMedidoSimulado = 0.0; // Se usa en simularPesaje
     private List<Pair<String, String>> discrepanciasEncontradas = new ArrayList<>();
     private boolean pesoSospechoso = false;
 
@@ -93,13 +108,13 @@ public class OficialViewController {
         }
     }
 
-    @FXML void onAprobarClick(ActionEvent event) {
+    @FXML void onAprobarClick(ActionEvent ignoredEvent) {
         GestorSonido.reproducirClick();procesarDecision(true); }
-    @FXML void onRechazarClick(ActionEvent event) {
+    @FXML void onRechazarClick(ActionEvent ignoredEvent) {
         GestorSonido.reproducirClick();procesarDecision(false); }
 
     @FXML
-    void onArrestarClick(ActionEvent event) {
+    void onArrestarClick(ActionEvent ignoredEvent) {
         GestorSonido.reproducirClick();
         if (personaActual != null && !arrestarButton.isDisabled()) {
             boolean arrestoCorrecto = personaActual.isTieneContrabando();
@@ -183,7 +198,7 @@ public class OficialViewController {
             aprobarButton.setDisable(false);
             rechazarButton.setDisable(false);
             inspeccionarButton.setDisable(false);
-            reglamentoButton.setDisable(false); // Habilitar reglamento
+            reglamentoButton.setDisable(false);
 
         } else {
             limpiarPanelesCompletos();
@@ -223,7 +238,7 @@ public class OficialViewController {
     }
 
     @FXML
-    void onInspeccionarClick(ActionEvent event) {
+    void onInspeccionarClick(ActionEvent ignoredEvent) {
         GestorSonido.reproducirClick();
         if (personaActual == null) return;
         modoInspeccion = !modoInspeccion;
@@ -255,29 +270,23 @@ public class OficialViewController {
     private void simularPesaje() {
         if (personaActual == null) return;
 
-        // Peso base fijo de la persona
         double pesoBase = personaActual.getPesoMedidoSimulado();
 
-        // Extra de contrabando (si tiene)
         double pesoExtraContrabando = personaActual.isTieneContrabando() ?
                 ThreadLocalRandom.current().nextDouble(5.0, 15.0) : 0.0;
 
-        // Peso medido real
         pesoMedidoSimulado = pesoBase + pesoExtraContrabando;
 
-        // Mostrar en la UI
         pesoMedidoLabel.setText(String.format("%.1f kg", pesoMedidoSimulado));
 
-        // Determinar si es sospechoso
         pesoSospechoso = (pesoMedidoSimulado - personaActual.getPeso()) > LIMITE_DISCREPANCIA_PESO;
 
-        // Cambiar color del label según sospecha
         pesoMedidoLabel.setStyle(pesoSospechoso ? "-fx-text-fill: #ff4d4d;" : "-fx-text-fill: #4CAF50;");
     }
 
 
     @FXML
-    void onRayosXClick(ActionEvent event) {
+    void onRayosXClick(ActionEvent ignoredEvent) {
         GestorSonido.reproducirClick();
         if (personaActual != null && modoInspeccion && pesoSospechoso) {
             realizarRadiografia();
@@ -301,7 +310,6 @@ public class OficialViewController {
         discrepanciasEncontradas.clear();
         resetearEstiloDiscrepancias();
         if (personaActual == null) return;
-        // Lógica de comparación futura
     }
 
     private void mostrarDiscrepanciasEncontradas() {
@@ -400,20 +408,20 @@ public class OficialViewController {
 
     private void crearDatosDePrueba() {
         this.filaDePersonas = new LinkedList<>();
-        long d = 86400000L; // un día en ms
-        long a = 31536000000L; // un año en ms
+        long d = 86400000L;
+        long a = 31536000000L;
         Date hoy = new Date();
 
-        Date fnA = new Date(87, 2, 1);
-        Date fnF = new Date(88, 8, 22);
-        Date fnL = new Date(95, 4, 15);
-        Date fnG = new Date(79, 10, 5);
-        Date fnLe = new Date(100, 5, 20);
-        Date fnB = new Date(85, 0, 10);
-        Date fnE = new Date(90, 7, 1);
+        Date fnA = new GregorianCalendar(1987, Calendar.MARCH, 1).getTime();
+        Date fnF = new GregorianCalendar(1988, Calendar.SEPTEMBER, 22).getTime();
+        Date fnL = new GregorianCalendar(1995, Calendar.MAY, 15).getTime();
+        Date fnG = new GregorianCalendar(1979, Calendar.NOVEMBER, 5).getTime();
+        Date fnLe = new GregorianCalendar(2000, Calendar.JUNE, 20).getTime();
+        Date fnB = new GregorianCalendar(1985, Calendar.JANUARY, 10).getTime();
+        Date fnE = new GregorianCalendar(1990, Calendar.AUGUST, 1).getTime();
 
         // Persona 1
-        Pasaporte p1d1 = new Pasaporte("GDR-12345", "Argentina", true, new Date(hoy.getTime() + a), "P");
+        Pasaporte p1d1 = new Pasaporte("GDR-12345", "Argentina", true, new Date(hoy.getTime() + a));
         Persona p1 = new Persona("Aragorn", "Argentina", Set.of(p1d1), "1", false, "Aragorn.jpg", fnA, 90.5, 181);
         filaDePersonas.add(p1);
 
@@ -423,7 +431,7 @@ public class OficialViewController {
         filaDePersonas.add(p2);
 
         // Persona 3
-        Pasaporte p3d1 = new Pasaporte("MDR-X6Y7", "Mordor", true, new Date(hoy.getTime() + a * 2), "O");
+        Pasaporte p3d1 = new Pasaporte("MDR-X6Y7", "Mordor", true, new Date(hoy.getTime() + a * 2));
         Persona p3 = new Persona("Lurtz", "Mordor", Set.of(p3d1), "3", true, "Lurtz.jpg", fnL, 105.2, 190);
         filaDePersonas.add(p3);
 
@@ -438,7 +446,7 @@ public class OficialViewController {
         filaDePersonas.add(p5);
 
         // Persona 6
-        Pasaporte p6d1 = new Pasaporte("ARG-P-555", "Argentina", true, new Date(hoy.getTime() + a * 3), "P");
+        Pasaporte p6d1 = new Pasaporte("ARG-P-555", "Argentina", true, new Date(hoy.getTime() + a * 3));
         PermisoEntrada p6d2 = new PermisoEntrada("ARG-T-TEMP", "Argentina", true, "Turismo", new Date(hoy.getTime() - d * 10));
         Persona p6 = new Persona("Boromir", "Argentina", Set.of(p6d1, p6d2), "6", true, null, fnB, 95.0, 183);
         filaDePersonas.add(p6);
@@ -450,14 +458,12 @@ public class OficialViewController {
 
         // Persona 8
         PermisoEntrada p8d1 = new PermisoEntrada("PE-INV-456", "Peru", true, "Invasión", new Date(hoy.getTime() + d * 150));
-        Persona p8 = new Persona("Grima", "Peru", Set.of(p8d1), "8", true, null, new Date(70, 0, 1), 60.0, 175);
+        Persona p8 = new Persona("Grima", "Peru", Set.of(p8d1), "8", true, null, new GregorianCalendar(1970, Calendar.JANUARY, 1).getTime(), 60.0, 175);
         filaDePersonas.add(p8);
 
         // Persona 9
-        Pasaporte p9d1 = new Pasaporte("CHL-P-999", "Chile", true, new Date(hoy.getTime() + a * 5), "P");
-        Persona p9 = new Persona("Samwise", "Chile", Set.of(p9d1), "9", false, null, new Date(89, 3, 6), 75.0, 160);
+        Pasaporte p9d1 = new Pasaporte("CHL-P-999", "Chile", true, new Date(hoy.getTime() + a * 5));
+        Persona p9 = new Persona("Samwise", "Chile", Set.of(p9d1), "9", false, null, new GregorianCalendar(1989, Calendar.APRIL, 6).getTime(), 75.0, 160);
         filaDePersonas.add(p9);
     }
-
-
 }

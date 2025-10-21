@@ -18,7 +18,6 @@ import java.util.List;
 public class PersistenciaDecisiones {
     private static final String RUTA_ARCHIVO = "decisiones.json";
 
-    // Adaptador interno para manejar la serialización y deserialización de LocalDateTime
     private static class LocalDateTimeAdapter implements JsonSerializer<LocalDateTime>, JsonDeserializer<LocalDateTime> {
         private static final DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
 
@@ -63,7 +62,6 @@ public class PersistenciaDecisiones {
                 return FXCollections.observableArrayList(decisiones);
             }
         } catch (IOException e) {
-            // Es normal si el archivo no existe la primera vez, se creará al guardar.
             System.out.println("No se encontró archivo de decisiones, se creará uno nuevo.");
         }
         return FXCollections.observableArrayList();

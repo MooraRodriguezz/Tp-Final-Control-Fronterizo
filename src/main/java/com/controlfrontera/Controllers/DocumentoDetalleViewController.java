@@ -28,9 +28,9 @@ public class DocumentoDetalleViewController {
         lblEstado.setText(esValidoAhora ? "VÁLIDO" : "INVÁLIDO");
 
         if (!esValidoAhora) {
-            lblEstado.setStyle("-fx-text-fill: #ff4d4d;"); // Rojo
+            lblEstado.setStyle("-fx-text-fill: #ff4d4d;");
         } else {
-            lblEstado.setStyle("-fx-text-fill: #4CAF50;"); // Verde
+            lblEstado.setStyle("-fx-text-fill: #4CAF50;");
         }
     }
 }

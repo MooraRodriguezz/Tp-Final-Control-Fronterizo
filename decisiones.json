@@ -102,5 +102,61 @@
     "aprobada": true,
     "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento \u0027Permiso de Entrada\u0027 (SHR-67890) caducado el 19/10/2025",
     "fecha": "2025-10-20T15:05:38.1291778"
+  },
+  {
+    "nombrePersona": "Aragorn",
+    "idPersona": "1",
+    "nombreOficial": "oficial",
+    "aprobada": true,
+    "motivo": "APROBADO (Correcto).",
+    "fecha": "2025-10-21T10:24:57.9703371"
+  },
+  {
+    "nombrePersona": "Frodo Baggins",
+    "idPersona": "2",
+    "nombreOficial": "oficial",
+    "aprobada": true,
+    "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento \u0027Permiso de Entrada\u0027 (SHR-67890) caducado el 20/10/2025",
+    "fecha": "2025-10-21T10:25:02.1032706"
+  },
+  {
+    "nombrePersona": "Aragorn",
+    "idPersona": "1",
+    "nombreOficial": "oficial",
+    "aprobada": true,
+    "motivo": "APROBADO (Correcto).",
+    "fecha": "2025-10-21T10:26:28.8245576"
+  },
+  {
+    "nombrePersona": "Frodo Baggins",
+    "idPersona": "2",
+    "nombreOficial": "oficial",
+    "aprobada": false,
+    "motivo": "RECHAZADO (Correcto).",
+    "fecha": "2025-10-21T10:26:44.0823156"
+  },
+  {
+    "nombrePersona": "Aragorn",
+    "idPersona": "1",
+    "nombreOficial": "oficial",
+    "aprobada": true,
+    "motivo": "APROBADO (Correcto).",
+    "fecha": "2025-10-21T11:01:33.0202573"
+  },
+  {
+    "nombrePersona": "Frodo Baggins",
+    "idPersona": "2",
+    "nombreOficial": "oficial",
+    "aprobada": false,
+    "motivo": "RECHAZADO (Correcto).",
+    "fecha": "2025-10-21T11:01:35.1192063"
+  },
+  {
+    "nombrePersona": "Lurtz",
+    "idPersona": "3",
+    "nombreOficial": "oficial",
+    "aprobada": true,
+    "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Nacionalidad no permitida: Mordor",
+    "fecha": "2025-10-21T11:01:38.6750829"
   }
 ]

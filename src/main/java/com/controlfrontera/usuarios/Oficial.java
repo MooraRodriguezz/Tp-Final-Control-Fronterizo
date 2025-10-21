@@ -1,14 +1,11 @@
 package com.controlfrontera.usuarios;
 
 import com.controlfrontera.modelo.Decision;
-import com.controlfrontera.modelo.Persona;
 import com.controlfrontera.modelo.RegistroDecisiones;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Oficial extends Usuario {
-    private transient List<Usuario> historial;
+
     private int puntuacion;
     private int erroresConsecutivos;
     private int totalAciertos;
@@ -16,21 +13,13 @@ public class Oficial extends Usuario {
 
     public Oficial() {
         super();
-        this.historial = new ArrayList<>();
     }
 
-    public Oficial(String nombre, String contrasenia, String rol, List<Usuario> historial) {
+    public Oficial(String nombre, String contrasenia, String rol) {
         super(nombre, contrasenia, rol);
-        this.historial = new ArrayList<>();
     }
 
-    public List<Usuario> getHistorial() {
-        if (this.historial == null) {
-            this.historial = new ArrayList<>();
-        }
-        return historial;
-    }
-    public void setHistorial(List<Usuario> historial) { this.historial = historial; }
+
     public int getPuntuacion() { return puntuacion; }
     public void setPuntuacion(int puntuacion) { this.puntuacion = puntuacion; }
     public int getTotalAciertos() { return totalAciertos; }
@@ -62,11 +51,10 @@ public class Oficial extends Usuario {
         this.totalErrores++;
     }
 
-    public void revisarPersona(Persona p){}
-    public void registrarDecision(Decision d){ RegistroDecisiones.getInstancia().agregarDecision(d); }
-    public void generarReporte(){}
-    @Override public boolean login() { return super.login(); }
-    @Override public void verMenu() { super.verMenu(); }
+    public void registrarDecision(Decision decision){
+        RegistroDecisiones.getInstancia().agregarDecision(decision);
+    }
+
 
     @Override
     public String toString() {

@@ -32,8 +32,8 @@ public class GestorUsuarios {
     }
 
     private void inicializarUsuarios() {
-        Usuario admin = new Administrador("admin", "admin123", "ADMIN", null, null);
-        Usuario oficial = new Oficial("oficial", "pass123", "OFICIAL", null);
+        Usuario admin = new Administrador("admin", "admin123", "ADMIN");
+        Usuario oficial = new Oficial("oficial", "pass123", "OFICIAL");
         mapaDeUsuarios.put(admin.getNombre(), admin);
         mapaDeUsuarios.put(oficial.getNombre(), oficial);
     }
@@ -56,12 +56,12 @@ public class GestorUsuarios {
      * @param nuevoUsuario El usuario a agregar.
      * @throws UsuarioYaExisteException Si ya existe un usuario con ese nombre.
      */
-     public void agregarUsuario(Usuario nuevoUsuario) throws UsuarioYaExisteException {
+    public void agregarUsuario(Usuario nuevoUsuario) throws UsuarioYaExisteException {
         if (nuevoUsuario != null) {
-             if (mapaDeUsuarios.containsKey(nuevoUsuario.getNombre())) {
+            if (mapaDeUsuarios.containsKey(nuevoUsuario.getNombre())) {
                 throw new UsuarioYaExisteException("El usuario '" + nuevoUsuario.getNombre() + "' ya existe.");
             }
-             mapaDeUsuarios.put(nuevoUsuario.getNombre(), nuevoUsuario);
+            mapaDeUsuarios.put(nuevoUsuario.getNombre(), nuevoUsuario);
             guardarUsuarios();
         }
     }

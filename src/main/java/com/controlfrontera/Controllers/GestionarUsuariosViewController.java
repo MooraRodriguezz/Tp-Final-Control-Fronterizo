@@ -2,7 +2,13 @@ package com.controlfrontera.Controllers;
 
 import com.controlfrontera.excepciones.RolInvalidoException;
 import com.controlfrontera.excepciones.UsuarioYaExisteException;
-import com.controlfrontera.usuarios.*;
+
+import com.controlfrontera.usuarios.Administrador;
+import com.controlfrontera.usuarios.GestorSonido;
+import com.controlfrontera.usuarios.GestorUsuarios;
+import com.controlfrontera.usuarios.Oficial;
+import com.controlfrontera.usuarios.Usuario;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableView;
@@ -38,9 +44,9 @@ public class GestionarUsuariosViewController {
             Usuario nuevoUsuario;
 
             if ("ADMIN".equals(rol)) {
-                nuevoUsuario = new Administrador(nombre, contrasenia, rol, null, null);
+                nuevoUsuario = new Administrador(nombre, contrasenia, rol);
             } else if ("OFICIAL".equals(rol)) {
-                nuevoUsuario = new Oficial(nombre, contrasenia, rol, null);
+                nuevoUsuario = new Oficial(nombre, contrasenia, rol);
             } else {
                 throw new RolInvalidoException("El rol '" + txtRol.getText() + "' no es válido. Use ADMIN o OFICIAL.");
             }

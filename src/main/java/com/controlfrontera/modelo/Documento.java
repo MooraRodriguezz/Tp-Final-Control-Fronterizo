@@ -39,7 +39,6 @@ public class Documento implements Verificable {
 
     @Override
     public boolean validar() {
-        // Un documento es válido si su fecha de expiración es en el futuro.
         return fechaExpiracion.after(new Date());
     }
 

@@ -1,6 +1,5 @@
 package com.controlfrontera.modelo;
 
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import com.controlfrontera.persistencia.PersistenciaDecisiones;
 
@@ -37,11 +36,7 @@ public class RegistroDecisiones {
         return decisiones;
     }
 
-    // Métodos para calcular estadísticas
     public long getTotalAprobados() {
-        // --- ESTA ES LA LÍNEA CORREGIDA ---
-        // Cambiamos "Decision::isAprobada" por un lambda "d -> d.isAprobada()"
-        // para forzar al compilador a re-evaluar el método.
         return decisiones.stream().filter(d -> d.isAprobada()).count();
     }
 
