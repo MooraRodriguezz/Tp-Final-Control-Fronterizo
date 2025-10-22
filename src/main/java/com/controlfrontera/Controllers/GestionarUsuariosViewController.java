@@ -30,7 +30,7 @@ public class GestionarUsuariosViewController {
 
     @FXML
     void onAgregarUsuarioClick() {
-        GestorSonido.reproducirClick();
+        GestorSonido.reproducirMenuClick();
         String nombre = txtNombre.getText();
         String contrasenia = txtContrasenia.getText();
         String rol = txtRol.getText().toUpperCase();
@@ -66,7 +66,7 @@ public class GestionarUsuariosViewController {
 
     @FXML
     void onEliminarUsuarioClick() {
-        GestorSonido.reproducirClick();
+        GestorSonido.reproducirMenuClick();
         Usuario seleccionado = tablaUsuarios.getSelectionModel().getSelectedItem();
         if (seleccionado != null) {
             gestorUsuarios.eliminarUsuario(seleccionado);

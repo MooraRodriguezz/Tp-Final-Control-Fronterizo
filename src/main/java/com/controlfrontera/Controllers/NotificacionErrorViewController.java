@@ -22,7 +22,7 @@ public class NotificacionErrorViewController {
 
     @FXML
     void onCerrarClick(ActionEvent ignoredEvent) {
-        GestorSonido.reproducirClick();
+        GestorSonido.reproducirMenuClick();
         Stage stage = (Stage) ((Node) ignoredEvent.getSource()).getScene().getWindow();
         stage.close();
     }

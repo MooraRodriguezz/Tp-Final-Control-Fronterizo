@@ -42,7 +42,7 @@ public class LoginViewController {
 
     @FXML
     protected void onLoginButtonClick(ActionEvent event) {
-        GestorSonido.reproducirClick();
+        GestorSonido.reproducirLogin();
         String username = usernameField.getText();
         String password = passwordField.getText();
 

@@ -25,7 +25,7 @@ public class ConfigurarPaisesViewController {
 
     @FXML
     void onAgregarPaisClick() {
-        GestorSonido.reproducirClick();
+        GestorSonido.reproducirMenuClick();
         String nuevoPais = txtNombrePais.getText();
         gestorPaises.agregarPais(nuevoPais);
         txtNombrePais.clear();
@@ -33,7 +33,7 @@ public class ConfigurarPaisesViewController {
 
     @FXML
     void onEliminarPaisClick() {
-        GestorSonido.reproducirClick();
+        GestorSonido.reproducirMenuClick();
         String seleccionado = listaPaises.getSelectionModel().getSelectedItem();
         if (seleccionado != null) {
             gestorPaises.eliminarPais(seleccionado);

@@ -33,7 +33,7 @@ public class AdminViewController {
 
     @FXML
     void onGestionarUsuariosClick(ActionEvent ignoredEvent) {
-        GestorSonido.reproducirClick();
+        GestorSonido.reproducirMenuClick();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/gestionar-usuarios-view.fxml"));
             Parent root = loader.load();
@@ -54,7 +54,7 @@ public class AdminViewController {
 
     @FXML
     void onCerrarSesionClick(ActionEvent event) {
-        GestorSonido.reproducirClick();
+        GestorSonido.reproducirMenuClick();
         try {
             Parent loginView = FXMLLoader.load(getClass().getResource("/com/example/demo/login-view.fxml"));
 
@@ -75,7 +75,7 @@ public class AdminViewController {
 
     @FXML
     void onConfigurarPaisesClick(ActionEvent ignoredEvent) {
-        GestorSonido.reproducirClick();
+        GestorSonido.reproducirMenuClick();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/configurar-paises-view.fxml"));
             Parent root = loader.load();
@@ -93,7 +93,7 @@ public class AdminViewController {
 
     @FXML
     void onVerEstadisticasClick(ActionEvent ignoredEvent) {
-        GestorSonido.reproducirClick();
+        GestorSonido.reproducirMenuClick();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/estadisticas-view.fxml"));
             Parent root = loader.load();

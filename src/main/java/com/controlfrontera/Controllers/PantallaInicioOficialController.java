@@ -31,6 +31,7 @@ public class PantallaInicioOficialController {
 
     @FXML
     void iniciarSistema(ActionEvent event) throws IOException {
+        GestorSonido.reproducirMenuClick(); // Nuevo
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/oficial-view.fxml"));
         Parent oficialView = loader.load();
 
@@ -49,7 +50,7 @@ public class PantallaInicioOficialController {
      */
     @FXML
     void onEstadisticasClick() {
-        GestorSonido.reproducirClick();
+        GestorSonido.reproducirMenuClick();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/estadisticas-view.fxml"));
             Parent root = loader.load();
@@ -69,7 +70,7 @@ public class PantallaInicioOficialController {
      */
     @FXML
     void onAjustesClick() {
-        GestorSonido.reproducirClick();
+        GestorSonido.reproducirMenuClick();
         try {
             Parent loginView = FXMLLoader.load(getClass().getResource("/com/example/demo/login-view.fxml"));
             Scene loginScene = new Scene(loginView, 550, 400);

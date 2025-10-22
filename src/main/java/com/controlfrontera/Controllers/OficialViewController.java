@@ -109,13 +109,18 @@ public class OficialViewController {
     }
 
     @FXML void onAprobarClick(ActionEvent ignoredEvent) {
-        GestorSonido.reproducirClick();procesarDecision(true); }
+        GestorSonido.reproducirDecision();
+        procesarDecision(true);
+    }
     @FXML void onRechazarClick(ActionEvent ignoredEvent) {
-        GestorSonido.reproducirClick();procesarDecision(false); }
+        GestorSonido.reproducirDecision();
+        procesarDecision(false);
+    }
 
     @FXML
     void onArrestarClick(ActionEvent ignoredEvent) {
-        GestorSonido.reproducirClick();
+        GestorSonido.reproducirArresto();
+
         if (personaActual != null && !arrestarButton.isDisabled()) {
             boolean arrestoCorrecto = personaActual.isTieneContrabando();
             if (arrestoCorrecto) {
@@ -239,7 +244,8 @@ public class OficialViewController {
 
     @FXML
     void onInspeccionarClick(ActionEvent ignoredEvent) {
-        GestorSonido.reproducirClick();
+        GestorSonido.reproducirInspeccion();
+
         if (personaActual == null) return;
         modoInspeccion = !modoInspeccion;
 
@@ -287,7 +293,8 @@ public class OficialViewController {
 
     @FXML
     void onRayosXClick(ActionEvent ignoredEvent) {
-        GestorSonido.reproducirClick();
+        GestorSonido.reproducirScanner();
+
         if (personaActual != null && modoInspeccion && pesoSospechoso) {
             realizarRadiografia();
             radiografiaLabel.setVisible(true);
@@ -322,7 +329,9 @@ public class OficialViewController {
 
     @FXML
     void onVerReglamentoClick(ActionEvent event) {
-        GestorSonido.reproducirClick();
+
+        GestorSonido.reproducirReglamento();
+
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/reglamento-view.fxml"));
             Parent root = loader.load();
@@ -339,7 +348,8 @@ public class OficialViewController {
     }
 
     @FXML void onAjustesClick(ActionEvent event) {
-        GestorSonido.reproducirClick();
+        GestorSonido.reproducirMenuClick();
+
         ContextMenu contextMenu = new ContextMenu();
         MenuItem estadisticasItem = new MenuItem("Ver Estadísticas");
         estadisticasItem.setOnAction(e -> abrirVentanaEstadisticas());
