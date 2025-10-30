@@ -1,39 +1,49 @@
 package com.controlfrontera.persistencia;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import org.json.JSONArray;
 
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Type;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PersistenciaPaises {
     private static final String RUTA_ARCHIVO = "paises.json";
-    private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    private static final int INDENT_FACTOR = 4;
 
     public static void guardarPaises(ObservableList<String> paises) {
+        JSONArray jsonArray = new JSONArray(paises);
+
         try (FileWriter writer = new FileWriter(RUTA_ARCHIVO)) {
-            gson.toJson(paises, writer);
+            writer.write(jsonArray.toString(INDENT_FACTOR));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public static ObservableList<String> cargarPaises() {
-        try (FileReader reader = new FileReader(RUTA_ARCHIVO)) {
-            Type type = new TypeToken<List<String>>(){}.getType();
-            List<String> paises = gson.fromJson(reader, type);
-            if (paises != null) {
-                return FXCollections.observableArrayList(paises);
+        try {
+            String contenido = new String(Files.readAllBytes(Paths.get(RUTA_ARCHIVO)));
+            JSONArray jsonArray = new JSONArray(contenido);
+
+            List<String> paises = new ArrayList<>();
+            for (int i = 0; i < jsonArray.length(); i++) {
+                paises.add(jsonArray.getString(i));
             }
+
+            return FXCollections.observableArrayList(paises);
+
+        } catch (NoSuchFileException e) {
+            System.out.println("No se encontró archivo de países, se creará uno nuevo.");
         } catch (IOException e) {
-            // Archivo no encontrado, se creará uno nuevo al guardar.
+            e.printStackTrace();
         }
+
         return FXCollections.observableArrayList();
     }
 }

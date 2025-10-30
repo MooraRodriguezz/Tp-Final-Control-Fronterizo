@@ -45,6 +45,24 @@ public class Decision {
         this.fecha = fecha;
     }
 
+    // --- NUEVO CONSTRUCTOR REQUERIDO PARA PERSISTENCIA JSON ---
+    /**
+     * Constructor para deserialización manual desde JSON.
+     * Los campos 'persona' y 'oficial' (transient) permanecen null.
+     */
+    public Decision(String nombrePersona, String idPersona, String nombreOficial, boolean aprobada, String motivo, LocalDateTime fecha) {
+        this.nombrePersona = nombrePersona;
+        this.idPersona = idPersona;
+        this.nombreOficial = nombreOficial;
+        this.aprobada = aprobada;
+        this.motivo = motivo;
+        this.fecha = fecha;
+        this.persona = null; // transient
+        this.oficial = null; // transient
+    }
+    // --- FIN DEL NUEVO CONSTRUCTOR ---
+
+
     // Getters and Setters
     public Persona getPersona() {
         return persona;

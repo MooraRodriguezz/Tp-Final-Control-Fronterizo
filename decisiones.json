@@ -1,162 +1,74 @@
 [
-  {
-    "nombrePersona": "Aragorn",
-    "idPersona": "1",
-    "nombreOficial": "oficial",
-    "aprobada": true,
-    "motivo": "APROBADO (Correcto).",
-    "fecha": "2025-10-20T11:35:14.0180279"
-  },
-  {
-    "nombrePersona": "Frodo Baggins",
-    "idPersona": "2",
-    "nombreOficial": "oficial",
-    "aprobada": false,
-    "motivo": "RECHAZADO (Correcto).",
-    "fecha": "2025-10-20T11:35:18.5951466"
-  },
-  {
-    "nombrePersona": "Aragorn",
-    "idPersona": "1",
-    "nombreOficial": "oficial",
-    "aprobada": false,
-    "motivo": "RECHAZADO (ERROR). Error: Persona válida rechazada.",
-    "fecha": "2025-10-20T12:03:43.9102015"
-  },
-  {
-    "nombrePersona": "Frodo Baggins",
-    "idPersona": "2",
-    "nombreOficial": "oficial",
-    "aprobada": true,
-    "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento \u0027Permiso de Entrada\u0027 (SHR-67890) caducado el 19/10/2025",
-    "fecha": "2025-10-20T12:03:49.7030083"
-  },
-  {
-    "nombrePersona": "Lurtz",
-    "idPersona": "3",
-    "nombreOficial": "oficial",
-    "aprobada": false,
-    "motivo": "RECHAZADO (Correcto).",
-    "fecha": "2025-10-20T12:03:51.1303549"
-  },
-  {
-    "nombrePersona": "Gimli",
-    "idPersona": "4",
-    "nombreOficial": "oficial",
-    "aprobada": false,
-    "motivo": "RECHAZADO (ERROR). Error: Persona válida rechazada.",
-    "fecha": "2025-10-20T12:04:05.8775882"
-  },
-  {
-    "nombrePersona": "Aragorn",
-    "idPersona": "1",
-    "nombreOficial": "oficial",
-    "aprobada": true,
-    "motivo": "APROBADO (Correcto).",
-    "fecha": "2025-10-20T12:09:57.6747308"
-  },
-  {
-    "nombrePersona": "Frodo Baggins",
-    "idPersona": "2",
-    "nombreOficial": "oficial",
-    "aprobada": false,
-    "motivo": "RECHAZADO (Correcto).",
-    "fecha": "2025-10-20T12:09:58.6413171"
-  },
-  {
-    "nombrePersona": "Lurtz",
-    "idPersona": "3",
-    "nombreOficial": "oficial",
-    "aprobada": false,
-    "motivo": "RECHAZADO (Correcto).",
-    "fecha": "2025-10-20T12:10:00.0812986"
-  },
-  {
-    "nombrePersona": "Gimli",
-    "idPersona": "4",
-    "nombreOficial": "oficial",
-    "aprobada": false,
-    "motivo": "RECHAZADO (ERROR). Error: Persona válida rechazada.",
-    "fecha": "2025-10-20T12:10:01.455217"
-  },
-  {
-    "nombrePersona": "Aragorn",
-    "idPersona": "1",
-    "nombreOficial": "oficial",
-    "aprobada": false,
-    "motivo": "RECHAZADO (ERROR). Error: Persona válida rechazada.",
-    "fecha": "2025-10-20T13:06:14.1754095"
-  },
-  {
-    "nombrePersona": "Aragorn",
-    "idPersona": "1",
-    "nombreOficial": "oficial",
-    "aprobada": true,
-    "motivo": "APROBADO (Correcto).",
-    "fecha": "2025-10-20T15:04:53.6756521"
-  },
-  {
-    "nombrePersona": "Frodo Baggins",
-    "idPersona": "2",
-    "nombreOficial": "oficial",
-    "aprobada": true,
-    "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento \u0027Permiso de Entrada\u0027 (SHR-67890) caducado el 19/10/2025",
-    "fecha": "2025-10-20T15:05:38.1291778"
-  },
-  {
-    "nombrePersona": "Aragorn",
-    "idPersona": "1",
-    "nombreOficial": "oficial",
-    "aprobada": true,
-    "motivo": "APROBADO (Correcto).",
-    "fecha": "2025-10-21T10:24:57.9703371"
-  },
-  {
-    "nombrePersona": "Frodo Baggins",
-    "idPersona": "2",
-    "nombreOficial": "oficial",
-    "aprobada": true,
-    "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento \u0027Permiso de Entrada\u0027 (SHR-67890) caducado el 20/10/2025",
-    "fecha": "2025-10-21T10:25:02.1032706"
-  },
-  {
-    "nombrePersona": "Aragorn",
-    "idPersona": "1",
-    "nombreOficial": "oficial",
-    "aprobada": true,
-    "motivo": "APROBADO (Correcto).",
-    "fecha": "2025-10-21T10:26:28.8245576"
-  },
-  {
-    "nombrePersona": "Frodo Baggins",
-    "idPersona": "2",
-    "nombreOficial": "oficial",
-    "aprobada": false,
-    "motivo": "RECHAZADO (Correcto).",
-    "fecha": "2025-10-21T10:26:44.0823156"
-  },
-  {
-    "nombrePersona": "Aragorn",
-    "idPersona": "1",
-    "nombreOficial": "oficial",
-    "aprobada": true,
-    "motivo": "APROBADO (Correcto).",
-    "fecha": "2025-10-21T11:01:33.0202573"
-  },
-  {
-    "nombrePersona": "Frodo Baggins",
-    "idPersona": "2",
-    "nombreOficial": "oficial",
-    "aprobada": false,
-    "motivo": "RECHAZADO (Correcto).",
-    "fecha": "2025-10-21T11:01:35.1192063"
-  },
-  {
-    "nombrePersona": "Lurtz",
-    "idPersona": "3",
-    "nombreOficial": "oficial",
-    "aprobada": true,
-    "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Nacionalidad no permitida: Mordor",
-    "fecha": "2025-10-21T11:01:38.6750829"
-  }
+    {
+        "fecha": "2025-10-30T10:02:39.0355092",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Aragorn",
+        "nombreOficial": "oficial",
+        "idPersona": "1"
+    },
+    {
+        "fecha": "2025-10-30T10:02:46.4661675",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Entrada' (SHR-67890) caducado el 29/10/2025",
+        "aprobada": true,
+        "nombrePersona": "Frodo Baggins",
+        "nombreOficial": "oficial",
+        "idPersona": "2"
+    },
+    {
+        "fecha": "2025-10-30T10:02:51.4912829",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Nacionalidad no permitida: Mordor",
+        "aprobada": true,
+        "nombrePersona": "Lurtz",
+        "nombreOficial": "oficial",
+        "idPersona": "3"
+    },
+    {
+        "fecha": "2025-10-30T10:02:54.8917943",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Gimli",
+        "nombreOficial": "oficial",
+        "idPersona": "4"
+    },
+    {
+        "fecha": "2025-10-30T10:02:58.7289982",
+        "motivo": "RECHAZADO (Correcto).",
+        "aprobada": false,
+        "nombrePersona": "Legolas",
+        "nombreOficial": "oficial",
+        "idPersona": "5"
+    },
+    {
+        "fecha": "2025-10-30T10:03:07.7913701",
+        "motivo": "ARRESTADO (Contrabando)",
+        "aprobada": false,
+        "nombrePersona": "Boromir",
+        "nombreOficial": "oficial",
+        "idPersona": "6"
+    },
+    {
+        "fecha": "2025-10-30T10:03:15.7062924",
+        "motivo": "ARRESTADO (Contrabando)",
+        "aprobada": false,
+        "nombrePersona": "Éowyn",
+        "nombreOficial": "oficial",
+        "idPersona": "7"
+    },
+    {
+        "fecha": "2025-10-30T10:03:21.9535644",
+        "motivo": "ARRESTADO (Contrabando)",
+        "aprobada": false,
+        "nombrePersona": "Grima",
+        "nombreOficial": "oficial",
+        "idPersona": "8"
+    },
+    {
+        "fecha": "2025-10-30T10:03:27.5044782",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Samwise",
+        "nombreOficial": "oficial",
+        "idPersona": "9"
+    }
 ]

@@ -19,11 +19,25 @@ public class Oficial extends Usuario {
         super(nombre, contrasenia, rol);
     }
 
+    // --- Getters y Setters existentes y nuevos ---
 
     public int getPuntuacion() { return puntuacion; }
     public void setPuntuacion(int puntuacion) { this.puntuacion = puntuacion; }
+
     public int getTotalAciertos() { return totalAciertos; }
+    // MÉTODO NUEVO
+    public void setTotalAciertos(int totalAciertos) { this.totalAciertos = totalAciertos; }
+
     public int getTotalErrores() { return totalErrores; }
+    // MÉTODO NUEVO
+    public void setTotalErrores(int totalErrores) { this.totalErrores = totalErrores; }
+
+    // MÉTODOS NUEVOS
+    public int getErroresConsecutivos() { return erroresConsecutivos; }
+    public void setErroresConsecutivos(int erroresConsecutivos) { this.erroresConsecutivos = erroresConsecutivos; }
+
+
+    // --- Lógica del Oficial ---
 
     public void registrarAcierto() {
         this.puntuacion += 50;

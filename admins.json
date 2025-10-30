@@ -1,7 +1,5 @@
-[
-  {
-    "nombre": "admin",
+[{
     "contrasenia": "admin123",
+    "nombre": "admin",
     "rol": "ADMIN"
-  }
-]
+}]
