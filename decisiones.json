@@ -70,5 +70,77 @@
         "nombrePersona": "Samwise",
         "nombreOficial": "oficial",
         "idPersona": "9"
+    },
+    {
+        "fecha": "2025-11-06T23:19:21.981613",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Aragorn",
+        "nombreOficial": "oficial",
+        "idPersona": "1"
+    },
+    {
+        "fecha": "2025-11-06T23:19:23.4683187",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Entrada' (SHR-67890) caducado el 29/10/2024",
+        "aprobada": true,
+        "nombrePersona": "Frodo Baggins",
+        "nombreOficial": "oficial",
+        "idPersona": "2"
+    },
+    {
+        "fecha": "2025-11-06T23:19:24.77798",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Nacionalidad no permitida: Mordor",
+        "aprobada": true,
+        "nombrePersona": "Lurtz",
+        "nombreOficial": "oficial",
+        "idPersona": "3"
+    },
+    {
+        "fecha": "2025-11-06T23:19:25.5324051",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Gimli",
+        "nombreOficial": "oficial",
+        "idPersona": "4"
+    },
+    {
+        "fecha": "2025-11-06T23:19:27.0425696",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Trabajo' (PE-ART-111) caducado el 31/12/2028",
+        "aprobada": true,
+        "nombrePersona": "Legolas",
+        "nombreOficial": "oficial",
+        "idPersona": "5"
+    },
+    {
+        "fecha": "2025-11-06T23:19:30.0578685",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Entrada' (ARG-T-TEMP) caducado el 20/10/2024",
+        "aprobada": true,
+        "nombrePersona": "Boromir",
+        "nombreOficial": "oficial",
+        "idPersona": "6"
+    },
+    {
+        "fecha": "2025-11-06T23:19:31.3015562",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Éowyn",
+        "nombreOficial": "oficial",
+        "idPersona": "7"
+    },
+    {
+        "fecha": "2025-11-06T23:19:32.5006956",
+        "motivo": "RECHAZADO (Correcto).",
+        "aprobada": false,
+        "nombrePersona": "Grima",
+        "nombreOficial": "oficial",
+        "idPersona": "8"
+    },
+    {
+        "fecha": "2025-11-06T23:19:33.2214464",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Samwise",
+        "nombreOficial": "oficial",
+        "idPersona": "9"
     }
 ]

@@ -1,0 +1,188 @@
+[
+  {
+    "id": "1",
+    "nombre": "Aragorn",
+    "nacionalidad": "Argentina",
+    "fechaNacimiento": "1987-03-01",
+    "altura": 181.0,
+    "peso": 90.5,
+    "nombreImagen": "Aragorn.jpg",
+    "sospechosa": false,
+    "documentos": [
+      {
+        "tipo": "Pasaporte",
+        "numeroIdentificacion": "GDR-12345",
+        "paisEmisor": "Argentina",
+        "valido": true,
+        "fechaExpiracion": "2035-11-06"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "nombre": "Frodo Baggins",
+    "nacionalidad": "Chile",
+    "fechaNacimiento": "1988-09-22",
+    "altura": 107.0,
+    "peso": 40.8,
+    "nombreImagen": "Frodo.jpg",
+    "sospechosa": true,
+    "documentos": [
+      {
+        "tipo": "PermisoEntrada",
+        "numeroIdentificacion": "SHR-67890",
+        "paisEmisor": "Chile",
+        "valido": true,
+        "motivoViaje": "Negocios",
+        "fechaExpiracion": "2024-10-29"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "nombre": "Lurtz",
+    "nacionalidad": "Mordor",
+    "fechaNacimiento": "1995-05-15",
+    "altura": 190.0,
+    "peso": 105.2,
+    "nombreImagen": "Lurtz.jpg",
+    "sospechosa": true,
+    "documentos": [
+      {
+        "tipo": "Pasaporte",
+        "numeroIdentificacion": "MDR-X6Y7",
+        "paisEmisor": "Mordor",
+        "valido": true,
+        "fechaExpiracion": "2040-01-01"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "nombre": "Gimli",
+    "nacionalidad": "Chile",
+    "fechaNacimiento": "1979-11-05",
+    "altura": 140.0,
+    "peso": 85.0,
+    "nombreImagen": null,
+    "sospechosa": false,
+    "documentos": [
+      {
+        "tipo": "PermisoTrabajo",
+        "numeroIdentificacion": "CL-ENG-987",
+        "paisEmisor": "Chile",
+        "valido": true,
+        "fechaExpiracion": "2030-06-15",
+        "profesionAutorizada": "INGENIERO",
+        "empleador": "Minera Andina"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "nombre": "Legolas",
+    "nacionalidad": "Peru",
+    "fechaNacimiento": "2000-06-20",
+    "altura": 185.0,
+    "peso": 70.0,
+    "nombreImagen": null,
+    "sospechosa": false,
+    "documentos": [
+      {
+        "tipo": "PermisoTrabajo",
+        "numeroIdentificacion": "PE-ART-111",
+        "paisEmisor": "Peru",
+        "valido": true,
+        "fechaExpiracion": "2028-12-31",
+        "profesionAutorizada": "ARTESANO",
+        "empleador": "Mercado Local"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "nombre": "Boromir",
+    "nacionalidad": "Argentina",
+    "fechaNacimiento": "1985-01-10",
+    "altura": 183.0,
+    "peso": 95.0,
+    "nombreImagen": null,
+    "sospechosa": true,
+    "documentos": [
+      {
+        "tipo": "Pasaporte",
+        "numeroIdentificacion": "ARG-P-555",
+        "paisEmisor": "Argentina",
+        "valido": true,
+        "fechaExpiracion": "2033-03-03"
+      },
+      {
+        "tipo": "PermisoEntrada",
+        "numeroIdentificacion": "ARG-T-TEMP",
+        "paisEmisor": "Argentina",
+        "valido": true,
+        "motivoViaje": "Turismo",
+        "fechaExpiracion": "2024-10-20"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "nombre": "Éowyn",
+    "nacionalidad": "Argentina",
+    "fechaNacimiento": "1990-08-01",
+    "altura": 170.0,
+    "peso": 65.0,
+    "nombreImagen": null,
+    "sospechosa": false,
+    "documentos": [
+      {
+        "tipo": "PermisoEntrada",
+        "numeroIdentificacion": "ARG-TUR-XYZ",
+        "paisEmisor": "Argentina",
+        "valido": true,
+        "motivoViaje": "Turismo",
+        "fechaExpiracion": "2026-02-15"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "nombre": "Grima",
+    "nacionalidad": "Peru",
+    "fechaNacimiento": "1970-01-01",
+    "altura": 175.0,
+    "peso": 60.0,
+    "nombreImagen": null,
+    "sospechosa": true,
+    "documentos": [
+      {
+        "tipo": "PermisoEntrada",
+        "numeroIdentificacion": "PE-INV-456",
+        "paisEmisor": "Peru",
+        "valido": true,
+        "motivoViaje": "Invasión",
+        "fechaExpiracion": "2026-04-01"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "nombre": "Samwise",
+    "nacionalidad": "Chile",
+    "fechaNacimiento": "1989-04-06",
+    "altura": 160.0,
+    "peso": 75.0,
+    "nombreImagen": null,
+    "sospechosa": false,
+    "documentos": [
+      {
+        "tipo": "Pasaporte",
+        "numeroIdentificacion": "CHL-P-999",
+        "paisEmisor": "Chile",
+        "valido": true,
+        "fechaExpiracion": "2035-10-10"
+      }
+    ]
+  }
+]

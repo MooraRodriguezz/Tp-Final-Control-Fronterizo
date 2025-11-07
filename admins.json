@@ -1,5 +1,6 @@
 [{
     "contrasenia": "admin123",
     "nombre": "admin",
-    "rol": "ADMIN"
+    "rol": "ADMIN",
+    "activo": true
 }]
