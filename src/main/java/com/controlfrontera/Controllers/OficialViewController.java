@@ -43,6 +43,8 @@ import java.util.Set;
 
 import java.util.concurrent.ThreadLocalRandom;
 import com.controlfrontera.usuarios.GestorSonido;
+// NUEVO IMPORT
+import com.controlfrontera.persistencia.PersistenciaPersonas;
 
 public class OficialViewController {
 
@@ -87,7 +89,16 @@ public class OficialViewController {
     @FXML
     public void initialize() {
         fechaLabel.setText("Fecha: " + LocalDate.now().format(formatterFechaHoy));
-        crearDatosDePrueba();
+
+        // --- MODIFICADO ---
+        // Ya no se llama a crearDatosDePrueba()
+        // Ahora cargamos las personas desde el JSON
+        this.filaDePersonas = PersistenciaPersonas.cargarPersonas();
+        if (this.filaDePersonas.isEmpty()) {
+            System.err.println("No se cargaron personas desde el JSON. La fila está vacía.");
+        }
+        // --- FIN DE MODIFICACIÓN ---
+
         documentosListView.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 mostrarDetalleDocumento(newSelection);
@@ -217,7 +228,7 @@ public class OficialViewController {
     }
 
     private void cargarImagenPersona(String nombreImagen) {
-        if (nombreImagen != null) {
+        if (nombreImagen != null && !nombreImagen.isEmpty()) {
             try { String imagePath = "/images/" + nombreImagen; Image img = new Image(getClass().getResourceAsStream(imagePath)); fotoPersonaImageView.setImage(img); }
             catch (Exception e) { fotoPersonaImageView.setImage(null); System.err.println("No se pudo cargar la imagen: " + nombreImagen + " - " + e.getMessage()); }
         } else { fotoPersonaImageView.setImage(null); }
@@ -416,64 +427,4 @@ public class OficialViewController {
         alert.showAndWait();
     }
 
-    private void crearDatosDePrueba() {
-        this.filaDePersonas = new LinkedList<>();
-        long d = 86400000L;
-        long a = 31536000000L;
-        Date hoy = new Date();
-
-        Date fnA = new GregorianCalendar(1987, Calendar.MARCH, 1).getTime();
-        Date fnF = new GregorianCalendar(1988, Calendar.SEPTEMBER, 22).getTime();
-        Date fnL = new GregorianCalendar(1995, Calendar.MAY, 15).getTime();
-        Date fnG = new GregorianCalendar(1979, Calendar.NOVEMBER, 5).getTime();
-        Date fnLe = new GregorianCalendar(2000, Calendar.JUNE, 20).getTime();
-        Date fnB = new GregorianCalendar(1985, Calendar.JANUARY, 10).getTime();
-        Date fnE = new GregorianCalendar(1990, Calendar.AUGUST, 1).getTime();
-
-        // Persona 1
-        Pasaporte p1d1 = new Pasaporte("GDR-12345", "Argentina", true, new Date(hoy.getTime() + a));
-        Persona p1 = new Persona("Aragorn", "Argentina", Set.of(p1d1), "1", false, "Aragorn.jpg", fnA, 90.5, 181);
-        filaDePersonas.add(p1);
-
-        // Persona 2
-        PermisoEntrada p2d1 = new PermisoEntrada("SHR-67890", "Chile", true, "Negocios", new Date(hoy.getTime() - d));
-        Persona p2 = new Persona("Frodo Baggins", "Chile", Set.of(p2d1), "2", true, "Frodo.jpg", fnF, 40.8, 107);
-        filaDePersonas.add(p2);
-
-        // Persona 3
-        Pasaporte p3d1 = new Pasaporte("MDR-X6Y7", "Mordor", true, new Date(hoy.getTime() + a * 2));
-        Persona p3 = new Persona("Lurtz", "Mordor", Set.of(p3d1), "3", true, "Lurtz.jpg", fnL, 105.2, 190);
-        filaDePersonas.add(p3);
-
-        // Persona 4
-        PermisoTrabajo p4d1 = new PermisoTrabajo("CL-ENG-987", "Chile", true, new Date(hoy.getTime() + a / 2), "INGENIERO", "Minera Andina");
-        Persona p4 = new Persona("Gimli", "Chile", Set.of(p4d1), "4", false, null, fnG, 85.0, 140);
-        filaDePersonas.add(p4);
-
-        // Persona 5
-        PermisoTrabajo p5d1 = new PermisoTrabajo("PE-ART-111", "Peru", true, new Date(hoy.getTime() + a), "ARTESANO", "Mercado Local");
-        Persona p5 = new Persona("Legolas", "Peru", Set.of(p5d1), "5", false, null, fnLe, 70.0, 185);
-        filaDePersonas.add(p5);
-
-        // Persona 6
-        Pasaporte p6d1 = new Pasaporte("ARG-P-555", "Argentina", true, new Date(hoy.getTime() + a * 3));
-        PermisoEntrada p6d2 = new PermisoEntrada("ARG-T-TEMP", "Argentina", true, "Turismo", new Date(hoy.getTime() - d * 10));
-        Persona p6 = new Persona("Boromir", "Argentina", Set.of(p6d1, p6d2), "6", true, null, fnB, 95.0, 183);
-        filaDePersonas.add(p6);
-
-        // Persona 7
-        PermisoEntrada p7d1 = new PermisoEntrada("ARG-TUR-XYZ", "Argentina", true, "Turismo", new Date(hoy.getTime() + d * 80));
-        Persona p7 = new Persona("Éowyn", "Argentina", Set.of(p7d1), "7", false, null, fnE, 65.0, 170);
-        filaDePersonas.add(p7);
-
-        // Persona 8
-        PermisoEntrada p8d1 = new PermisoEntrada("PE-INV-456", "Peru", true, "Invasión", new Date(hoy.getTime() + d * 150));
-        Persona p8 = new Persona("Grima", "Peru", Set.of(p8d1), "8", true, null, new GregorianCalendar(1970, Calendar.JANUARY, 1).getTime(), 60.0, 175);
-        filaDePersonas.add(p8);
-
-        // Persona 9
-        Pasaporte p9d1 = new Pasaporte("CHL-P-999", "Chile", true, new Date(hoy.getTime() + a * 5));
-        Persona p9 = new Persona("Samwise", "Chile", Set.of(p9d1), "9", false, null, new GregorianCalendar(1989, Calendar.APRIL, 6).getTime(), 75.0, 160);
-        filaDePersonas.add(p9);
-    }
 }

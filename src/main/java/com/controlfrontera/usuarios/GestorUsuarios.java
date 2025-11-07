@@ -40,13 +40,15 @@ public class GestorUsuarios {
 
     public Usuario autenticarUsuario(String nombre, String contrasenia) {
         Usuario usuario = mapaDeUsuarios.get(nombre);
-        if (usuario != null && usuario.getContrasenia().equals(contrasenia)) {
+        // MODIFICADO: Ahora comprueba si el usuario está activo
+        if (usuario != null && usuario.getContrasenia().equals(contrasenia) && usuario.isActivo()) {
             return usuario;
         }
         return null;
     }
 
     public ObservableList<Usuario> getListaDeUsuarios() {
+        // Devuelve todos los usuarios (activos e inactivos) para el panel de admin
         return FXCollections.observableArrayList(mapaDeUsuarios.values());
     }
 
@@ -66,12 +68,9 @@ public class GestorUsuarios {
         }
     }
 
-    public void eliminarUsuario(Usuario usuarioAEliminar) {
-        if (usuarioAEliminar != null) {
-            mapaDeUsuarios.remove(usuarioAEliminar.getNombre());
-            guardarUsuarios();
-        }
-    }
+    // ELIMINADO: eliminarUsuario(Usuario usuarioAEliminar)
+    // La baja se maneja modificando el objeto y llamando a guardarUsuarios()
+    // desde el controlador.
 
     public void guardarUsuarios() {
         PersistenciaGestorUsuarios.guardarUsuarios(getListaDeUsuarios());

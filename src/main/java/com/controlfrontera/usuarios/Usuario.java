@@ -7,16 +7,20 @@ public abstract class Usuario {
     private String nombre;
     private String contrasenia;
     private String rol;
+    private boolean activo;
 
     // Constructores
     public Usuario() {
+        this.activo = true;
     }
 
     public Usuario(String nombre, String contrasenia, String rol) {
         this.nombre = nombre;
         this.contrasenia = contrasenia;
         this.rol = rol;
+        this.activo = true;
     }
+
     // Getters and Setters
     public String getNombre() {
         return nombre;
@@ -40,5 +44,13 @@ public abstract class Usuario {
 
     public void setRol(String rol) {
         this.rol = rol;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
 }

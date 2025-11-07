@@ -44,6 +44,7 @@ public class PersistenciaGestorUsuarios {
             jsonOficial.put("nombre", o.getNombre());
             jsonOficial.put("contrasenia", o.getContrasenia());
             jsonOficial.put("rol", o.getRol());
+            jsonOficial.put("activo", o.isActivo()); // MODIFICADO
             jsonOficiales.put(jsonOficial);
         }
 
@@ -60,6 +61,7 @@ public class PersistenciaGestorUsuarios {
             jsonAdmin.put("nombre", a.getNombre());
             jsonAdmin.put("contrasenia", a.getContrasenia());
             jsonAdmin.put("rol", a.getRol());
+            jsonAdmin.put("activo", a.isActivo()); // MODIFICADO
             jsonAdmins.put(jsonAdmin);
         }
 
@@ -88,6 +90,8 @@ public class PersistenciaGestorUsuarios {
                 oficial.setTotalAciertos(jsonOficial.getInt("totalAciertos"));
                 oficial.setTotalErrores(jsonOficial.getInt("totalErrores"));
                 oficial.setErroresConsecutivos(jsonOficial.optInt("erroresConsecutivos", 0));
+                // Carga el estado 'activo', si no existe, es 'true' por defecto
+                oficial.setActivo(jsonOficial.optBoolean("activo", true)); // MODIFICADO
 
                 listaCombinada.add(oficial);
             }
@@ -108,6 +112,7 @@ public class PersistenciaGestorUsuarios {
                 admin.setNombre(jsonAdmin.getString("nombre"));
                 admin.setContrasenia(jsonAdmin.getString("contrasenia"));
                 admin.setRol(jsonAdmin.getString("rol"));
+                admin.setActivo(jsonAdmin.optBoolean("activo", true)); // MODIFICADO
                 listaCombinada.add(admin);
             }
         } catch (NoSuchFileException e) {
