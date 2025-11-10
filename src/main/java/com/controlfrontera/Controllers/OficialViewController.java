@@ -238,8 +238,6 @@ public class OficialViewController {
         if (doc == null) { limpiarDetalleDocumento(); return; }
         lblTipo.setText(doc.getTipo()); lblNumero.setText(doc.getNumeroIdentificacion()); lblPaisEmisor.setText(doc.getPaisEmisor());
         lblFechaExp.setText(doc.getFechaExpiracion() != null ? formatterDoc.format(doc.getFechaExpiracion()) : "N/A");
-        boolean esValido = doc.validar();
-        lblEstado.setText(esValido ? "VÁLIDO" : "INVÁLIDO"); lblEstado.setStyle(esValido ? "-fx-text-fill: #4CAF50;" : "-fx-text-fill: #ff4d4d;");
     }
 
     private void limpiarDetalleDocumento() {

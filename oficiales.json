@@ -1,10 +1,10 @@
 [{
     "erroresConsecutivos": 0,
-    "puntuacion": 675,
-    "totalAciertos": 12,
+    "puntuacion": 1115,
+    "totalAciertos": 20,
     "contrasenia": "pass123",
     "nombre": "oficial",
     "rol": "OFICIAL",
-    "totalErrores": 6,
+    "totalErrores": 7,
     "activo": true
 }]

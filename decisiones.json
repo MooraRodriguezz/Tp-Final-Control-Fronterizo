@@ -142,5 +142,77 @@
         "nombrePersona": "Samwise",
         "nombreOficial": "oficial",
         "idPersona": "9"
+    },
+    {
+        "fecha": "2025-11-10T13:22:16.1514923",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Aragorn",
+        "nombreOficial": "oficial",
+        "idPersona": "1"
+    },
+    {
+        "fecha": "2025-11-10T13:22:17.7507587",
+        "motivo": "RECHAZADO (Correcto).",
+        "aprobada": false,
+        "nombrePersona": "Frodo Baggins",
+        "nombreOficial": "oficial",
+        "idPersona": "2"
+    },
+    {
+        "fecha": "2025-11-10T13:22:21.6359335",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Nacionalidad no permitida: Mordor",
+        "aprobada": true,
+        "nombrePersona": "Lurtz",
+        "nombreOficial": "oficial",
+        "idPersona": "3"
+    },
+    {
+        "fecha": "2025-11-10T13:22:27.3591039",
+        "motivo": "ARRESTADO (Contrabando)",
+        "aprobada": false,
+        "nombrePersona": "Gimli",
+        "nombreOficial": "oficial",
+        "idPersona": "4"
+    },
+    {
+        "fecha": "2025-11-10T13:22:30.0178853",
+        "motivo": "RECHAZADO (Correcto).",
+        "aprobada": false,
+        "nombrePersona": "Legolas",
+        "nombreOficial": "oficial",
+        "idPersona": "5"
+    },
+    {
+        "fecha": "2025-11-10T13:22:31.5304056",
+        "motivo": "RECHAZADO (Correcto).",
+        "aprobada": false,
+        "nombrePersona": "Boromir",
+        "nombreOficial": "oficial",
+        "idPersona": "6"
+    },
+    {
+        "fecha": "2025-11-10T13:22:33.3007276",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Éowyn",
+        "nombreOficial": "oficial",
+        "idPersona": "7"
+    },
+    {
+        "fecha": "2025-11-10T13:22:34.9440736",
+        "motivo": "RECHAZADO (Correcto).",
+        "aprobada": false,
+        "nombrePersona": "Grima",
+        "nombreOficial": "oficial",
+        "idPersona": "8"
+    },
+    {
+        "fecha": "2025-11-10T13:22:36.0912829",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Samwise",
+        "nombreOficial": "oficial",
+        "idPersona": "9"
     }
 ]

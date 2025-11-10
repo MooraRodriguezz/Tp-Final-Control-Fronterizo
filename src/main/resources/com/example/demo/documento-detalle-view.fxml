@@ -29,9 +29,6 @@
 
                 <Label text="EXPIRA:" GridPane.rowIndex="3" />
                 <Label fx:id="lblFechaExp" styleClass="info-data" text="[...]" GridPane.rowIndex="3" GridPane.columnIndex="1" />
-
-                <Label text="ESTADO:" GridPane.rowIndex="4" />
-                <Label fx:id="lblEstado" styleClass="info-data" text="[...]" GridPane.rowIndex="4" GridPane.columnIndex="1" />
             </children>
         </GridPane>
     </center>
