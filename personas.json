@@ -25,7 +25,7 @@
     "fechaNacimiento": "1988-09-22",
     "altura": 107.0,
     "peso": 40.8,
-    "nombreImagen": "Frodo.jpg",
+    "nombreImagen": "Frodo Baggins.jpg",
     "sospechosa": true,
     "documentos": [
       {
@@ -64,7 +64,7 @@
     "fechaNacimiento": "1979-11-05",
     "altura": 140.0,
     "peso": 85.0,
-    "nombreImagen": null,
+    "nombreImagen": "Gimli.jpg",
     "sospechosa": false,
     "documentos": [
       {
@@ -85,7 +85,7 @@
     "fechaNacimiento": "2000-06-20",
     "altura": 185.0,
     "peso": 70.0,
-    "nombreImagen": null,
+    "nombreImagen": "Legolas.jpg",
     "sospechosa": false,
     "documentos": [
       {
@@ -106,7 +106,7 @@
     "fechaNacimiento": "1985-01-10",
     "altura": 183.0,
     "peso": 95.0,
-    "nombreImagen": null,
+    "nombreImagen": "Boromir.jpg",
     "sospechosa": true,
     "documentos": [
       {
@@ -133,7 +133,7 @@
     "fechaNacimiento": "1990-08-01",
     "altura": 170.0,
     "peso": 65.0,
-    "nombreImagen": null,
+    "nombreImagen": "Éowyn.jpg",
     "sospechosa": false,
     "documentos": [
       {
@@ -153,7 +153,7 @@
     "fechaNacimiento": "1970-01-01",
     "altura": 175.0,
     "peso": 60.0,
-    "nombreImagen": null,
+    "nombreImagen": "Grima.jpg",
     "sospechosa": true,
     "documentos": [
       {
@@ -173,7 +173,7 @@
     "fechaNacimiento": "1989-04-06",
     "altura": 160.0,
     "peso": 75.0,
-    "nombreImagen": null,
+    "nombreImagen": "Samwise.jpg",
     "sospechosa": false,
     "documentos": [
       {
