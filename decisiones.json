@@ -214,5 +214,509 @@
         "nombrePersona": "Samwise",
         "nombreOficial": "oficial",
         "idPersona": "9"
+    },
+    {
+        "fecha": "2025-11-13T17:46:00.03727",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Aragorn",
+        "nombreOficial": "nashe",
+        "idPersona": "1"
+    },
+    {
+        "fecha": "2025-11-13T17:46:05.666512",
+        "motivo": "RECHAZADO (Correcto).",
+        "aprobada": false,
+        "nombrePersona": "Frodo Baggins",
+        "nombreOficial": "nashe",
+        "idPersona": "2"
+    },
+    {
+        "fecha": "2025-11-13T17:46:10.55473",
+        "motivo": "RECHAZADO (Correcto).",
+        "aprobada": false,
+        "nombrePersona": "Lurtz",
+        "nombreOficial": "nashe",
+        "idPersona": "3"
+    },
+    {
+        "fecha": "2025-11-13T17:46:12.268063",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Gimli",
+        "nombreOficial": "nashe",
+        "idPersona": "4"
+    },
+    {
+        "fecha": "2025-11-13T17:46:18.3460627",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Trabajo' (PE-ART-111) caducado el 31/12/2028",
+        "aprobada": true,
+        "nombrePersona": "Legolas",
+        "nombreOficial": "nashe",
+        "idPersona": "5"
+    },
+    {
+        "fecha": "2025-11-13T17:46:31.0624377",
+        "motivo": "RECHAZADO (Correcto).",
+        "aprobada": false,
+        "nombrePersona": "Boromir",
+        "nombreOficial": "nashe",
+        "idPersona": "6"
+    },
+    {
+        "fecha": "2025-11-13T17:46:35.3590483",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Éowyn",
+        "nombreOficial": "nashe",
+        "idPersona": "7"
+    },
+    {
+        "fecha": "2025-11-13T17:49:31.6445738",
+        "motivo": "ARRESTADO (Contrabando)",
+        "aprobada": false,
+        "nombrePersona": "Grima",
+        "nombreOficial": "nashe",
+        "idPersona": "8"
+    },
+    {
+        "fecha": "2025-11-13T17:49:34.8946158",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Samwise",
+        "nombreOficial": "nashe",
+        "idPersona": "9"
+    },
+    {
+        "fecha": "2025-11-13T17:52:09.6386866",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Aragorn",
+        "nombreOficial": "nashe",
+        "idPersona": "1"
+    },
+    {
+        "fecha": "2025-11-13T17:52:25.8714487",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Entrada' (SHR-67890) caducado el 29/10/2024",
+        "aprobada": true,
+        "nombrePersona": "Frodo Baggins",
+        "nombreOficial": "nashe",
+        "idPersona": "2"
+    },
+    {
+        "fecha": "2025-11-13T17:52:49.3000419",
+        "motivo": "ARRESTADO (Contrabando)",
+        "aprobada": false,
+        "nombrePersona": "Lurtz",
+        "nombreOficial": "nashe",
+        "idPersona": "3"
+    },
+    {
+        "fecha": "2025-11-13T17:53:14.2528",
+        "motivo": "ARRESTADO (Contrabando)",
+        "aprobada": false,
+        "nombrePersona": "Gimli",
+        "nombreOficial": "nashe",
+        "idPersona": "4"
+    },
+    {
+        "fecha": "2025-11-13T17:53:17.2310599",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Trabajo' (PE-ART-111) caducado el 31/12/2028",
+        "aprobada": true,
+        "nombrePersona": "Legolas",
+        "nombreOficial": "nashe",
+        "idPersona": "5"
+    },
+    {
+        "fecha": "2025-11-13T17:53:25.2591217",
+        "motivo": "ARRESTADO (Contrabando)",
+        "aprobada": false,
+        "nombrePersona": "Boromir",
+        "nombreOficial": "nashe",
+        "idPersona": "6"
+    },
+    {
+        "fecha": "2025-11-13T17:53:27.3175872",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Éowyn",
+        "nombreOficial": "nashe",
+        "idPersona": "7"
+    },
+    {
+        "fecha": "2025-11-13T17:53:31.0231286",
+        "motivo": "ARRESTADO (Contrabando)",
+        "aprobada": false,
+        "nombrePersona": "Grima",
+        "nombreOficial": "nashe",
+        "idPersona": "8"
+    },
+    {
+        "fecha": "2025-11-13T17:53:34.2789569",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Samwise",
+        "nombreOficial": "nashe",
+        "idPersona": "9"
+    },
+    {
+        "fecha": "2025-11-13T17:57:31.9883453",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Aragorn",
+        "nombreOficial": "nashe",
+        "idPersona": "1"
+    },
+    {
+        "fecha": "2025-11-13T17:57:33.623697",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Entrada' (SHR-67890) caducado el 29/10/2024",
+        "aprobada": true,
+        "nombrePersona": "Frodo Baggins",
+        "nombreOficial": "nashe",
+        "idPersona": "2"
+    },
+    {
+        "fecha": "2025-11-13T17:57:35.3026956",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Nacionalidad no permitida: Mordor",
+        "aprobada": true,
+        "nombrePersona": "Lurtz",
+        "nombreOficial": "nashe",
+        "idPersona": "3"
+    },
+    {
+        "fecha": "2025-11-13T17:57:35.746643",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Gimli",
+        "nombreOficial": "nashe",
+        "idPersona": "4"
+    },
+    {
+        "fecha": "2025-11-13T17:57:37.1708068",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Trabajo' (PE-ART-111) caducado el 31/12/2028",
+        "aprobada": true,
+        "nombrePersona": "Legolas",
+        "nombreOficial": "nashe",
+        "idPersona": "5"
+    },
+    {
+        "fecha": "2025-11-13T17:57:39.2454239",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Entrada' (ARG-T-TEMP) caducado el 20/10/2024",
+        "aprobada": true,
+        "nombrePersona": "Boromir",
+        "nombreOficial": "nashe",
+        "idPersona": "6"
+    },
+    {
+        "fecha": "2025-11-13T17:57:39.8971042",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Éowyn",
+        "nombreOficial": "nashe",
+        "idPersona": "7"
+    },
+    {
+        "fecha": "2025-11-13T17:57:41.2116486",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Entrada' (PE-INV-456) caducado el 01/04/2026",
+        "aprobada": true,
+        "nombrePersona": "Grima",
+        "nombreOficial": "nashe",
+        "idPersona": "8"
+    },
+    {
+        "fecha": "2025-11-13T17:57:41.7766312",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Samwise",
+        "nombreOficial": "nashe",
+        "idPersona": "9"
+    },
+    {
+        "fecha": "2025-11-13T18:01:06.6168379",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Aragorn",
+        "nombreOficial": "nashe",
+        "idPersona": "1"
+    },
+    {
+        "fecha": "2025-11-13T18:01:09.4389266",
+        "motivo": "RECHAZADO (Correcto).",
+        "aprobada": false,
+        "nombrePersona": "Frodo Baggins",
+        "nombreOficial": "nashe",
+        "idPersona": "2"
+    },
+    {
+        "fecha": "2025-11-13T18:01:19.4290089",
+        "motivo": "ARRESTADO (Contrabando)",
+        "aprobada": false,
+        "nombrePersona": "Lurtz",
+        "nombreOficial": "nashe",
+        "idPersona": "3"
+    },
+    {
+        "fecha": "2025-11-13T18:01:27.3837265",
+        "motivo": "RECHAZADO (ERROR). Error: Persona válida rechazada.",
+        "aprobada": false,
+        "nombrePersona": "Gimli",
+        "nombreOficial": "nashe",
+        "idPersona": "4"
+    },
+    {
+        "fecha": "2025-11-13T18:01:42.9985291",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Trabajo' (PE-ART-111) caducado el 31/12/2028",
+        "aprobada": true,
+        "nombrePersona": "Legolas",
+        "nombreOficial": "nashe",
+        "idPersona": "5"
+    },
+    {
+        "fecha": "2025-11-13T18:01:54.9753876",
+        "motivo": "RECHAZADO (Correcto).",
+        "aprobada": false,
+        "nombrePersona": "Boromir",
+        "nombreOficial": "nashe",
+        "idPersona": "6"
+    },
+    {
+        "fecha": "2025-11-13T18:01:59.1341037",
+        "motivo": "ARRESTADO (Contrabando)",
+        "aprobada": false,
+        "nombrePersona": "Éowyn",
+        "nombreOficial": "nashe",
+        "idPersona": "7"
+    },
+    {
+        "fecha": "2025-11-13T18:02:03.0713616",
+        "motivo": "ARRESTADO (Contrabando)",
+        "aprobada": false,
+        "nombrePersona": "Grima",
+        "nombreOficial": "nashe",
+        "idPersona": "8"
+    },
+    {
+        "fecha": "2025-11-13T18:02:11.2858414",
+        "motivo": "ARRESTADO (Contrabando)",
+        "aprobada": false,
+        "nombrePersona": "Samwise",
+        "nombreOficial": "nashe",
+        "idPersona": "9"
+    },
+    {
+        "fecha": "2025-11-13T18:09:16.7068402",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Aragorn",
+        "nombreOficial": "nashe",
+        "idPersona": "1"
+    },
+    {
+        "fecha": "2025-11-13T18:09:18.0710339",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Entrada' (SHR-67890) caducado el 29/10/2024",
+        "aprobada": true,
+        "nombrePersona": "Frodo Baggins",
+        "nombreOficial": "nashe",
+        "idPersona": "2"
+    },
+    {
+        "fecha": "2025-11-13T18:09:18.5639025",
+        "motivo": "RECHAZADO (Correcto).",
+        "aprobada": false,
+        "nombrePersona": "Lurtz",
+        "nombreOficial": "nashe",
+        "idPersona": "3"
+    },
+    {
+        "fecha": "2025-11-13T18:09:19.7932369",
+        "motivo": "RECHAZADO (ERROR). Error: Persona válida rechazada.",
+        "aprobada": false,
+        "nombrePersona": "Gimli",
+        "nombreOficial": "nashe",
+        "idPersona": "4"
+    },
+    {
+        "fecha": "2025-11-13T18:09:20.4458213",
+        "motivo": "RECHAZADO (Correcto).",
+        "aprobada": false,
+        "nombrePersona": "Legolas",
+        "nombreOficial": "nashe",
+        "idPersona": "5"
+    },
+    {
+        "fecha": "2025-11-13T18:09:21.1010752",
+        "motivo": "RECHAZADO (Correcto).",
+        "aprobada": false,
+        "nombrePersona": "Boromir",
+        "nombreOficial": "nashe",
+        "idPersona": "6"
+    },
+    {
+        "fecha": "2025-11-13T18:09:21.9723544",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Éowyn",
+        "nombreOficial": "nashe",
+        "idPersona": "7"
+    },
+    {
+        "fecha": "2025-11-13T18:09:23.3527725",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Entrada' (PE-INV-456) caducado el 01/04/2026",
+        "aprobada": true,
+        "nombrePersona": "Grima",
+        "nombreOficial": "nashe",
+        "idPersona": "8"
+    },
+    {
+        "fecha": "2025-11-13T18:09:24.2013136",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Samwise",
+        "nombreOficial": "nashe",
+        "idPersona": "9"
+    },
+    {
+        "fecha": "2025-11-13T18:10:55.5780455",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Aragorn",
+        "nombreOficial": "nashe",
+        "idPersona": "1"
+    },
+    {
+        "fecha": "2025-11-13T18:10:57.2840849",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Entrada' (SHR-67890) caducado el 29/10/2024",
+        "aprobada": true,
+        "nombrePersona": "Frodo Baggins",
+        "nombreOficial": "nashe",
+        "idPersona": "2"
+    },
+    {
+        "fecha": "2025-11-13T18:10:58.2528709",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Nacionalidad no permitida: Mordor",
+        "aprobada": true,
+        "nombrePersona": "Lurtz",
+        "nombreOficial": "nashe",
+        "idPersona": "3"
+    },
+    {
+        "fecha": "2025-11-13T18:10:58.6199551",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Gimli",
+        "nombreOficial": "nashe",
+        "idPersona": "4"
+    },
+    {
+        "fecha": "2025-11-13T18:10:59.8846866",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Trabajo' (PE-ART-111) caducado el 31/12/2028",
+        "aprobada": true,
+        "nombrePersona": "Legolas",
+        "nombreOficial": "nashe",
+        "idPersona": "5"
+    },
+    {
+        "fecha": "2025-11-13T18:11:01.5328438",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Entrada' (ARG-T-TEMP) caducado el 20/10/2024",
+        "aprobada": true,
+        "nombrePersona": "Boromir",
+        "nombreOficial": "nashe",
+        "idPersona": "6"
+    },
+    {
+        "fecha": "2025-11-13T18:11:06.4383139",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Éowyn",
+        "nombreOficial": "nashe",
+        "idPersona": "7"
+    },
+    {
+        "fecha": "2025-11-13T18:11:08.2581569",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Entrada' (PE-INV-456) caducado el 01/04/2026",
+        "aprobada": true,
+        "nombrePersona": "Grima",
+        "nombreOficial": "nashe",
+        "idPersona": "8"
+    },
+    {
+        "fecha": "2025-11-13T18:11:11.1517666",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Samwise",
+        "nombreOficial": "nashe",
+        "idPersona": "9"
+    },
+    {
+        "fecha": "2025-11-13T18:11:41.3436812",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Aragorn",
+        "nombreOficial": "nashe",
+        "idPersona": "1"
+    },
+    {
+        "fecha": "2025-11-13T18:11:42.8758351",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Entrada' (SHR-67890) caducado el 29/10/2024",
+        "aprobada": true,
+        "nombrePersona": "Frodo Baggins",
+        "nombreOficial": "nashe",
+        "idPersona": "2"
+    },
+    {
+        "fecha": "2025-11-13T18:11:43.9481978",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Nacionalidad no permitida: Mordor",
+        "aprobada": true,
+        "nombrePersona": "Lurtz",
+        "nombreOficial": "nashe",
+        "idPersona": "3"
+    },
+    {
+        "fecha": "2025-11-13T18:11:44.3645903",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Gimli",
+        "nombreOficial": "nashe",
+        "idPersona": "4"
+    },
+    {
+        "fecha": "2025-11-13T18:11:45.1693143",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Trabajo' (PE-ART-111) caducado el 31/12/2028",
+        "aprobada": true,
+        "nombrePersona": "Legolas",
+        "nombreOficial": "nashe",
+        "idPersona": "5"
+    },
+    {
+        "fecha": "2025-11-13T18:11:45.9684481",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Entrada' (ARG-T-TEMP) caducado el 20/10/2024",
+        "aprobada": true,
+        "nombrePersona": "Boromir",
+        "nombreOficial": "nashe",
+        "idPersona": "6"
+    },
+    {
+        "fecha": "2025-11-13T18:11:46.4038599",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Éowyn",
+        "nombreOficial": "nashe",
+        "idPersona": "7"
+    },
+    {
+        "fecha": "2025-11-13T18:11:47.654781",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Entrada' (PE-INV-456) caducado el 01/04/2026",
+        "aprobada": true,
+        "nombrePersona": "Grima",
+        "nombreOficial": "nashe",
+        "idPersona": "8"
+    },
+    {
+        "fecha": "2025-11-13T18:11:48.1079634",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Samwise",
+        "nombreOficial": "nashe",
+        "idPersona": "9"
     }
 ]

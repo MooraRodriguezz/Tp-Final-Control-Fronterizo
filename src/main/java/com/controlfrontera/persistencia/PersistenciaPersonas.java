@@ -28,12 +28,14 @@ public class PersistenciaPersonas {
         Queue<Persona> filaDePersonas = new LinkedList<>();
 
         try {
+            // Lee el contenido del archivo personas.json
             String contenido = new String(Files.readAllBytes(Paths.get(RUTA_ARCHIVO)));
             JSONArray jsonArray = new JSONArray(contenido);
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonPersona = jsonArray.getJSONObject(i);
 
+                // Extrae los datos de la persona del JSON
                 String id = jsonPersona.getString("id");
                 String nombre = jsonPersona.getString("nombre");
                 String nacionalidad = jsonPersona.getString("nacionalidad");
@@ -50,6 +52,7 @@ public class PersistenciaPersonas {
                     documentos.add(parsearDocumento(jsonDocumentos.getJSONObject(j)));
                 }
 
+                // Crea el objeto Persona y lo añade a la cola
                 Persona p = new Persona(nombre, nacionalidad, documentos, id, sospechosa, nombreImagen, fechaNacimiento, peso, altura);
                 filaDePersonas.add(p);
             }
@@ -71,6 +74,7 @@ public class PersistenciaPersonas {
         boolean valido = jsonDoc.getBoolean("valido");
         Date fechaExpiracion = aJsonFecha.parse(jsonDoc.getString("fechaExpiracion"));
 
+        // Crea la subclase de Documento correspondiente según el campo "tipo"
         switch (tipo) {
             case "Pasaporte":
                 return new Pasaporte(numeroIdentificacion, paisEmisor, valido, fechaExpiracion);

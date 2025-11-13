@@ -43,7 +43,6 @@ import java.util.Set;
 
 import java.util.concurrent.ThreadLocalRandom;
 import com.controlfrontera.usuarios.GestorSonido;
-// NUEVO IMPORT
 import com.controlfrontera.persistencia.PersistenciaPersonas;
 
 public class OficialViewController {
@@ -90,14 +89,12 @@ public class OficialViewController {
     public void initialize() {
         fechaLabel.setText("Fecha: " + LocalDate.now().format(formatterFechaHoy));
 
-        // --- MODIFICADO ---
-        // Ya no se llama a crearDatosDePrueba()
-        // Ahora cargamos las personas desde el JSON
+
         this.filaDePersonas = PersistenciaPersonas.cargarPersonas();
         if (this.filaDePersonas.isEmpty()) {
             System.err.println("No se cargaron personas desde el JSON. La fila está vacía.");
         }
-        // --- FIN DE MODIFICACIÓN ---
+
 
         documentosListView.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
@@ -217,13 +214,20 @@ public class OficialViewController {
             reglamentoButton.setDisable(false);
 
         } else {
-            limpiarPanelesCompletos();
-            nombreLabel.setText("[NO HAY MÁS PERSONAS]");
-            aprobarButton.setDisable(true);
-            rechazarButton.setDisable(true);
-            inspeccionarButton.setDisable(true);
-            arrestarButton.setDisable(true);
-            reglamentoButton.setDisable(true);
+
+            if (aprobarButton != null) {
+                mostrarPantallaFinal((Stage) aprobarButton.getScene().getWindow());
+            } else {
+
+                limpiarPanelesCompletos();
+                nombreLabel.setText("[NO HAY MÁS PERSONAS]");
+                aprobarButton.setDisable(true);
+                rechazarButton.setDisable(true);
+                inspeccionarButton.setDisable(true);
+                arrestarButton.setDisable(true);
+                reglamentoButton.setDisable(true);
+            }
+
         }
     }
 
@@ -423,6 +427,36 @@ public class OficialViewController {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titulo); alert.setHeaderText(null); alert.setContentText(mensaje);
         alert.showAndWait();
+    }
+
+    private void mostrarPantallaFinal(Stage currentStage) {
+        try {
+
+            java.net.URL fxmlUrl = getClass().getResource("/com/example/demo/pantalla-finalli-view.fxml");
+
+            if (fxmlUrl == null) {
+                throw new IOException("ERROR FATAL: No se encontró el recurso FXML: /com/example/demo/final-screen-view.fxml. Verifique la ruta y que el archivo esté en src/main/resources.");
+            }
+
+            FXMLLoader loader = new FXMLLoader(fxmlUrl);
+            Parent root = loader.load();
+
+            PantallaFinalViewController controller = loader.getController();
+            controller.initData(oficialLogueado);
+
+            Scene finalScene = new Scene(root, 600, 450);
+            currentStage.setScene(finalScene);
+            currentStage.setTitle("Turno Finalizado");
+            currentStage.centerOnScreen();
+            currentStage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            mostrarAlertaError("Error de Transición (Archivo FXML)", "No se pudo abrir la pantalla final. " + e.getMessage());
+        }
+
+
+
     }
 
 }
