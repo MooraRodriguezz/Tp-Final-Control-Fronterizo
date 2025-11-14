@@ -10,13 +10,13 @@
         "activo": true
     },
     {
-        "erroresConsecutivos": 2,
-        "puntuacion": 1530,
-        "totalAciertos": 26,
+        "erroresConsecutivos": 0,
+        "puntuacion": 1775,
+        "totalAciertos": 33,
         "contrasenia": "pass123",
         "nombre": "oficial",
         "rol": "OFICIAL",
-        "totalErrores": 10,
+        "totalErrores": 21,
         "activo": true
     }
 ]

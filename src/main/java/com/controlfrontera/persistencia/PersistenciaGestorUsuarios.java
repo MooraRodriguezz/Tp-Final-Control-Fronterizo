@@ -33,7 +33,7 @@ public class PersistenciaGestorUsuarios {
             }
         }
 
-        // Guardamos los oficiales
+
         JSONArray jsonOficiales = new JSONArray();
         for (Oficial o : oficiales) {
             JSONObject jsonOficial = new JSONObject();
@@ -44,7 +44,7 @@ public class PersistenciaGestorUsuarios {
             jsonOficial.put("nombre", o.getNombre());
             jsonOficial.put("contrasenia", o.getContrasenia());
             jsonOficial.put("rol", o.getRol());
-            jsonOficial.put("activo", o.isActivo()); // MODIFICADO
+            jsonOficial.put("activo", o.isActivo());
             jsonOficiales.put(jsonOficial);
         }
 
@@ -54,14 +54,14 @@ public class PersistenciaGestorUsuarios {
             System.err.println("Error al guardar oficiales: " + e.getMessage());
         }
 
-        // Guardamos los administradores
+
         JSONArray jsonAdmins = new JSONArray();
         for (Administrador a : administradores) {
             JSONObject jsonAdmin = new JSONObject();
             jsonAdmin.put("nombre", a.getNombre());
             jsonAdmin.put("contrasenia", a.getContrasenia());
             jsonAdmin.put("rol", a.getRol());
-            jsonAdmin.put("activo", a.isActivo()); // MODIFICADO
+            jsonAdmin.put("activo", a.isActivo());
             jsonAdmins.put(jsonAdmin);
         }
 
@@ -75,7 +75,7 @@ public class PersistenciaGestorUsuarios {
     public static ObservableList<Usuario> cargarUsuarios() {
         ObservableList<Usuario> listaCombinada = FXCollections.observableArrayList();
 
-        // Cargamos los oficiales
+
         try {
             String contenidoOficiales = new String(Files.readAllBytes(Paths.get(OFICIALES_JSON)));
             JSONArray jsonOficiales = new JSONArray(contenidoOficiales);
@@ -90,8 +90,8 @@ public class PersistenciaGestorUsuarios {
                 oficial.setTotalAciertos(jsonOficial.getInt("totalAciertos"));
                 oficial.setTotalErrores(jsonOficial.getInt("totalErrores"));
                 oficial.setErroresConsecutivos(jsonOficial.optInt("erroresConsecutivos", 0));
-                // Carga el estado 'activo', si no existe, es 'true' por defecto
-                oficial.setActivo(jsonOficial.optBoolean("activo", true)); // MODIFICADO
+
+                oficial.setActivo(jsonOficial.optBoolean("activo", true));
 
                 listaCombinada.add(oficial);
             }

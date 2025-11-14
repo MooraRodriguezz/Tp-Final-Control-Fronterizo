@@ -4,7 +4,7 @@ package com.controlfrontera.excepciones;
  * Excepción personalizada que se lanza cuando se proporciona un rol de usuario inválido
  * (diferente de "ADMIN" u "OFICIAL").
  */
-public class RolInvalidoException extends Exception { // Hereda de Exception
+public class RolInvalidoException extends Exception {
 
     private static final long serialVersionUID = 1L;
 

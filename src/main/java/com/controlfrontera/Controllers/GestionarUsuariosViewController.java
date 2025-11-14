@@ -25,13 +25,11 @@ public class GestionarUsuariosViewController {
     @FXML private TableColumn<Usuario, String> colRol;
     @FXML private TableColumn<Usuario, Boolean> colActivo;
 
-    // Campos para Agregar
     @FXML private TextField txtNombre;
     @FXML private TextField txtContrasenia;
     @FXML private TextField txtRol;
     @FXML private Button btnAgregar;
 
-    // Campos para Modificar
     @FXML private TextField txtModNombre;
     @FXML private TextField txtModContrasenia;
     @FXML private TextField txtModRol;
@@ -44,15 +42,12 @@ public class GestionarUsuariosViewController {
     public void initData(GestorUsuarios gestorUsuarios) {
         this.gestorUsuarios = gestorUsuarios;
 
-        // Configurar columnas
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         colRol.setCellValueFactory(new PropertyValueFactory<>("rol"));
         colActivo.setCellValueFactory(new PropertyValueFactory<>("activo"));
 
-        // Cargar datos
         tablaUsuarios.setItems(gestorUsuarios.getListaDeUsuarios());
 
-        // Listener para cargar datos en el panel de modificación
         tablaUsuarios.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 cargarDatosUsuarioSeleccionado(newSelection);
@@ -114,27 +109,18 @@ public class GestionarUsuariosViewController {
             String nuevoRol = txtModRol.getText().toUpperCase();
             boolean estaActivo = checkActivo.isSelected();
 
-            // Validar Rol
             if (!"ADMIN".equals(nuevoRol) && !"OFICIAL".equals(nuevoRol)) {
                 throw new RolInvalidoException("El rol '" + txtModRol.getText() + "' no es válido. Use ADMIN o OFICIAL.");
             }
 
-            // Actualizar datos del objeto
             if (nuevaContrasenia != null && !nuevaContrasenia.isEmpty()) {
                 seleccionado.setContrasenia(nuevaContrasenia);
             }
             seleccionado.setRol(nuevoRol);
             seleccionado.setActivo(estaActivo);
 
-            // Si cambiamos el rol, necesitamos reemplazar el objeto en el mapa
-            // Esta lógica es compleja, por ahora solo actualizamos campos
-            // Para un cambio de rol real, habría que eliminar y crear uno nuevo.
-            // Simplificación: solo actualizamos los campos.
-
-            // Guardar cambios en JSON
             gestorUsuarios.guardarUsuarios();
 
-            // Refrescar la tabla y limpiar
             tablaUsuarios.refresh();
             limpiarCamposModificacion();
             mostrarAlertaInfo("Éxito", "Usuario '" + seleccionado.getNombre() + "' actualizado.");

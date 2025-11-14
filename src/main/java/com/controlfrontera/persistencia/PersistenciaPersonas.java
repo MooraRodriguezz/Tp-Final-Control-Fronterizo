@@ -21,21 +21,21 @@ import java.util.Set;
 public class PersistenciaPersonas {
 
     private static final String RUTA_ARCHIVO = "personas.json";
-    // Formato YYYY-MM-DD para compatibilidad con JSON
+
     private static final SimpleDateFormat aJsonFecha = new SimpleDateFormat("yyyy-MM-dd");
 
     public static Queue<Persona> cargarPersonas() {
         Queue<Persona> filaDePersonas = new LinkedList<>();
 
         try {
-            // Lee el contenido del archivo personas.json
+
             String contenido = new String(Files.readAllBytes(Paths.get(RUTA_ARCHIVO)));
             JSONArray jsonArray = new JSONArray(contenido);
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonPersona = jsonArray.getJSONObject(i);
 
-                // Extrae los datos de la persona del JSON
+
                 String id = jsonPersona.getString("id");
                 String nombre = jsonPersona.getString("nombre");
                 String nacionalidad = jsonPersona.getString("nacionalidad");
@@ -45,14 +45,14 @@ public class PersistenciaPersonas {
                 String nombreImagen = jsonPersona.optString("nombreImagen", null);
                 boolean sospechosa = jsonPersona.getBoolean("sospechosa");
 
-                // Parsear documentos
+
                 Set<Documento> documentos = new HashSet<>();
                 JSONArray jsonDocumentos = jsonPersona.getJSONArray("documentos");
                 for (int j = 0; j < jsonDocumentos.length(); j++) {
                     documentos.add(parsearDocumento(jsonDocumentos.getJSONObject(j)));
                 }
 
-                // Crea el objeto Persona y lo añade a la cola
+
                 Persona p = new Persona(nombre, nacionalidad, documentos, id, sospechosa, nombreImagen, fechaNacimiento, peso, altura);
                 filaDePersonas.add(p);
             }
@@ -74,7 +74,7 @@ public class PersistenciaPersonas {
         boolean valido = jsonDoc.getBoolean("valido");
         Date fechaExpiracion = aJsonFecha.parse(jsonDoc.getString("fechaExpiracion"));
 
-        // Crea la subclase de Documento correspondiente según el campo "tipo"
+
         switch (tipo) {
             case "Pasaporte":
                 return new Pasaporte(numeroIdentificacion, paisEmisor, valido, fechaExpiracion);

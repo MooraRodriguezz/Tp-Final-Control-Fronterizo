@@ -45,7 +45,6 @@ public class Decision {
         this.fecha = fecha;
     }
 
-    // --- NUEVO CONSTRUCTOR REQUERIDO PARA PERSISTENCIA JSON ---
     /**
      * Constructor para deserialización manual desde JSON.
      * Los campos 'persona' y 'oficial' (transient) permanecen null.
@@ -57,10 +56,10 @@ public class Decision {
         this.aprobada = aprobada;
         this.motivo = motivo;
         this.fecha = fecha;
-        this.persona = null; // transient
-        this.oficial = null; // transient
+        this.persona = null;
+        this.oficial = null;
     }
-    // --- FIN DEL NUEVO CONSTRUCTOR ---
+
 
 
     // Getters and Setters

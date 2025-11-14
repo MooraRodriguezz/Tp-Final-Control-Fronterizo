@@ -77,7 +77,7 @@ public class LoginViewController {
             Parent nuevaVista = loader.load();
 
             if (usuario instanceof Oficial) {
-                // Si estamos cargando la pantalla de inicio, le pasamos los datos a su controlador
+
                 if (fxmlFile.contains("pantalla-inicio-oficial.fxml")) {
                     PantallaInicioOficialController controller = loader.getController();
                     controller.initData((Oficial) usuario);

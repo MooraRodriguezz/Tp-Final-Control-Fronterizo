@@ -2,10 +2,6 @@ package com.controlfrontera.Controllers;
 
 import com.controlfrontera.modelo.Decision;
 import com.controlfrontera.modelo.Documento;
-import com.controlfrontera.modelo.GestorPaises;
-import com.controlfrontera.modelo.Pasaporte;
-import com.controlfrontera.modelo.PermisoEntrada;
-import com.controlfrontera.modelo.PermisoTrabajo;
 import com.controlfrontera.modelo.Persona;
 import com.controlfrontera.modelo.RegistroDecisiones;
 
@@ -33,13 +29,9 @@ import java.time.format.DateTimeFormatter;
 
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import java.util.Set;
+
 
 import java.util.concurrent.ThreadLocalRandom;
 import com.controlfrontera.usuarios.GestorSonido;
@@ -79,7 +71,7 @@ public class OficialViewController {
     private final SimpleDateFormat formatterDoc = new SimpleDateFormat("dd/MM/yyyy");
     private final DateTimeFormatter formatterFechaHoy = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     private boolean modoInspeccion = false;
-    private double pesoMedidoSimulado = 0.0; // Se usa en simularPesaje
+    private double pesoMedidoSimulado = 0.0;
     private List<Pair<String, String>> discrepanciasEncontradas = new ArrayList<>();
     private boolean pesoSospechoso = false;
 
@@ -432,8 +424,7 @@ public class OficialViewController {
     private void mostrarPantallaFinal(Stage currentStage) {
         try {
 
-            java.net.URL fxmlUrl = getClass().getResource("/com/example/demo/pantalla-finalli-view.fxml");
-
+            java.net.URL fxmlUrl = getClass().getResource("/com/example/demo/pantalla-final-view.fxml");
             if (fxmlUrl == null) {
                 throw new IOException("ERROR FATAL: No se encontró el recurso FXML: /com/example/demo/final-screen-view.fxml. Verifique la ruta y que el archivo esté en src/main/resources.");
             }

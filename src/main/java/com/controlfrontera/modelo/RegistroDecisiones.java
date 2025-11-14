@@ -12,7 +12,7 @@ public class RegistroDecisiones {
     private static RegistroDecisiones instancia;
     private final ObservableList<Decision> decisiones;
 
-    // El constructor es privado para que nadie más pueda crear instancias
+
     private RegistroDecisiones() {
         this.decisiones = PersistenciaDecisiones.cargarDecisiones();
     }
