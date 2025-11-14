@@ -718,5 +718,77 @@
         "nombrePersona": "Samwise",
         "nombreOficial": "nashe",
         "idPersona": "9"
+    },
+    {
+        "fecha": "2025-11-14T09:38:26.5499719",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Aragorn",
+        "nombreOficial": "oficial",
+        "idPersona": "1"
+    },
+    {
+        "fecha": "2025-11-14T09:38:35.9876422",
+        "motivo": "ARRESTADO (Contrabando)",
+        "aprobada": false,
+        "nombrePersona": "Frodo Baggins",
+        "nombreOficial": "oficial",
+        "idPersona": "2"
+    },
+    {
+        "fecha": "2025-11-14T09:38:46.9003791",
+        "motivo": "RECHAZADO (Correcto).",
+        "aprobada": false,
+        "nombrePersona": "Lurtz",
+        "nombreOficial": "oficial",
+        "idPersona": "3"
+    },
+    {
+        "fecha": "2025-11-14T09:39:01.8310272",
+        "motivo": "ARRESTADO (Contrabando)",
+        "aprobada": false,
+        "nombrePersona": "Gimli",
+        "nombreOficial": "oficial",
+        "idPersona": "4"
+    },
+    {
+        "fecha": "2025-11-14T09:39:17.064061",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Trabajo' (PE-ART-111) caducado el 31/12/2028",
+        "aprobada": true,
+        "nombrePersona": "Legolas",
+        "nombreOficial": "oficial",
+        "idPersona": "5"
+    },
+    {
+        "fecha": "2025-11-14T09:39:28.1912649",
+        "motivo": "ARRESTADO (Contrabando)",
+        "aprobada": false,
+        "nombrePersona": "Boromir",
+        "nombreOficial": "oficial",
+        "idPersona": "6"
+    },
+    {
+        "fecha": "2025-11-14T09:39:34.5041504",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Éowyn",
+        "nombreOficial": "oficial",
+        "idPersona": "7"
+    },
+    {
+        "fecha": "2025-11-14T09:39:39.5911681",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Entrada' (PE-INV-456) caducado el 01/04/2026",
+        "aprobada": true,
+        "nombrePersona": "Grima",
+        "nombreOficial": "oficial",
+        "idPersona": "8"
+    },
+    {
+        "fecha": "2025-11-14T09:39:47.4899291",
+        "motivo": "RECHAZADO (ERROR). Error: Persona válida rechazada.",
+        "aprobada": false,
+        "nombrePersona": "Samwise",
+        "nombreOficial": "oficial",
+        "idPersona": "9"
     }
 ]

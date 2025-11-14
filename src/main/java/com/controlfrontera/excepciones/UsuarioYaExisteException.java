@@ -16,9 +16,6 @@ public class UsuarioYaExisteException extends Exception { // Hereda de Exception
         super(message);
     }
 
-    /**
-     * Constructor sin argumentos con un mensaje predeterminado.
-     */
     public UsuarioYaExisteException() {
         super("El nombre de usuario ya está registrado en el sistema.");
     }

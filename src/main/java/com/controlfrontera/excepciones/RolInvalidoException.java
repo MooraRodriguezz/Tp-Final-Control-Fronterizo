@@ -16,9 +16,6 @@ public class RolInvalidoException extends Exception { // Hereda de Exception
         super(message);
     }
 
-    /**
-     * Constructor sin argumentos con un mensaje predeterminado.
-     */
     public RolInvalidoException() {
         super("El rol especificado es inválido. Debe ser 'ADMIN' o 'OFICIAL'.");
     }
