@@ -53,7 +53,15 @@ public class Persona implements Verificable {
     public double getAltura() {return altura;}
     public double getPeso() {return peso;}
     public boolean isTieneContrabando() { return tieneContrabando; }
-
+    public void setId(String id) {this.id = id;}
+    public void setNombre(String nombre) {this.nombre = nombre;}
+    public void setNacionalidad(String nacionalidad) {this.nacionalidad = nacionalidad;}
+    public void setFechaNacimiento(java.util.Date fechaNacimiento) {this.fechaNacimiento = fechaNacimiento;}
+    public void setAltura(double altura) {this.altura = altura;}
+    public void setPeso(double peso) {this.peso = peso;}
+    public void setNombreImagen(String nombreImagen) {this.nombreImagen = nombreImagen;}
+    public void setTieneContrabando(boolean tieneContrabando) {this.tieneContrabando = tieneContrabando;}
+    public void setDocumentos(java.util.Set<Documento> documentos) {this.documentos = documentos;}
 
     public String determinarVeredictoCorrecto() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");

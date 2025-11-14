@@ -71,7 +71,40 @@ public class AdminViewController {
             e.printStackTrace();
         }
     }
+    @FXML
+    void onVerDecisionesClick(ActionEvent ignoredEvent) {
+        GestorSonido.reproducirMenuClick();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/visor-decisiones-view.fxml"));
+            Parent root = loader.load();
 
+            Stage stage = new Stage();
+            stage.setTitle("Visor de Decisiones");
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    void onGestionarPersonasClick(ActionEvent ignoredEvent) {
+        GestorSonido.reproducirMenuClick();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/gestionar-personas-view.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Gestionar Personas");
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     void onConfigurarPaisesClick(ActionEvent ignoredEvent) {

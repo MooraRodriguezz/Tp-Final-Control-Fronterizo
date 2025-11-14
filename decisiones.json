@@ -934,5 +934,101 @@
         "nombrePersona": "Samwise",
         "nombreOficial": "oficial",
         "idPersona": "9"
+    },
+    {
+        "fecha": "2025-11-14T10:54:08.5296428",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Axel",
+        "nombreOficial": "oficial",
+        "idPersona": "1"
+    },
+    {
+        "fecha": "2025-11-14T10:54:10.3579781",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Entrada' (SHR-67890) caducado el 29/10/2024",
+        "aprobada": true,
+        "nombrePersona": "Gabriel",
+        "nombreOficial": "oficial",
+        "idPersona": "2"
+    },
+    {
+        "fecha": "2025-11-14T10:54:11.8523348",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Nacionalidad no permitida: Mordor",
+        "aprobada": true,
+        "nombrePersona": "Dylan",
+        "nombreOficial": "oficial",
+        "idPersona": "3"
+    },
+    {
+        "fecha": "2025-11-14T10:54:12.3366254",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Luis",
+        "nombreOficial": "oficial",
+        "idPersona": "4"
+    },
+    {
+        "fecha": "2025-11-14T10:54:14.1967885",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Trabajo' (PE-ART-111) caducado el 31/12/2028",
+        "aprobada": true,
+        "nombrePersona": "Jose",
+        "nombreOficial": "oficial",
+        "idPersona": "5"
+    },
+    {
+        "fecha": "2025-11-14T10:54:15.7401171",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Entrada' (ARG-T-TEMP) caducado el 20/10/2024",
+        "aprobada": true,
+        "nombrePersona": "Julian",
+        "nombreOficial": "oficial",
+        "idPersona": "6"
+    },
+    {
+        "fecha": "2025-11-14T10:54:16.6329383",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Thiago",
+        "nombreOficial": "oficial",
+        "idPersona": "7"
+    },
+    {
+        "fecha": "2025-11-14T10:54:18.5806217",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Entrada' (PE-INV-456) caducado el 01/04/2026",
+        "aprobada": true,
+        "nombrePersona": "Liam",
+        "nombreOficial": "oficial",
+        "idPersona": "8"
+    },
+    {
+        "fecha": "2025-11-14T10:54:19.1686216",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Samuel",
+        "nombreOficial": "oficial",
+        "idPersona": "9"
+    },
+    {
+        "fecha": "2025-11-14T10:54:20.200218",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Juan Pérez",
+        "nombreOficial": "oficial",
+        "idPersona": "10"
+    },
+    {
+        "fecha": "2025-11-14T10:54:21.8706419",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Entrada' (CHL-MG-222) caducado el 01/01/2024",
+        "aprobada": true,
+        "nombrePersona": "María González",
+        "nombreOficial": "oficial",
+        "idPersona": "11"
+    },
+    {
+        "fecha": "2025-11-14T10:54:24.4206086",
+        "motivo": "APROBADO (ERROR). Error: Persona inválida aprobada. Motivo: Documento 'Permiso de Trabajo' (PER-CR-333) caducado el 01/01/2030",
+        "aprobada": true,
+        "nombrePersona": "Carlos Rodríguez",
+        "nombreOficial": "oficial",
+        "idPersona": "12"
     }
 ]

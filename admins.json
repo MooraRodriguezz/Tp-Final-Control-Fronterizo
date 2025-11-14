@@ -1,17 +1,92 @@
 [
-  { "contrasenia": "admin123", "nombre": "admin", "rol": "ADMIN", "activo": true },
-  { "contrasenia": "sup123", "nombre": "supervisor", "rol": "ADMIN", "activo": true },
-  { "contrasenia": "pass123", "nombre": "jefe", "rol": "ADMIN", "activo": true },
-  { "contrasenia": "pass123", "nombre": "root", "rol": "ADMIN", "activo": true },
-  { "contrasenia": "pass123", "nombre": "sistema", "rol": "ADMIN", "activo": true },
-  { "contrasenia": "pass123", "nombre": "admin01", "rol": "ADMIN", "activo": true },
-  { "contrasenia": "pass123", "nombre": "admin02", "rol": "ADMIN", "activo": true },
-  { "contrasenia": "pass123", "nombre": "admin03", "rol": "ADMIN", "activo": true },
-  { "contrasenia": "pass123", "nombre": "admin04", "rol": "ADMIN", "activo": true },
-  { "contrasenia": "pass123", "nombre": "admin05", "rol": "ADMIN", "activo": true },
-  { "contrasenia": "pass123", "nombre": "admin06", "rol": "ADMIN", "activo": true },
-  { "contrasenia": "pass123", "nombre": "admin07", "rol": "ADMIN", "activo": true },
-  { "contrasenia": "pass123", "nombre": "admin08", "rol": "ADMIN", "activo": true },
-  { "contrasenia": "pass123", "nombre": "admin09", "rol": "ADMIN", "activo": true },
-  { "contrasenia": "pass123", "nombre": "admin10", "rol": "ADMIN", "activo": true }
+    {
+        "contrasenia": "pass123",
+        "nombre": "admin03",
+        "rol": "ADMIN",
+        "activo": true
+    },
+    {
+        "contrasenia": "pass123",
+        "nombre": "admin04",
+        "rol": "ADMIN",
+        "activo": true
+    },
+    {
+        "contrasenia": "pass123",
+        "nombre": "admin01",
+        "rol": "ADMIN",
+        "activo": true
+    },
+    {
+        "contrasenia": "pass123",
+        "nombre": "admin02",
+        "rol": "ADMIN",
+        "activo": true
+    },
+    {
+        "contrasenia": "pass123",
+        "nombre": "admin07",
+        "rol": "ADMIN",
+        "activo": true
+    },
+    {
+        "contrasenia": "pass123",
+        "nombre": "admin08",
+        "rol": "ADMIN",
+        "activo": true
+    },
+    {
+        "contrasenia": "pass123",
+        "nombre": "sistema",
+        "rol": "ADMIN",
+        "activo": true
+    },
+    {
+        "contrasenia": "pass123",
+        "nombre": "admin05",
+        "rol": "ADMIN",
+        "activo": true
+    },
+    {
+        "contrasenia": "pass123",
+        "nombre": "admin06",
+        "rol": "ADMIN",
+        "activo": true
+    },
+    {
+        "contrasenia": "admin123",
+        "nombre": "admin",
+        "rol": "ADMIN",
+        "activo": true
+    },
+    {
+        "contrasenia": "pass123",
+        "nombre": "admin09",
+        "rol": "ADMIN",
+        "activo": true
+    },
+    {
+        "contrasenia": "pass123",
+        "nombre": "jefe",
+        "rol": "ADMIN",
+        "activo": true
+    },
+    {
+        "contrasenia": "pass123",
+        "nombre": "root",
+        "rol": "ADMIN",
+        "activo": true
+    },
+    {
+        "contrasenia": "pass123",
+        "nombre": "admin10",
+        "rol": "ADMIN",
+        "activo": true
+    },
+    {
+        "contrasenia": "sup123",
+        "nombre": "supervisor",
+        "rol": "ADMIN",
+        "activo": true
+    }
 ]
