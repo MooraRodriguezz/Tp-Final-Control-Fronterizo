@@ -1030,5 +1030,13 @@
         "nombrePersona": "Carlos Rodríguez",
         "nombreOficial": "oficial",
         "idPersona": "12"
+    },
+    {
+        "fecha": "2025-11-14T14:43:24.9757931",
+        "motivo": "APROBADO (Correcto).",
+        "aprobada": true,
+        "nombrePersona": "Axel",
+        "nombreOficial": "oficial",
+        "idPersona": "1"
     }
 ]

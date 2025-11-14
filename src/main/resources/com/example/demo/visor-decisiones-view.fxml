@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
 
 <BorderPane prefHeight="500.0" prefWidth="700.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controlfrontera.Controllers.VisorDecisionesViewController">
     <top>
@@ -18,27 +19,40 @@
         </Label>
     </top>
     <center>
+
         <SplitPane dividerPositions="0.6" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <items>
                 <TableView fx:id="tablaDecisiones" prefHeight="200.0" prefWidth="200.0">
                     <columns>
                         <TableColumn fx:id="colOficial" prefWidth="100.0" text="Oficial" />
+
                         <TableColumn fx:id="colPersona" prefWidth="120.0" text="Persona" />
                         <TableColumn fx:id="colDecision" prefWidth="75.0" text="Decisión" />
                         <TableColumn fx:id="colFecha" prefWidth="150.0" text="Fecha y Hora" />
                     </columns>
+
                     <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                     </columnResizePolicy>
                 </TableView>
+
                 <VBox alignment="TOP_CENTER" spacing="10.0" style="-fx-background-color: #2b2b2b;">
+
                     <children>
                         <Label styleClass="menu-title" text="[ DETALLE DE LA DECISIÓN ]" />
-                        <TextArea fx:id="txtDetalleMotivo" editable="false" prefHeight="300.0" wrapText="true" styleClass="info-data" style="-fx-font-size: 10px; -fx-background-color: #1c1c1c;"/>
+                        <TextArea fx:id="txtDetalleMotivo" editable="false" prefHeight="300.0" wrapText="true" styleClass="info-data" style="-fx-font-size: 10px; -fx-background-color: #1c1c1c;" VBox.vgrow="ALWAYS" />
+
+                        <Button fx:id="btnEliminar" onAction="#onEliminarClick" text="[ ELIMINAR DECISIÓN ]" styleClass="danger-button" maxWidth="1.7976931348623157E308">
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </Button>
+
                     </children>
                     <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </padding>
+
                 </VBox>
             </items>
             <BorderPane.margin>
