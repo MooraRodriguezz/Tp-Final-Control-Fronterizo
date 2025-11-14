@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "nombre": "Aragorn",
+    "nombre": "Axel",
     "nacionalidad": "Argentina",
     "fechaNacimiento": "1987-03-01",
     "altura": 181.0,
@@ -20,7 +20,7 @@
   },
   {
     "id": "2",
-    "nombre": "Frodo Baggins",
+    "nombre": "Gabriel",
     "nacionalidad": "Chile",
     "fechaNacimiento": "1988-09-22",
     "altura": 107.0,
@@ -40,7 +40,7 @@
   },
   {
     "id": "3",
-    "nombre": "Lurtz",
+    "nombre": "Dylan",
     "nacionalidad": "Mordor",
     "fechaNacimiento": "1995-05-15",
     "altura": 190.0,
@@ -59,7 +59,7 @@
   },
   {
     "id": "4",
-    "nombre": "Gimli",
+    "nombre": "Luis",
     "nacionalidad": "Chile",
     "fechaNacimiento": "1979-11-05",
     "altura": 140.0,
@@ -80,7 +80,7 @@
   },
   {
     "id": "5",
-    "nombre": "Legolas",
+    "nombre": "Jose",
     "nacionalidad": "Peru",
     "fechaNacimiento": "2000-06-20",
     "altura": 185.0,
@@ -101,7 +101,7 @@
   },
   {
     "id": "6",
-    "nombre": "Boromir",
+    "nombre": "Julian",
     "nacionalidad": "Argentina",
     "fechaNacimiento": "1985-01-10",
     "altura": 183.0,
@@ -128,7 +128,7 @@
   },
   {
     "id": "7",
-    "nombre": "Éowyn",
+    "nombre": "Thiago",
     "nacionalidad": "Argentina",
     "fechaNacimiento": "1990-08-01",
     "altura": 170.0,
@@ -148,7 +148,7 @@
   },
   {
     "id": "8",
-    "nombre": "Grima",
+    "nombre": "Liam",
     "nacionalidad": "Peru",
     "fechaNacimiento": "1970-01-01",
     "altura": 175.0,
@@ -168,7 +168,7 @@
   },
   {
     "id": "9",
-    "nombre": "Samwise",
+    "nombre": "Samuel",
     "nacionalidad": "Chile",
     "fechaNacimiento": "1989-04-06",
     "altura": 160.0,
@@ -182,6 +182,126 @@
         "paisEmisor": "Chile",
         "valido": true,
         "fechaExpiracion": "2035-10-10"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "nombre": "Juan Pérez",
+    "nacionalidad": "Argentina",
+    "fechaNacimiento": "1990-05-15",
+    "altura": 175.0,
+    "peso": 78.0,
+    "nombreImagen": "Aragorn.jpg",
+    "sospechosa": false,
+    "documentos": [
+      {
+        "tipo": "Pasaporte",
+        "numeroIdentificacion": "ARG-JP-111",
+        "paisEmisor": "Argentina",
+        "valido": true,
+        "fechaExpiracion": "2030-01-01"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "nombre": "María González",
+    "nacionalidad": "Chile",
+    "fechaNacimiento": "1985-11-20",
+    "altura": 165.0,
+    "peso": 60.5,
+    "nombreImagen": "Éowyn.jpg",
+    "sospechosa": false,
+    "documentos": [
+      {
+        "tipo": "PermisoEntrada",
+        "numeroIdentificacion": "CHL-MG-222",
+        "paisEmisor": "Chile",
+        "valido": true,
+        "motivoViaje": "Turismo",
+        "fechaExpiracion": "2024-01-01"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "nombre": "Carlos Rodríguez",
+    "nacionalidad": "Peru",
+    "fechaNacimiento": "1992-02-10",
+    "altura": 180.0,
+    "peso": 85.0,
+    "nombreImagen": "Boromir.jpg",
+    "sospechosa": true,
+    "documentos": [
+      {
+        "tipo": "PermisoTrabajo",
+        "numeroIdentificacion": "PER-CR-333",
+        "paisEmisor": "Peru",
+        "valido": true,
+        "fechaExpiracion": "2030-01-01",
+        "profesionAutorizada": "CARPINTERO",
+        "empleador": "Muebles S.A."
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "nombre": "Ana López",
+    "nacionalidad": "Argentina",
+    "fechaNacimiento": "1988-09-30",
+    "altura": 170.0,
+    "peso": 63.0,
+    "nombreImagen": "Samwise.jpg",
+    "sospechosa": false,
+    "documentos": [
+      {
+        "tipo": "PermisoTrabajo",
+        "numeroIdentificacion": "ARG-AL-444",
+        "paisEmisor": "Argentina",
+        "valido": true,
+        "fechaExpiracion": "2035-01-01",
+        "profesionAutorizada": "MEDICO",
+        "empleador": "Hospital Central"
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "nombre": "Miguel Sánchez",
+    "nacionalidad": "Bolivia",
+    "fechaNacimiento": "1975-07-12",
+    "altura": 172.0,
+    "peso": 79.0,
+    "nombreImagen": "Grima.jpg",
+    "sospechosa": true,
+    "documentos": [
+      {
+        "tipo": "Pasaporte",
+        "numeroIdentificacion": "BOL-MS-555",
+        "paisEmisor": "Bolivia",
+        "valido": true,
+        "fechaExpiracion": "2030-01-01"
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "nombre": "Laura Fernández",
+    "nacionalidad": "Chile",
+    "fechaNacimiento": "1999-12-01",
+    "altura": 168.0,
+    "peso": 58.0,
+    "nombreImagen": "Gimli.jpg",
+    "sospechosa": false,
+    "documentos": [
+      {
+        "tipo": "PermisoEntrada",
+        "numeroIdentificacion": "CHL-LF-666",
+        "paisEmisor": "Chile",
+        "valido": true,
+        "motivoViaje": "Negocios",
+        "fechaExpiracion": "2026-05-01"
       }
     ]
   }

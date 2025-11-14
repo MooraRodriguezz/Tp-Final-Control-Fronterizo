@@ -1,22 +1,62 @@
 [
-    {
-        "erroresConsecutivos": 0,
-        "puntuacion": 2185,
-        "totalAciertos": 40,
-        "contrasenia": "123",
-        "nombre": "nashe",
-        "rol": "OFICIAL",
-        "totalErrores": 23,
-        "activo": true
-    },
-    {
-        "erroresConsecutivos": 0,
-        "puntuacion": 1775,
-        "totalAciertos": 33,
-        "contrasenia": "pass123",
-        "nombre": "oficial",
-        "rol": "OFICIAL",
-        "totalErrores": 21,
-        "activo": true
-    }
+  {
+    "erroresConsecutivos": 0, "puntuacion": 2185, "totalAciertos": 40,
+    "contrasenia": "123", "nombre": "nashe", "rol": "OFICIAL", "totalErrores": 23, "activo": true
+  },
+  {
+    "erroresConsecutivos": 2, "puntuacion": 1530, "totalAciertos": 26,
+    "contrasenia": "pass123", "nombre": "oficial", "rol": "OFICIAL", "totalErrores": 10, "activo": true
+  },
+  {
+    "erroresConsecutivos": 0, "puntuacion": 100, "totalAciertos": 2,
+    "contrasenia": "pass123", "nombre": "oficial01", "rol": "OFICIAL", "totalErrores": 0, "activo": true
+  },
+  {
+    "erroresConsecutivos": 1, "puntuacion": 500, "totalAciertos": 10,
+    "contrasenia": "pass123", "nombre": "oficial02", "rol": "OFICIAL", "totalErrores": 1, "activo": true
+  },
+  {
+    "erroresConsecutivos": 0, "puntuacion": 0, "totalAciertos": 0,
+    "contrasenia": "pass123", "nombre": "oficial03", "rol": "OFICIAL", "totalErrores": 0, "activo": true
+  },
+  {
+    "erroresConsecutivos": 3, "puntuacion": -50, "totalAciertos": 0,
+    "contrasenia": "pass123", "nombre": "oficial04", "rol": "OFICIAL", "totalErrores": 3, "activo": true
+  },
+  {
+    "erroresConsecutivos": 0, "puntuacion": 150, "totalAciertos": 3,
+    "contrasenia": "pass123", "nombre": "oficial05", "rol": "OFICIAL", "totalErrores": 0, "activo": true
+  },
+  {
+    "erroresConsecutivos": 0, "puntuacion": 800, "totalAciertos": 16,
+    "contrasenia": "pass123", "nombre": "oficial06", "rol": "OFICIAL", "totalErrores": 0, "activo": true
+  },
+  {
+    "erroresConsecutivos": 0, "puntuacion": 300, "totalAciertos": 6,
+    "contrasenia": "pass123", "nombre": "oficial07", "rol": "OFICIAL", "totalErrores": 0, "activo": true
+  },
+  {
+    "erroresConsecutivos": 0, "puntuacion": 0, "totalAciertos": 0,
+    "contrasenia": "pass123", "nombre": "oficial08", "rol": "OFICIAL", "totalErrores": 0, "activo": true
+  },
+  {
+    "erroresConsecutivos": 0, "puntuacion": 0, "totalAciertos": 0,
+    "contrasenia": "pass123", "nombre": "oficial09", "rol": "OFICIAL", "totalErrores": 0, "activo": true
+  },
+  {
+    "erroresConsecutivos": 0, "puntuacion": 0, "totalAciertos": 0,
+    "contrasenia": "pass123", "nombre": "oficial10", "rol": "OFICIAL", "totalErrores": 0, "activo": true
+  },
+  {
+    "erroresConsecutivos": 0, "puntuacion": 1000, "totalAciertos": 20,
+    "contrasenia": "pass123", "nombre": "oficial11", "rol": "OFICIAL", "totalErrores": 0, "activo": true
+  },
+  {
+    "erroresConsecutivos": 5, "puntuacion": -150, "totalAciertos": 0,
+    "contrasenia": "pass123", "nombre": "oficial12", "rol": "OFICIAL", "totalErrores": 5, "activo": true
+  },
+  {
+    "erroresConsecutivos": 0, "puntuacion": 0, "totalAciertos": 0,
+    "contrasenia": "pass123", "nombre": "oficial_inactivo", "rol": "OFICIAL", "totalErrores": 0, "activo": false
+  }
 ]
