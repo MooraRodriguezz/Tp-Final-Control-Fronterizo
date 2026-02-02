@@ -1,8 +1,8 @@
-# Control Fronterizo - JavaFX
+# Control Fronterizo - Java y JavaFX
 
 Este proyecto es una aplicación de escritorio desarrollada como trabajo final, diseñada para gestionar de manera eficiente el flujo migratorio en un puesto de control. La aplicación permite validar documentación, registrar ingresos/egresos y aplicar reglas de negocio complejas a través de una interfaz gráfica intuitiva.
 
-## 🚀 Características
+##  Características
 
 - **Gestión Migratoria:** Registro y validación de personas en tiempo real.
 - **Lógica de Validación:** Algoritmos para verificar estados de documentación y permisos según normativas vigentes.
@@ -10,13 +10,13 @@ Este proyecto es una aplicación de escritorio desarrollada como trabajo final, 
 - **Arquitectura Robusta:** Aplicación de principios de Programación Orientada a Objetos (POO) como herencia, polimorfismo y encapsulamiento.
 - **Manejo de Datos:** Uso de colecciones para la administración de registros y flujos de pasajeros.
 
-## 🛠️ Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
 * [Java](https://www.oracle.com/java/) - Lenguaje de programación.
 * [JavaFX](https://openjfx.io/) - Framework para la interfaz gráfica.
 * [Maven/Gradle] 
 
-## 📦 Instalación y Ejecución
+##  Instalación y Ejecución
 
 Para ejecutar este proyecto de forma local, seguí estos pasos:
 
