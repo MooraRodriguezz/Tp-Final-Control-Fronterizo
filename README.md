@@ -22,4 +22,4 @@ Para ejecutar este proyecto de forma local, seguí estos pasos:
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone [https://github.com/TU_USUARIO/TU_REPOSITORIO.git](https://github.com/TU_USUARIO/TU_REPOSITORIO.git)
+   git clone [https://github.com/MooraRodriguezz/Tp-Final-Control-Fronterizo.git]
